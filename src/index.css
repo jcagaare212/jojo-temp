@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@100;200;300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+
+    --card: 0 0% 0%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 0 0% 0%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 28 55% 46%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 0%;
+    --secondary-foreground: 0 0% 70%;
+
+    --muted: 0 0% 0%;
+    --muted-foreground: 0 0% 55%;
+
+    --accent: 28 55% 46%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
+    --ring: 28 55% 46%;
+
+    --radius: 0.25rem;
+
+    --copper: 28 55% 46%;
+    --copper-light: 30 40% 68%;
+    --copper-dark: 25 55% 36%;
+    --bronze: 30 60% 50%;
+    --navy: 0 0% 0%;
+    --charcoal: 0 0% 0%;
+
+    --sidebar-background: 0 0% 0%;
+    --sidebar-foreground: 0 0% 70%;
+    --sidebar-primary: 28 55% 46%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 0%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 0 0% 18%;
+    --sidebar-ring: 28 55% 46%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+}
+
+@layer utilities {
+  .text-copper {
+    color: hsl(var(--copper));
+  }
+  .text-copper-light {
+    color: hsl(var(--copper-light));
+  }
+  .text-copper-dark {
+    color: hsl(var(--copper-dark));
+  }
+  .bg-copper {
+    background-color: hsl(var(--copper));
+  }
+  .bg-copper-dark {
+    background-color: hsl(var(--copper-dark));
+  }
+  .border-copper {
+    border-color: hsl(var(--copper));
+  }
+  .bg-navy {
+    background-color: hsl(var(--navy));
+  }
+  .bg-charcoal {
+    background-color: hsl(var(--charcoal));
+  }
+  .ring-copper {
+    --tw-ring-color: hsl(var(--copper));
+  }
+
+  .blur-vignette {
+    --inset: 0px;
+    --transition-length: 30%;
+    --blur: 20px;
+
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    -webkit-backdrop-filter: blur(var(--blur));
+    backdrop-filter: blur(var(--blur));
+
+    /* Mask: transparent center, opaque edges */
+    -webkit-mask-image:
+      linear-gradient(to right,
+        black 0%, transparent var(--transition-length),
+        transparent calc(100% - var(--transition-length)), black 100%),
+      linear-gradient(to bottom,
+        black 0%, transparent var(--transition-length),
+        transparent calc(100% - var(--transition-length)), black 100%);
+    -webkit-mask-composite: source-over;
+    mask-image:
+      linear-gradient(to right,
+        black 0%, transparent var(--transition-length),
+        transparent calc(100% - var(--transition-length)), black 100%),
+      linear-gradient(to bottom,
+        black 0%, transparent var(--transition-length),
+        transparent calc(100% - var(--transition-length)), black 100%);
+    mask-composite: add;
+
+    /* Black tint on top of blur so edges fade to pure black */
+    background: radial-gradient(
+      ellipse 65% 55% at center,
+      transparent 0%,
+      rgba(0,0,0,0.15) 40%,
+      rgba(0,0,0,0.5) 65%,
+      rgba(0,0,0,0.85) 80%,
+      #000 100%
+    );
+  }
+}
