@@ -37,7 +37,7 @@ const ProductDetail = () => {
   }
 
   return (
-    <div className="bg-black min-h-screen text-foreground">
+    <div className="bg-background min-h-screen text-foreground">
       {/* Hero: Product info left (sticky), Gallery right (scrolling) */}
       <div className="container mx-auto px-6 pt-12 lg:pt-20 pb-24">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.4fr] gap-12 lg:gap-20">
@@ -60,7 +60,7 @@ const ProductDetail = () => {
           <div className="space-y-3 order-1 lg:order-2">
             {product.gallery.map((img, i) => (
               <FadeIn key={i}>
-                <div className="overflow-hidden rounded-2xl bg-black">
+                <div className="overflow-hidden rounded-2xl bg-muted">
                   <img
                     src={img.src}
                     alt={img.alt}
@@ -155,7 +155,7 @@ const ProductDetail = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {product.usageImages.map((img, i) => (
                   <div key={i} className="space-y-3">
-                    <div className="overflow-hidden rounded-2xl bg-black">
+                    <div className="overflow-hidden rounded-2xl bg-muted">
                       <img
                         src={img.src}
                         alt={img.alt}

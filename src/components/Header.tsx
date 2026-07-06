@@ -11,7 +11,7 @@ const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-black/95 backdrop-blur-sm">
+    <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm">
       <div className="container mx-auto px-6 h-16 md:h-20 flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="text-xl font-light tracking-wider text-foreground font-display">
@@ -53,7 +53,7 @@ const Header = () => {
 
       {/* Mobile Menu */}
       {mobileOpen && (
-        <div className="fixed inset-0 top-16 bg-black z-40 md:hidden animate-fade-in">
+        <div className="fixed inset-0 top-16 bg-background z-40 md:hidden animate-fade-in">
           <nav className="flex flex-col px-6 pt-8">
             {navItems.map((item) => (
               <div key={item.label} className="border-b border-border">

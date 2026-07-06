@@ -2,7 +2,7 @@ import { Shield, Wrench, AlertCircle, CheckCircle } from "lucide-react";
 
 const Warranty = () => {
   return (
-    <div className="bg-black min-h-screen">
+    <div className="bg-background min-h-screen">
       <div className="container mx-auto px-6 py-20 max-w-4xl">
         <h1 className="text-5xl md:text-6xl font-extralight text-foreground tracking-wider text-center mb-4 font-display">
           Warranty

@@ -63,7 +63,7 @@ const rightSpecs = [
 
 const Index = () => {
   return (
-    <div className="bg-black">
+    <div className="bg-background">
       {/* Hero */}
       <section className="flex flex-col items-center w-full">
         <div className="pt-0 text-center z-10">
@@ -87,7 +87,7 @@ const Index = () => {
         <section key={i} className={`${i === 0 ? "pt-16 pb-32 md:pt-24 md:pb-48" : "py-32 md:py-48"}`}>
           <FadeIn>
             <div className="max-w-[900px] mx-auto px-6 space-y-12 text-center">
-              <p className="text-white font-bold text-2xl md:text-[28px] leading-relaxed max-w-lg mx-auto">
+              <p className="text-foreground font-bold text-2xl md:text-[28px] leading-relaxed max-w-lg mx-auto">
                 {section.description}
               </p>
               <div className="relative overflow-hidden rounded-2xl h-[60vh]">
@@ -123,10 +123,10 @@ const Index = () => {
                 {leftSpecs.map((spec) => (
                   <div key={spec.label} className="flex items-center gap-4">
                     <div className="text-right">
-                      <p className="text-white text-xs tracking-widest uppercase">{spec.label}</p>
-                      <p className="text-white/50 text-xs mt-0.5">{spec.value}</p>
+                      <p className="text-foreground text-xs tracking-widest uppercase">{spec.label}</p>
+                      <p className="text-foreground/50 text-xs mt-0.5">{spec.value}</p>
                     </div>
-                    <div className="w-16 h-px bg-white/20" />
+                    <div className="w-16 h-px bg-foreground/20" />
                   </div>
                 ))}
               </div>
@@ -134,10 +134,10 @@ const Index = () => {
               <div className="absolute right-0 top-1/2 -translate-y-1/2 hidden md:flex flex-col gap-12 pl-8">
                 {rightSpecs.map((spec) => (
                   <div key={spec.label} className="flex items-center gap-4">
-                    <div className="w-16 h-px bg-white/20" />
+                    <div className="w-16 h-px bg-foreground/20" />
                     <div className="text-left">
-                      <p className="text-white text-xs tracking-widest uppercase">{spec.label}</p>
-                      <p className="text-white/50 text-xs mt-0.5">{spec.value}</p>
+                      <p className="text-foreground text-xs tracking-widest uppercase">{spec.label}</p>
+                      <p className="text-foreground/50 text-xs mt-0.5">{spec.value}</p>
                     </div>
                   </div>
                 ))}
@@ -146,8 +146,8 @@ const Index = () => {
               <div className="md:hidden mt-12 grid grid-cols-2 gap-6">
                 {[...leftSpecs, ...rightSpecs].map((spec) => (
                   <div key={spec.label} className="text-center">
-                    <p className="text-white text-xs tracking-widest uppercase">{spec.label}</p>
-                    <p className="text-white/50 text-xs mt-0.5">{spec.value}</p>
+                    <p className="text-foreground text-xs tracking-widest uppercase">{spec.label}</p>
+                    <p className="text-foreground/50 text-xs mt-0.5">{spec.value}</p>
                   </div>
                 ))}
               </div>

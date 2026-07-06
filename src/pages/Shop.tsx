@@ -10,7 +10,7 @@ const mockProducts = [
 
 const Shop = () => {
   return (
-    <div className="bg-black min-h-screen">
+    <div className="bg-background min-h-screen">
       <div className="container mx-auto px-6 py-20">
         <h1 className="text-5xl md:text-6xl font-extralight text-foreground tracking-wider text-center mb-16 font-display">
           Shop

@@ -18,7 +18,7 @@ const teamMembers = [
 
 const About = () => {
   return (
-    <div className="bg-black min-h-screen text-foreground">
+    <div className="bg-background min-h-screen text-foreground">
       <div className="container mx-auto px-6 py-16 max-w-6xl">
         <div className="grid grid-cols-1 md:grid-cols-[1fr_1.5fr] gap-16 md:gap-20">
           {/* Left column — brand + team */}
