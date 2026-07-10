@@ -130,12 +130,12 @@ const Index = () => {
       {/* Premium Collections (Moved Up) */}
       <section className="py-24 md:py-32 bg-background">
         <div className="container mx-auto px-6">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
             <div>
               <h3 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4 tracking-tight">Premium Collections</h3>
               <p className="text-lg text-muted-foreground max-w-xl">Explore our diverse manufacturing capabilities across distinct product lines.</p>
             </div>
-            <Link to="/products" className="inline-flex items-center justify-center bg-transparent border border-primary text-primary px-8 py-3 rounded-full text-sm font-semibold tracking-wider uppercase hover:bg-primary hover:text-primary-foreground transition-colors">
+            <Link to="/products" className="inline-flex items-center justify-center bg-transparent border border-primary text-primary px-8 py-3 rounded-full text-sm font-semibold tracking-wider uppercase hover:bg-primary hover:text-primary-foreground transition-colors w-full md:w-auto">
               Explore Full Catalog
             </Link>
           </div>
@@ -231,12 +231,12 @@ const Index = () => {
       {/* Core Capabilities - Bento Grid (Moved Down) */}
       <section className="py-24 md:py-32 bg-slate-50 border-b border-border">
         <div className="container mx-auto px-6">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
             <div>
               <h3 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4 tracking-tight">Core Capabilities</h3>
               <p className="text-lg text-muted-foreground max-w-xl">From custom watermarking to retail-ready displays, we engineer solutions for the world's most demanding brands.</p>
             </div>
-            <Link to="/private-label" className="inline-flex items-center justify-center bg-primary text-primary-foreground px-8 py-3 rounded-full text-sm font-semibold tracking-wider uppercase hover:bg-primary/90 transition-colors">
+            <Link to="/private-label" className="inline-flex items-center justify-center bg-primary text-primary-foreground px-8 py-3 rounded-full text-sm font-semibold tracking-wider uppercase hover:bg-primary/90 transition-colors w-full md:w-auto">
               Explore Private Label
             </Link>
           </div>

@@ -13,7 +13,7 @@ const Footer = () => {
               <span className="text-sm tracking-[0.4em] text-slate-400 font-display uppercase mt-1 block">PAPERS</span>
             </Link>
             <p className="text-slate-400 text-sm leading-relaxed max-w-xs">
-              Global leaders in premium rolling paper manufacturing. Scaling the world's top smoking brands with absolute precision and uncompromised quality.
+              Your trusted manufacturing partner for custom rolling papers and pre-rolled cones. We build and supply products for brands around the world.
             </p>
           </div>
 
@@ -21,21 +21,22 @@ const Footer = () => {
           <div className="space-y-6">
             <h4 className="text-white font-display font-bold tracking-wider uppercase text-sm">Capabilities</h4>
             <ul className="space-y-4">
-              <li><Link to="/private-label" className="text-slate-400 hover:text-white transition-colors text-sm">High-Volume OEM</Link></li>
-              <li><Link to="/products" className="text-slate-400 hover:text-white transition-colors text-sm">Private Label Booklets</Link></li>
-              <li><Link to="/products" className="text-slate-400 hover:text-white transition-colors text-sm">Custom Pre-Rolled Cones</Link></li>
-              <li><Link to="/products" className="text-slate-400 hover:text-white transition-colors text-sm">Bespoke Metal Packaging</Link></li>
+              <li><Link to="/private-label" className="text-slate-400 hover:text-white transition-colors text-sm">Wholesale Manufacturing</Link></li>
+              <li><Link to="/products" className="text-slate-400 hover:text-white transition-colors text-sm">Custom Rolling Papers</Link></li>
+              <li><Link to="/products" className="text-slate-400 hover:text-white transition-colors text-sm">Pre-Rolled Cones</Link></li>
+              <li><Link to="/products" className="text-slate-400 hover:text-white transition-colors text-sm">Custom Packaging</Link></li>
             </ul>
           </div>
 
-          {/* Company Column */}
+          {/* Quick Links Column */}
           <div className="space-y-6">
-            <h4 className="text-white font-display font-bold tracking-wider uppercase text-sm">Company</h4>
+            <h4 className="text-white font-display font-bold tracking-wider uppercase text-sm">Quick Links</h4>
             <ul className="space-y-4">
-              <li><Link to="/about" className="text-slate-400 hover:text-white transition-colors text-sm">Our Factory</Link></li>
-              <li><Link to="/about" className="text-slate-400 hover:text-white transition-colors text-sm">Sustainability</Link></li>
-              <li><Link to="/contact" className="text-slate-400 hover:text-white transition-colors text-sm">Partner Network</Link></li>
-              <li><Link to="/contact" className="text-slate-400 hover:text-white transition-colors text-sm">Contact Us</Link></li>
+              <li><Link to="/products" className="text-slate-400 hover:text-white transition-colors text-sm">Products</Link></li>
+              <li><Link to="/private-label" className="text-slate-400 hover:text-white transition-colors text-sm">Private Label</Link></li>
+              <li><Link to="/about" className="text-slate-400 hover:text-white transition-colors text-sm">About Us</Link></li>
+              <li><a href="#" onClick={(e) => { e.preventDefault(); alert('JotForm Integration Coming Soon!'); }} className="text-slate-400 hover:text-white transition-colors text-sm">Become Our Distributor</a></li>
+              <li><Link to="/contact" className="text-slate-400 hover:text-white transition-colors text-sm">Contact</Link></li>
             </ul>
           </div>
 
