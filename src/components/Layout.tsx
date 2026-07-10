@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
+import WhatsAppButton from "./WhatsAppButton";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -13,11 +14,12 @@ const ScrollToTop = () => {
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background relative">
       <ScrollToTop />
       <Header />
       <main>{children}</main>
       <Footer />
+      <WhatsAppButton />
     </div>
   );
 };
