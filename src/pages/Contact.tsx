@@ -1,18 +1,29 @@
 import B2BForm from "@/components/B2BForm";
 import { Mail, MapPin, Phone } from "lucide-react";
 
+const bgImg = "/images/jojo_assets/JOJO Website 26-06-2026/27.webp";
+
 const Contact = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Contact Header */}
-      <section className="pt-32 pb-16 md:pt-48 md:pb-24 bg-slate-900 border-b border-slate-800 text-white">
-        <div className="container mx-auto px-6 text-center max-w-3xl">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight mb-6">
-            Get in Touch
-          </h1>
-          <p className="text-lg text-slate-400 leading-relaxed">
-            Whether you are looking to scale an existing brand or build a completely custom private label product line, our team is ready to engineer your solution.
-          </p>
+      <section className="bg-slate-900 border-b border-slate-800 text-white overflow-hidden">
+        <div className="flex flex-col lg:flex-row">
+          <div className="flex-1 px-6 py-24 md:py-32 lg:py-48 lg:px-16 xl:px-24 flex flex-col justify-center max-w-3xl mx-auto lg:mx-0 text-center lg:text-left">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight mb-6">
+              Get in Touch
+            </h1>
+            <p className="text-lg text-slate-300 leading-relaxed max-w-xl mx-auto lg:mx-0">
+              Whether you are looking to scale an existing brand or build a completely custom private label product line, our team is ready to engineer your solution.
+            </p>
+          </div>
+          <div className="flex-1 relative min-h-[400px] lg:min-h-auto">
+            <img 
+              src={bgImg} 
+              alt="JOJO Papers Products" 
+              className="absolute inset-0 w-full h-full object-cover object-center" 
+            />
+          </div>
         </div>
       </section>
 
