@@ -1,66 +1,78 @@
 import { Link } from "react-router-dom";
-import { Instagram, Twitter } from "lucide-react";
+import { Linkedin, Mail, MapPin, Phone } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-secondary py-12 mt-32">
-      {/* Newsletter */}
-      <div className="container mx-auto px-6 text-center space-y-4 pb-8">
-        <p className="text-secondary-foreground text-lg font-light">
-          Want to know when new pieces are available?
-        </p>
-        <a
-          href="mailto:hello@soilandspirit.com"
-          className="text-primary hover:text-copper-light underline text-base transition-colors"
-        >
-          Join email list
-        </a>
-      </div>
+    <footer className="bg-slate-900 pt-20 pb-10 border-t border-slate-800">
+      <div className="container mx-auto px-6 max-w-7xl">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
+          {/* Brand Column */}
+          <div className="space-y-6">
+            <Link to="/" className="inline-block">
+              <span className="text-3xl font-bold tracking-widest text-white font-display uppercase leading-none block">JOJO</span>
+              <span className="text-sm tracking-[0.4em] text-slate-400 font-display uppercase mt-1 block">PAPERS</span>
+            </Link>
+            <p className="text-slate-400 text-sm leading-relaxed max-w-xs">
+              Global leaders in premium rolling paper manufacturing. Scaling the world's top smoking brands with absolute precision and uncompromised quality.
+            </p>
+          </div>
 
-      {/* Social */}
-      <div className="flex gap-6 justify-center py-6">
-        <a
-          href="https://instagram.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Instagram"
-          className="text-muted-foreground hover:text-foreground transition-colors"
-        >
-          <Instagram className="w-5 h-5" />
-        </a>
-        <a
-          href="https://twitter.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Twitter"
-          className="text-muted-foreground hover:text-foreground transition-colors"
-        >
-          <Twitter className="w-5 h-5" />
-        </a>
-      </div>
+          {/* Solutions Column */}
+          <div className="space-y-6">
+            <h4 className="text-white font-display font-bold tracking-wider uppercase text-sm">Capabilities</h4>
+            <ul className="space-y-4">
+              <li><Link to="/private-label" className="text-slate-400 hover:text-white transition-colors text-sm">High-Volume OEM</Link></li>
+              <li><Link to="/products" className="text-slate-400 hover:text-white transition-colors text-sm">Private Label Booklets</Link></li>
+              <li><Link to="/products" className="text-slate-400 hover:text-white transition-colors text-sm">Custom Pre-Rolled Cones</Link></li>
+              <li><Link to="/products" className="text-slate-400 hover:text-white transition-colors text-sm">Bespoke Metal Packaging</Link></li>
+            </ul>
+          </div>
 
-      {/* Copyright & Legal */}
-      <div className="container mx-auto px-6 pt-6 text-center space-y-4">
-        <p className="text-muted-foreground text-sm">©2024 Soil & Spirit</p>
-        <p className="text-muted-foreground/60 text-xs leading-relaxed max-w-3xl mx-auto">
-          No part of this site may be copied, reproduced, republished, transmitted or
-          distributed in any form or by any means, including photocopying or other
-          electronic or mechanical methods, without the creator's express prior written
-          consent.
-        </p>
-        <div className="flex gap-4 justify-center mt-6">
-          <Link
-            to="/shipping"
-            className="text-muted-foreground hover:text-secondary-foreground text-xs underline transition-colors"
-          >
-            shipping and returns
-          </Link>
-          <Link
-            to="/warranty"
-            className="text-muted-foreground hover:text-secondary-foreground text-xs underline transition-colors"
-          >
-            warranty information
-          </Link>
+          {/* Company Column */}
+          <div className="space-y-6">
+            <h4 className="text-white font-display font-bold tracking-wider uppercase text-sm">Company</h4>
+            <ul className="space-y-4">
+              <li><Link to="/about" className="text-slate-400 hover:text-white transition-colors text-sm">Our Factory</Link></li>
+              <li><Link to="/about" className="text-slate-400 hover:text-white transition-colors text-sm">Sustainability</Link></li>
+              <li><Link to="/contact" className="text-slate-400 hover:text-white transition-colors text-sm">Partner Network</Link></li>
+              <li><Link to="/contact" className="text-slate-400 hover:text-white transition-colors text-sm">Contact Us</Link></li>
+            </ul>
+          </div>
+
+          {/* Contact Column */}
+          <div className="space-y-6">
+            <h4 className="text-white font-display font-bold tracking-wider uppercase text-sm">Global Headquarters</h4>
+            <ul className="space-y-4">
+              <li className="flex items-start gap-3">
+                <Mail className="w-5 h-5 text-slate-500 shrink-0 mt-0.5" />
+                <a href="mailto:info@jojopapers.com" className="text-slate-400 hover:text-white transition-colors text-sm">info@jojopapers.com</a>
+              </li>
+              <li className="flex items-start gap-3">
+                <Phone className="w-5 h-5 text-slate-500 shrink-0 mt-0.5" />
+                <span className="text-slate-400 text-sm leading-relaxed">+91 XXXX XXXXXX<br/><span className="text-xs opacity-70">Available for wholesale inquiries only</span></span>
+              </li>
+              <li className="flex items-start gap-3">
+                <MapPin className="w-5 h-5 text-slate-500 shrink-0 mt-0.5" />
+                <span className="text-slate-400 text-sm leading-relaxed">Vasant Kunj, New Delhi, Delhi</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Bottom Bar */}
+        <div className="pt-8 border-t border-slate-800 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-slate-500 text-sm text-center md:text-left">
+            © {new Date().getFullYear()} Jojo Papers Manufacturing. All rights reserved.
+          </p>
+          <div className="flex items-center gap-6">
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-white transition-colors">
+              <Linkedin className="w-5 h-5" />
+            </a>
+            <div className="flex gap-4">
+              <Link to="/privacy" className="text-slate-500 hover:text-white text-sm transition-colors">Privacy Policy</Link>
+              <Link to="/terms" className="text-slate-500 hover:text-white text-sm transition-colors">Terms of Service</Link>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

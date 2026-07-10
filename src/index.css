@@ -15,8 +15,8 @@
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 0%;
 
-    --primary: 28 55% 46%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
 
     --secondary: 0 0% 96%;
     --secondary-foreground: 0 0% 0%;
@@ -24,15 +24,15 @@
     --muted: 0 0% 96%;
     --muted-foreground: 0 0% 45%;
 
-    --accent: 28 55% 46%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 0 0% 96%;
+    --accent-foreground: 0 0% 9%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
     --border: 0 0% 82%;
     --input: 0 0% 82%;
-    --ring: 28 55% 46%;
+    --ring: 0 0% 9%;
 
     --radius: 0.25rem;
 
@@ -136,5 +136,15 @@
       rgba(0,0,0,0.85) 80%,
       #000 100%
     );
+  }
+
+  @keyframes marquee {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-50%); }
+  }
+  .animate-marquee {
+    animation: marquee 30s linear infinite;
+    display: inline-flex;
+    width: max-content;
   }
 }
