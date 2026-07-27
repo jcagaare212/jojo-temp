@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import B2BForm from "@/components/B2BForm";
 import { useInView } from "@/hooks/useInView";
 import heroBg from "@/assets/hero-bg.jpg";
 import sectionTl from "@/assets/section-tl.jpg";
@@ -190,40 +189,90 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Products We Make For You */}
+      <section className="py-24 bg-white border-b border-border">
+        <div className="container mx-auto px-6 max-w-6xl">
+          <div className="text-center mb-16">
+            <h3 className="font-display text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">Products we make for you</h3>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+            {/* Pre-rolled cones */}
+            <div className="flex flex-col items-center text-center group">
+              <div className="w-full h-48 md:h-64 mb-8 overflow-hidden flex items-center justify-center">
+                <img src="/images/jojo_assets/JOJO Website 26-06-2026/7.webp" alt="Pre-rolled cones" className="w-full h-full object-contain transform-gpu group-hover:scale-105 transition-transform duration-500 mix-blend-multiply" />
+              </div>
+              <h4 className="font-display text-xl md:text-2xl font-bold text-slate-900 mb-4">Pre-rolled cones</h4>
+              <p className="text-slate-500 font-sans leading-relaxed mb-6">
+                Rolled by hand, using only the highest quality materials for a superior cone.
+              </p>
+              <Link to="/products" className="text-primary font-bold text-sm tracking-wide uppercase hover:text-slate-600 transition-colors">
+                Explore our range
+              </Link>
+            </div>
+
+            {/* Custom rolling papers */}
+            <div className="flex flex-col items-center text-center group">
+              <div className="w-full h-48 md:h-64 mb-8 overflow-hidden flex items-center justify-center">
+                <img src="/images/jojo_assets/JOJO Website 26-06-2026/6.webp" alt="Custom rolling papers" className="w-full h-full object-contain transform-gpu group-hover:scale-105 transition-transform duration-500 mix-blend-multiply" />
+              </div>
+              <h4 className="font-display text-xl md:text-2xl font-bold text-slate-900 mb-4">Custom rolling papers</h4>
+              <p className="text-slate-500 font-sans leading-relaxed mb-6">
+                Anything is possible. Build your brand with customized booklets and filters.
+              </p>
+              <Link to="/products" className="text-primary font-bold text-sm tracking-wide uppercase hover:text-slate-600 transition-colors">
+                Explore the possibilities
+              </Link>
+            </div>
+
+            {/* Custom Branding & Textures */}
+            <div className="flex flex-col items-center text-center group">
+              <div className="w-full h-48 md:h-64 mb-8 overflow-hidden flex items-center justify-center">
+                <img src="/images/jojo_assets/JOJO Website 26-06-2026/16.webp" alt="Custom branding and textures" className="w-full h-full object-contain transform-gpu group-hover:scale-105 transition-transform duration-500 rounded-xl" />
+              </div>
+              <h4 className="font-display text-xl md:text-2xl font-bold text-slate-900 mb-4">Custom Branding & Textures</h4>
+              <p className="text-slate-500 font-sans leading-relaxed mb-6">
+                Elevate your product with custom watermarks, printed tips, and unique paper blends.
+              </p>
+              <Link to="/products" className="text-primary font-bold text-sm tracking-wide uppercase hover:text-slate-600 transition-colors">
+                Learn more
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Custom Manufacturing Steps */}
       <section className="py-24 bg-slate-50 border-y border-border">
-        <div className="container mx-auto px-6 max-w-5xl">
+        <div className="container mx-auto px-6 max-w-7xl">
           <div className="text-center mb-16">
             <h3 className="font-display text-3xl md:text-4xl font-bold text-foreground tracking-tight">The Ultimate Private Label Experience</h3>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mb-16">
             {[
-              { step: "01", title: "DEFINE YOUR PROFILE" },
-              { step: "02", title: "SELECT PREMIUM MATERIALS" },
-              { step: "03", title: "DESIGN CUSTOM GRAPHICS" },
-              { step: "04", title: "CREATE RETAIL PACKAGING" }
+              { title: "CUSTOM SIZES", img: "/images/concept/size.png" },
+              { title: "CUSTOM PAPER", img: "/images/concept/paper.png" },
+              { title: "CUSTOM PRINT", img: "/images/concept/print.png" },
+              { title: "CUSTOM PACKAGING", img: "/images/concept/packaging.png" }
             ].map((item, i) => (
-              <div key={i} className="flex flex-col items-center group cursor-default">
-                <div className="w-full relative bg-white shadow-md hover:shadow-xl hover:shadow-slate-200 transition-all duration-500 flex flex-col items-center justify-center p-8 border border-slate-100 rounded-3xl text-center hover:-translate-y-2 overflow-hidden aspect-square">
-                  
-                  {/* Subtle step watermark */}
-                  <span className="absolute -top-4 -right-2 text-8xl md:text-9xl font-black text-slate-50 opacity-50 select-none group-hover:scale-110 group-hover:text-slate-100 transition-all duration-500">
-                    {item.step}
-                  </span>
-
-                  {/* Stacked Text with Modern Font */}
-                  <h4 className="relative z-10 font-sans text-[1.1rem] md:text-lg font-bold text-slate-800 tracking-widest leading-loose uppercase">
-                    {item.title.split(' ').map((word, j) => (
-                      <span key={j} className="block">{word}</span>
-                    ))}
+              <div key={i} className="flex flex-col items-center group">
+                <div className="w-full bg-white shadow-sm hover:shadow-xl hover:shadow-slate-200 transition-all duration-500 flex flex-col items-center justify-between p-8 pt-12 pb-10 border border-slate-100 rounded-2xl text-center hover:-translate-y-2 h-[340px] md:h-[400px]">
+                  <div className="w-full flex-1 flex items-center justify-center mb-8">
+                    <img src={item.img} alt={item.title} className="max-h-40 md:max-h-56 w-auto object-contain mix-blend-multiply transform-gpu group-hover:scale-110 transition-transform duration-500" />
+                  </div>
+                  <h4 className="font-display text-lg md:text-xl font-bold text-slate-800 tracking-widest uppercase">
+                    {item.title}
                   </h4>
-
-                  {/* Decorative animated line */}
-                  <div className="relative z-10 mt-8 w-8 h-1 bg-slate-200 rounded-full group-hover:w-16 group-hover:bg-slate-800 transition-all duration-500"></div>
                 </div>
               </div>
             ))}
+          </div>
+
+          <div className="flex justify-center">
+            <Link to="/products" className="inline-flex items-center justify-center px-10 py-5 bg-primary text-white rounded-full font-bold text-sm tracking-widest uppercase hover:bg-slate-900 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
+              Start Your Custom Build
+            </Link>
           </div>
         </div>
       </section>
@@ -282,9 +331,6 @@ const Index = () => {
           </div>
         </div>
       </section>
-
-      {/* B2B Lead Capture Form */}
-      <B2BForm />
     </div>
   );
 };

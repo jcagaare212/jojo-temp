@@ -22,9 +22,6 @@ const PrivateLabel = () => {
           <p className="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto mb-10 leading-relaxed">
             Elevate your brand with world-class OEM capabilities. From custom watermarked papers to luxury printed tins, we build premium smoking essentials at global scale.
           </p>
-          <a href="#inquiry" className="inline-flex items-center justify-center bg-primary text-primary-foreground px-8 py-4 rounded-full text-sm font-semibold tracking-wider uppercase hover:bg-primary/90 transition-colors">
-            Start Your Custom Build
-          </a>
         </div>
       </section>
 
@@ -42,8 +39,8 @@ const PrivateLabel = () => {
               <div className="absolute inset-0 z-10 bg-black/10 group-hover:bg-transparent transition-colors duration-500" />
               <img src="/images/jojo_assets/JOJO Website 26-06-2026/24.webp" alt="Custom Watermarks" className="w-full h-full object-cover transform-gpu backface-hidden [transform:translateZ(0)] group-hover:scale-[1.03] transition-transform duration-700 ease-out will-change-transform" />
               <div className="absolute bottom-0 left-0 p-8 z-20 w-full bg-gradient-to-t from-black/90 via-black/40 to-transparent">
-                <h4 className="text-white font-display text-2xl md:text-3xl font-bold mb-2">[Client Capability 1]</h4>
-                <p className="text-slate-200 text-sm max-w-md">[Client to provide detailed description of capability 1 here. E.g., specific materials, watermarks, etc.]</p>
+                <h4 className="text-white font-display text-2xl md:text-3xl font-bold mb-2">Custom Watermarks & Blends</h4>
+                <p className="text-slate-200 text-sm max-w-md">We engineer proprietary paper blends featuring custom watermarks that protect your brand identity while delivering an exceptional, slow-burning smoking experience.</p>
               </div>
             </div>
 
@@ -52,8 +49,8 @@ const PrivateLabel = () => {
               <div className="absolute inset-0 z-10 bg-black/10 group-hover:bg-transparent transition-colors duration-500" />
               <img src="/images/jojo_assets/JOJO Website 26-06-2026/4.webp" alt="Luxury Packaging" className="w-full h-full object-cover transform-gpu backface-hidden [transform:translateZ(0)] group-hover:scale-[1.03] transition-transform duration-700 ease-out will-change-transform" />
               <div className="absolute bottom-0 left-0 p-8 z-20 w-full bg-gradient-to-t from-black/90 via-black/40 to-transparent">
-                <h4 className="text-white font-display text-2xl md:text-3xl font-bold mb-2">[Client Capability 2]</h4>
-                <p className="text-slate-200 text-sm max-w-md">[Client to provide detailed description of capability 2 here. E.g., specific printing methods, foils, closures, etc.]</p>
+                <h4 className="text-white font-display text-2xl md:text-3xl font-bold mb-2">Luxury Retail Packaging</h4>
+                <p className="text-slate-200 text-sm max-w-md">Stand out on the shelf with bespoke packaging solutions. We offer everything from embossed metal tins to premium magnetic closure boxes and minimalist glass tubes.</p>
               </div>
             </div>
 
@@ -62,8 +59,8 @@ const PrivateLabel = () => {
               <div className="absolute inset-0 z-10 bg-black/10 group-hover:bg-transparent transition-colors duration-500" />
               <img src="/images/jojo_assets/JOJO Website 26-06-2026/30.webp" alt="Pre-rolled Cones" className="w-full h-full object-cover object-top transform-gpu backface-hidden [transform:translateZ(0)] group-hover:scale-[1.03] transition-transform duration-700 ease-out will-change-transform" />
               <div className="absolute bottom-0 left-0 p-8 z-20 w-full bg-gradient-to-t from-black/90 via-black/40 to-transparent">
-                <h4 className="text-white font-display text-2xl md:text-3xl font-bold mb-2">[Client Capability 3]</h4>
-                <p className="text-slate-200 text-sm max-w-md">[Client to provide detailed description of capability 3 here. E.g., cone rolling specifics, sizes, crutches.]</p>
+                <h4 className="text-white font-display text-2xl md:text-3xl font-bold mb-2">Precision Pre-Rolled Cones</h4>
+                <p className="text-slate-200 text-sm max-w-md">Manufactured to exact tolerances, our pre-rolled cones are crafted for perfect airflow. Available in various sizes, custom paper blends, and featuring custom-printed crutches.</p>
               </div>
             </div>
 
@@ -72,8 +69,8 @@ const PrivateLabel = () => {
               <div className="absolute inset-0 z-10 bg-black/10 group-hover:bg-transparent transition-colors duration-500" />
               <img src="/images/jojo_assets/JOJO Website 26-06-2026/28.webp" alt="Retail Displays" className="w-full h-full object-cover transform-gpu backface-hidden [transform:translateZ(0)] group-hover:scale-[1.03] transition-transform duration-700 ease-out will-change-transform" />
               <div className="absolute bottom-0 left-0 p-8 z-20 w-full bg-gradient-to-t from-black/90 via-black/40 to-transparent">
-                <h4 className="text-white font-display text-2xl md:text-3xl font-bold mb-2">[Client Capability 4]</h4>
-                <p className="text-slate-200 text-sm max-w-md">[Client to provide detailed description of capability 4 here. E.g., retail displays, metal packaging features.]</p>
+                <h4 className="text-white font-display text-2xl md:text-3xl font-bold mb-2">Retail Display Solutions</h4>
+                <p className="text-slate-200 text-sm max-w-md">Drive point-of-sale impact with custom-engineered retail displays. We design counter-ready solutions that perfectly showcase your pre-rolls and booklets.</p>
               </div>
             </div>
           </div>
@@ -92,23 +89,23 @@ const PrivateLabel = () => {
             {[
               {
                 step: "01",
-                title: "[Pipeline Step 1]",
-                desc: "[Client to describe the first step of the manufacturing pipeline, such as design, consultation, or requirements gathering.]"
+                title: "Consultation & Prototyping",
+                desc: "We start by understanding your brand vision and target market. Our design team works closely with you to prototype custom paper blends, tip designs, and primary packaging."
               },
               {
                 step: "02",
-                title: "[Pipeline Step 2]",
-                desc: "[Client to describe the second step, such as prototyping, sampling, or sign-offs.]"
+                title: "Sampling & Refinement",
+                desc: "Before full-scale production, we provide physical samples of your products. This ensures every detail—from the watermark clarity to the foil stamping—meets your exact specifications."
               },
               {
                 step: "03",
-                title: "[Pipeline Step 3]",
-                desc: "[Client to describe the third step, such as mass production, automated manufacturing details.]"
+                title: "Automated Mass Production",
+                desc: "Once approved, your products enter our state-of-the-art manufacturing facility. High-volume automation ensures precision consistency across production runs of any scale."
               },
               {
                 step: "04",
-                title: "[Pipeline Step 4]",
-                desc: "[Client to describe the final step, such as quality control, delivery, and logistics.]"
+                title: "QC & Global Logistics",
+                desc: "Every batch undergoes rigorous quality assurance testing. Finally, our logistics network ensures your premium private label products are delivered securely anywhere in the world."
               }
             ].map((item, i) => (
               <div key={i} className="flex flex-col md:flex-row gap-6 md:gap-12 items-start md:items-center">
@@ -124,21 +121,6 @@ const PrivateLabel = () => {
           </div>
         </div>
       </section>
-
-      {/* MOQ Callout */}
-      <section className="py-16 bg-slate-900 text-slate-50">
-        <div className="container mx-auto px-6 text-center max-w-3xl">
-          <h3 className="font-display text-2xl md:text-3xl font-bold text-white mb-4">Wholesale & OEM Inquiries</h3>
-          <p className="text-slate-400 mb-8">
-            Due to our high-volume automated manufacturing processes, our standard Minimum Order Quantities (MOQs) apply. Please reach out via the form below with your project details and estimated volume, and our sales team will provide a tailored quote.
-          </p>
-        </div>
-      </section>
-
-      {/* Form Section */}
-      <div id="inquiry">
-        <B2BForm />
-      </div>
     </div>
   );
 };
