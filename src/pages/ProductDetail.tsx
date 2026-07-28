@@ -143,7 +143,7 @@ const ProductDetail = () => {
                 <div className="space-y-4">
                   <h2 className="text-sm tracking-[0.3em] uppercase text-slate-500 font-bold">The JOJO Standard</h2>
                   {product.craftNote.split("\n").map((line, i) => (
-                    <h3 key={i} className="text-3xl md:text-4xl lg:text-5xl font-display font-bold leading-tight text-slate-900">
+                    <h3 key={i} className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold leading-tight text-slate-900">
                       {line}
                     </h3>
                   ))}

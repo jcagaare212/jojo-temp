@@ -103,7 +103,7 @@ const Footer = () => {
           <p className="text-slate-500 text-sm text-center md:text-left">
             © {new Date().getFullYear()} JOJO Papers Manufacturing. All rights reserved.
           </p>
-          <div className="flex items-center justify-end w-full md:w-auto gap-3">
+          <div className="flex items-center justify-center md:justify-end w-full md:w-auto gap-3 mt-4 md:mt-0">
             <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-white transition-colors bg-slate-800/50 p-2 rounded-full hover:bg-slate-700">
               <Instagram className="w-4 h-4" />
             </a>

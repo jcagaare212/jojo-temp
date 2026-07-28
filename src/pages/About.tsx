@@ -60,7 +60,7 @@ const About = () => {
           style={{ y }}
           className="relative z-10 text-center px-6 max-w-5xl mx-auto"
         >
-          <h1 className="font-display text-5xl md:text-7xl font-bold text-white tracking-tight mb-6 drop-shadow-md">
+          <h1 className="font-display text-4xl sm:text-5xl md:text-7xl font-bold text-white tracking-tight mb-6 drop-shadow-md">
             Engineered for <span className="text-white">Perfection</span>
           </h1>
           <p className="text-xl md:text-2xl text-white/90 font-medium tracking-wide max-w-3xl mx-auto drop-shadow-md">
@@ -111,7 +111,7 @@ const About = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center mb-32">
             <FadeIn>
               <h2 className="text-sm tracking-[0.3em] uppercase text-primary font-bold mb-6">Our Legacy</h2>
-              <h3 className="font-display text-4xl md:text-5xl font-bold text-slate-900 mb-8 leading-tight">
+              <h3 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-8 leading-tight">
                 An obsession with craft the industry forgot.
               </h3>
               <div className="space-y-6 text-lg text-slate-600 leading-relaxed">
@@ -142,7 +142,7 @@ const About = () => {
             </FadeIn>
             <FadeIn className="order-1 lg:order-2">
               <h2 className="text-sm tracking-[0.3em] uppercase text-primary font-bold mb-6">Wholesale Partners</h2>
-              <h3 className="font-display text-4xl md:text-5xl font-bold text-slate-900 mb-8 leading-tight">
+              <h3 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-8 leading-tight">
                 Building a product worth your name.
               </h3>
               <div className="space-y-6 text-lg text-slate-600 leading-relaxed">
@@ -166,7 +166,7 @@ const About = () => {
             </FadeIn>
             <FadeIn delay={200}>
               <h2 className="text-sm tracking-[0.3em] uppercase text-primary font-bold mb-6">Our Philosophy</h2>
-              <h3 className="font-display text-4xl md:text-5xl font-bold text-slate-900 mb-8 leading-tight">
+              <h3 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-8 leading-tight">
                 No Shortcuts.<br/>Just the JOJO Standard.
               </h3>
               <div className="space-y-6 text-lg text-slate-600 leading-relaxed">

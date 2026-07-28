@@ -64,10 +64,10 @@ const Index = () => {
             
             <div className="absolute inset-0 flex flex-col justify-center px-8 md:px-16 lg:px-24">
               <div className="max-w-4xl">
-                <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-white tracking-tight leading-[1.1] mb-4 drop-shadow-lg">
+                <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white tracking-tight leading-[1.1] mb-4 drop-shadow-lg">
                   Factory-Direct <br className="hidden md:block" />Wholesale Value
                 </h1>
-                <h2 className="font-display text-2xl md:text-3xl lg:text-4xl text-white/90 font-medium tracking-wide drop-shadow-md mb-12">
+                <h2 className="font-display text-xl sm:text-2xl md:text-3xl lg:text-4xl text-white/90 font-medium tracking-wide drop-shadow-md mb-12">
                   Premium stock ready to ship today. <br className="hidden md:block" />Custom orders built in just 4 weeks.
                 </h2>
                 
@@ -131,7 +131,7 @@ const Index = () => {
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
             <div>
-              <h3 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4 tracking-tight">Premium Collections</h3>
+              <h3 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4 tracking-tight">Premium Collections</h3>
               <p className="text-lg text-muted-foreground max-w-xl">Explore our diverse manufacturing capabilities across distinct product lines.</p>
             </div>
             <Link to="/products" className="inline-flex items-center justify-center bg-transparent border border-primary text-primary px-8 py-3 rounded-full text-sm font-semibold tracking-wider uppercase hover:bg-primary hover:text-primary-foreground transition-colors w-full md:w-auto">
@@ -282,7 +282,7 @@ const Index = () => {
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
             <div>
-              <h3 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4 tracking-tight">Core Capabilities</h3>
+              <h3 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4 tracking-tight">Core Capabilities</h3>
               <p className="text-lg text-muted-foreground max-w-xl">From custom watermarking to retail-ready displays, we engineer solutions for the world's most demanding brands.</p>
             </div>
             <Link to="/private-label" className="inline-flex items-center justify-center bg-primary text-primary-foreground px-8 py-3 rounded-full text-sm font-semibold tracking-wider uppercase hover:bg-primary/90 transition-colors w-full md:w-auto">

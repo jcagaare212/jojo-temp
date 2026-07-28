@@ -11,7 +11,7 @@ const Contact = () => {
       <section className="bg-slate-900 border-b border-slate-800 text-white overflow-hidden">
         <div className="flex flex-col lg:flex-row">
           <div className="flex-1 px-6 py-24 md:py-32 lg:py-48 lg:px-16 xl:px-24 flex flex-col justify-center max-w-3xl mx-auto lg:mx-0 text-center lg:text-left">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight mb-6">
               Get in Touch
             </h1>
             <p className="text-lg text-slate-300 leading-relaxed max-w-xl mx-auto lg:mx-0">
