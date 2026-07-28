@@ -3,12 +3,12 @@ import { Linkedin, Mail, MapPin, Phone } from "lucide-react";
 
 const Footer = () => {
   const location = useLocation();
-  const isContactPage = location.pathname === '/contact';
+  const hideCta = location.pathname === '/contact' || location.pathname === '/distributor';
 
   return (
     <>
-      {/* Global CTA Section (Hidden on Contact Page) */}
-      {!isContactPage && (
+      {/* Global CTA Section (Hidden on Contact & Distributor Pages) */}
+      {!hideCta && (
         <section className="bg-white py-24 border-t border-slate-100 relative overflow-hidden">
           {/* Abstract decorative graphics simulating the screenshot */}
           <div className="absolute left-0 top-1/2 -translate-y-1/2 w-48 md:w-80 opacity-10 pointer-events-none -translate-x-1/4">
@@ -38,7 +38,7 @@ const Footer = () => {
         </section>
       )}
 
-      <footer className="bg-slate-900 pt-20 pb-10 border-t border-slate-800">
+      <footer className="bg-[#0f172a] pt-20 pb-10 border-t border-slate-800">
         <div className="container mx-auto px-6 max-w-7xl">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
           {/* Brand Column */}
@@ -50,9 +50,12 @@ const Footer = () => {
             <p className="text-slate-400 text-sm leading-relaxed max-w-xs">
               Your trusted manufacturing partner for custom rolling papers and pre-rolled cones. We build and supply products for brands around the world.
             </p>
+            <div className="pt-4">
+              <img src="/images/make_in_india.svg" alt="Make in India" className="h-24 md:h-28 w-auto opacity-90 hover:opacity-100 transition-opacity" />
+            </div>
           </div>
 
-          {/* Solutions Column */}
+          {/* Capabilities Column */}
           <div className="space-y-6">
             <h4 className="text-white font-display font-bold tracking-wider uppercase text-sm">Capabilities</h4>
             <ul className="space-y-4">
@@ -70,8 +73,8 @@ const Footer = () => {
               <li><Link to="/products" className="text-slate-400 hover:text-white transition-colors text-sm">Products</Link></li>
               <li><Link to="/private-label" className="text-slate-400 hover:text-white transition-colors text-sm">Private Label</Link></li>
               <li><Link to="/about" className="text-slate-400 hover:text-white transition-colors text-sm">About Us</Link></li>
-              <li><a href="#" onClick={(e) => { e.preventDefault(); alert('JotForm Integration Coming Soon!'); }} className="text-slate-400 hover:text-white transition-colors text-sm">Become Our Distributor</a></li>
-              <li><Link to="/contact" className="text-slate-400 hover:text-white transition-colors text-sm">Contact</Link></li>
+              <li><Link to="/distributor" className="text-slate-400 hover:text-white transition-colors text-sm">Become Our Distributor</Link></li>
+              <li><Link to="/contact" className="text-slate-400 hover:text-white transition-colors text-sm">Contact Us</Link></li>
             </ul>
           </div>
 
@@ -79,35 +82,31 @@ const Footer = () => {
           <div className="space-y-6">
             <h4 className="text-white font-display font-bold tracking-wider uppercase text-sm">Global Headquarters</h4>
             <ul className="space-y-4">
-              <li className="flex items-start gap-3">
-                <Mail className="w-5 h-5 text-slate-500 shrink-0 mt-0.5" />
-                <a href="mailto:info@jojopapers.com" className="text-slate-400 hover:text-white transition-colors text-sm">info@jojopapers.com</a>
+              <li className="flex items-start gap-3 group">
+                <Mail className="w-5 h-5 text-slate-500 shrink-0 mt-0.5 group-hover:text-primary transition-colors" />
+                <a href="mailto:info@jojopapers.com" className="text-slate-400 group-hover:text-white transition-colors text-sm">info@jojopapers.com</a>
               </li>
-              <li className="flex items-start gap-3">
-                <Phone className="w-5 h-5 text-slate-500 shrink-0 mt-0.5" />
-                <span className="text-slate-400 text-sm leading-relaxed">+91 XXXX XXXXXX</span>
+              <li className="flex items-start gap-3 group">
+                <Phone className="w-5 h-5 text-slate-500 shrink-0 mt-0.5 group-hover:text-primary transition-colors" />
+                <span className="text-slate-400 text-sm leading-relaxed group-hover:text-white transition-colors">+91 XXXX XXXXXX</span>
               </li>
-              <li className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-slate-500 shrink-0 mt-0.5" />
-                <span className="text-slate-400 text-sm leading-relaxed">Vasant Kunj, New Delhi, Delhi</span>
+              <li className="flex items-start gap-3 group">
+                <MapPin className="w-5 h-5 text-slate-500 shrink-0 mt-0.5 group-hover:text-primary transition-colors" />
+                <span className="text-slate-400 text-sm leading-relaxed group-hover:text-white transition-colors">Vasant Kunj, New Delhi, Delhi</span>
               </li>
             </ul>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-slate-800 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="pt-8 border-t border-slate-800 flex flex-col md:flex-row items-center justify-between gap-6">
           <p className="text-slate-500 text-sm text-center md:text-left">
-            © {new Date().getFullYear()} Jojo Papers Manufacturing. All rights reserved.
+            © {new Date().getFullYear()} JOJO Papers Manufacturing. All rights reserved.
           </p>
-          <div className="flex items-center gap-6">
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-white transition-colors">
-              <Linkedin className="w-5 h-5" />
+          <div className="flex items-center justify-end w-full md:w-auto">
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-white transition-colors bg-slate-800/50 p-2 rounded-full hover:bg-slate-700">
+              <Linkedin className="w-4 h-4" />
             </a>
-            <div className="flex gap-4">
-              <Link to="/privacy" className="text-slate-500 hover:text-white text-sm transition-colors">Privacy Policy</Link>
-              <Link to="/terms" className="text-slate-500 hover:text-white text-sm transition-colors">Terms of Service</Link>
-            </div>
           </div>
         </div>
       </div>

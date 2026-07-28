@@ -14,18 +14,18 @@ const Products = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {allProductsList.map((product) => (
             <Link
               key={product.id}
               to={`/products/${product.id}`}
               className="group block bg-slate-50 border border-border/50 rounded-3xl overflow-hidden hover:shadow-lg transition-all duration-300"
             >
-              <div className="relative overflow-hidden aspect-[4/3] bg-white">
+              <div className="relative overflow-hidden aspect-[4/3] bg-[#ebe4d8] flex items-center justify-center p-6">
                 <img
                   src={product.specImage}
                   alt={`${product.name} ${product.subtitle}`}
-                  className="w-full h-full object-cover transform-gpu backface-hidden [transform:translateZ(0)] group-hover:scale-[1.03] transition-transform duration-700 ease-out will-change-transform"
+                  className="w-full h-full object-contain mix-blend-multiply transform-gpu backface-hidden [transform:translateZ(0)] group-hover:scale-[1.03] transition-transform duration-700 ease-out will-change-transform"
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors duration-500" />

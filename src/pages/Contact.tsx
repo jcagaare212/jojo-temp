@@ -1,4 +1,5 @@
 import B2BForm from "@/components/B2BForm";
+import { Link } from "react-router-dom";
 import { Mail, MapPin, Phone } from "lucide-react";
 
 const bgImg = "/images/jojo_assets/JOJO Website 26-06-2026/27.webp";
@@ -71,13 +72,12 @@ const Contact = () => {
           <h2 className="font-display text-3xl font-bold mb-4">Partner Network</h2>
           <p className="text-muted-foreground mb-8 text-lg">Interested in joining our global distribution network or finding a supplier near you?</p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a 
-              href="#" 
-              onClick={(e) => { e.preventDefault(); alert('JotForm Integration Coming Soon!'); }}
+            <Link 
+              to="/distributor"
               className="w-full sm:w-auto inline-flex items-center justify-center bg-transparent border-2 border-[#1B4D3E] text-[#1B4D3E] px-8 py-3 rounded-md font-semibold tracking-wide hover:bg-[#1B4D3E] hover:text-white transition-colors"
             >
               Become Our Distributor
-            </a>
+            </Link>
           </div>
         </div>
       </section>

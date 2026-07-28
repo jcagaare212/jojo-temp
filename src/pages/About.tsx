@@ -133,11 +133,11 @@ const About = () => {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-            <FadeIn delay={200} className="order-2 lg:order-1 relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
+            <FadeIn delay={200} className="order-2 lg:order-1 relative aspect-square md:aspect-[4/5] rounded-3xl overflow-hidden bg-[#dfd6c8] shadow-sm flex items-center justify-center p-8 border border-border/50">
               <img
-                src="/images/jojo_assets/JOJO Website 26-06-2026/5.webp"
+                src="/images/about/bulk-brown-cones.png"
                 alt="B2B Manufacturing"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain mix-blend-multiply transform-gpu hover:scale-[1.03] transition-transform duration-700"
               />
             </FadeIn>
             <FadeIn className="order-1 lg:order-2">
@@ -152,19 +152,32 @@ const About = () => {
                 <p>
                   Through private label and OEM partnerships, we give partners access to a decade of manufacturing precision, from raw material sourcing to the final finish, so the product that reaches their customers is one they can stand behind completely.
                 </p>
-                <div className="mt-12 bg-white p-8 rounded-2xl border border-slate-100 shadow-sm relative flex flex-col md:flex-row items-center md:items-start gap-8">
-                  <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-primary rounded-l-2xl"></div>
-
-                  <div className="flex-shrink-0 w-32 h-32 md:w-48 md:h-48 flex items-center justify-center">
-                    <img src="/images/make_in_india.svg" alt="Made by Women, Made in India Logo" className="w-full h-full object-contain" />
-                  </div>
-
-                  <div className="flex-1">
-                    <h4 className="text-xl font-display font-bold text-slate-900 uppercase tracking-widest mb-3 border-b border-slate-100 pb-3">Made In India • Made By Women</h4>
-                    <p className="text-lg font-sans text-slate-600 leading-relaxed">
-                      Made with a level of care that shows in the details you notice only after everything else has failed to impress you. That is the JOJO standard, and it is the only standard we know how to work to.
-                    </p>
-                  </div>
+              </div>
+            </FadeIn>
+          </div>
+        {/* The JOJO Standard Infographic Section */}
+          <div className="mt-32 grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+            <FadeIn className="relative aspect-square md:aspect-[4/5] rounded-3xl overflow-hidden bg-[#ebe4d8] shadow-sm flex items-center justify-center p-8 lg:p-12 border border-border/50">
+              <img
+                src="/images/about/jojo-standard.png"
+                alt="The JOJO Standard Philosophy"
+                className="w-full h-full object-contain mix-blend-multiply transform-gpu hover:scale-[1.02] transition-transform duration-700"
+              />
+            </FadeIn>
+            <FadeIn delay={200}>
+              <h2 className="text-sm tracking-[0.3em] uppercase text-primary font-bold mb-6">Our Philosophy</h2>
+              <h3 className="font-display text-4xl md:text-5xl font-bold text-slate-900 mb-8 leading-tight">
+                No Shortcuts.<br/>Just the JOJO Standard.
+              </h3>
+              <div className="space-y-6 text-lg text-slate-600 leading-relaxed">
+                <p>
+                  We believe that the finest products cannot be rushed. Our manufacturing process is built on uncompromising quality control and an obsession with the details that most overlook.
+                </p>
+                <div className="pl-6 border-l-2 border-primary mt-8">
+                  <h4 className="text-xl font-display font-bold text-slate-900 mb-2">Empowering Craftsmanship</h4>
+                  <p className="text-slate-600">
+                    Hand-crafted in India by a 100% women-led production team, every cone and paper is made with meticulous care. By choosing JOJO, you aren't just getting premium manufacturing—you are supporting ethical labor and female empowerment at scale.
+                  </p>
                 </div>
               </div>
             </FadeIn>

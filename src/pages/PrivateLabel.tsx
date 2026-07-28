@@ -79,45 +79,56 @@ const PrivateLabel = () => {
 
       {/* The OEM Pipeline */}
       <section className="py-24 bg-white border-b border-border">
-        <div className="container mx-auto px-6 max-w-5xl">
+        <div className="container mx-auto px-6 max-w-6xl">
           <div className="text-center mb-16">
             <h3 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">The Manufacturing Pipeline</h3>
             <p className="text-muted-foreground text-lg">A seamless, proven process to take your brand from concept to global distribution.</p>
           </div>
 
-          <div className="space-y-12">
-            {[
-              {
-                step: "01",
-                title: "Consultation & Prototyping",
-                desc: "We start by understanding your brand vision and target market. Our design team works closely with you to prototype custom paper blends, tip designs, and primary packaging."
-              },
-              {
-                step: "02",
-                title: "Sampling & Refinement",
-                desc: "Before full-scale production, we provide physical samples of your products. This ensures every detail—from the watermark clarity to the foil stamping—meets your exact specifications."
-              },
-              {
-                step: "03",
-                title: "Automated Mass Production",
-                desc: "Once approved, your products enter our state-of-the-art manufacturing facility. High-volume automation ensures precision consistency across production runs of any scale."
-              },
-              {
-                step: "04",
-                title: "QC & Global Logistics",
-                desc: "Every batch undergoes rigorous quality assurance testing. Finally, our logistics network ensures your premium private label products are delivered securely anywhere in the world."
-              }
-            ].map((item, i) => (
-              <div key={i} className="flex flex-col md:flex-row gap-6 md:gap-12 items-start md:items-center">
-                <div className="shrink-0 w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center border border-primary/20">
-                  <span className="font-display text-2xl font-bold text-primary">{item.step}</span>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+            <div className="space-y-12">
+              {[
+                {
+                  step: "01",
+                  title: "Consultation & Prototyping",
+                  desc: "We start by understanding your brand vision and target market. Our design team works closely with you to prototype custom paper blends, tip designs, and primary packaging."
+                },
+                {
+                  step: "02",
+                  title: "Sampling & Refinement",
+                  desc: "Before full-scale production, we provide physical samples of your products. This ensures every detail—from the watermark clarity to the foil stamping—meets your exact specifications."
+                },
+                {
+                  step: "03",
+                  title: "Automated Mass Production",
+                  desc: "Once approved, your products enter our state-of-the-art manufacturing facility. High-volume automation ensures precision consistency across production runs of any scale."
+                },
+                {
+                  step: "04",
+                  title: "QC & Global Logistics",
+                  desc: "Every batch undergoes rigorous quality assurance testing. Finally, our logistics network ensures your premium private label products are delivered securely anywhere in the world."
+                }
+              ].map((item, i) => (
+                <div key={i} className="flex flex-col md:flex-row gap-6 md:gap-8 items-start md:items-center group">
+                  <div className="shrink-0 w-16 h-16 rounded-full bg-primary/5 group-hover:bg-primary/10 transition-colors flex items-center justify-center border border-primary/20">
+                    <span className="font-display text-2xl font-bold text-primary">{item.step}</span>
+                  </div>
+                  <div>
+                    <h4 className="font-display text-2xl font-bold mb-2">{item.title}</h4>
+                    <p className="text-muted-foreground leading-relaxed">{item.desc}</p>
+                  </div>
                 </div>
-                <div>
-                  <h4 className="font-display text-2xl font-bold mb-2">{item.title}</h4>
-                  <p className="text-muted-foreground leading-relaxed">{item.desc}</p>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
+            
+            {/* Mass Production Visual */}
+            <div className="relative aspect-square md:aspect-[4/5] rounded-3xl overflow-hidden bg-[#e0d6c8] shadow-sm flex items-center justify-center p-8 lg:p-12 border border-border/50">
+              <img
+                src="/images/about/bulk-multi-cones.png"
+                alt="Automated Mass Production"
+                className="w-full h-full object-contain mix-blend-multiply transform-gpu hover:scale-[1.03] transition-transform duration-700"
+              />
+            </div>
           </div>
         </div>
       </section>

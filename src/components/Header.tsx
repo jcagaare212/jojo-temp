@@ -39,13 +39,12 @@ const Header = () => {
 
         {/* Desktop Buttons + Mobile Toggle */}
         <div className="flex flex-1 items-center justify-end gap-4">
-          <a 
-            href="#" 
-            onClick={(e) => { e.preventDefault(); alert('JotForm Integration Coming Soon!'); }}
+          <Link 
+            to="/distributor"
             className="hidden lg:flex bg-transparent border border-slate-800 text-slate-800 hover:bg-slate-800 hover:text-white px-5 py-2 rounded-md font-semibold tracking-wide text-sm transition-colors"
           >
             Become Our Distributor
-          </a>
+          </Link>
           <Button asChild variant="default" className="rounded-full px-6 tracking-wide hidden sm:flex">
             <Link to="/contact">Contact Us</Link>
           </Button>
@@ -78,13 +77,13 @@ const Header = () => {
           </nav>
           
           <div className="px-6 mt-8 pb-12 flex flex-col gap-4">
-            <a 
-              href="#" 
-              onClick={(e) => { e.preventDefault(); setMobileOpen(false); alert('JotForm Integration Coming Soon!'); }}
+            <Link 
+              to="/distributor"
+              onClick={() => setMobileOpen(false)}
               className="w-full text-center bg-transparent border-2 border-slate-800 text-slate-800 hover:bg-slate-800 hover:text-white rounded-md py-4 text-lg font-semibold transition-colors"
             >
               Become Our Distributor
-            </a>
+            </Link>
             <Button asChild className="w-full rounded-full py-6 text-lg shadow-md">
               <Link to="/contact" onClick={() => setMobileOpen(false)}>
                 Contact Us

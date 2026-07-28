@@ -140,27 +140,27 @@ const Index = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="group cursor-pointer">
+            <Link to="/products/bulk-cones" className="group block cursor-pointer">
               <div className="relative overflow-hidden rounded-2xl aspect-[4/3] mb-6 border border-border bg-slate-100">
                 <img src="/images/jojo_assets/JOJO Website 26-06-2026/33.webp" alt="The Pink Series" className="w-full h-full object-cover transform-gpu backface-hidden [transform:translateZ(0)] group-hover:scale-[1.03] transition-transform duration-700 ease-out will-change-transform" />
               </div>
               <h4 className="font-display text-2xl font-bold mb-2">The Pink Series</h4>
               <p className="text-muted-foreground text-sm">Ultra-thin, slow-burning colored papers.</p>
-            </div>
-            <div className="group cursor-pointer md:-translate-y-8">
-              <div className="relative overflow-hidden rounded-2xl aspect-[4/3] mb-6 border border-border bg-slate-900">
-                <img src="/images/jojo_assets/JOJO Website 26-06-2026/21.webp" alt="The Signature Series" className="w-full h-full object-cover transform-gpu backface-hidden [transform:translateZ(0)] group-hover:scale-[1.03] transition-transform duration-700 ease-out will-change-transform" />
+            </Link>
+            <Link to="/products/signature-series" className="group block cursor-pointer md:-translate-y-8">
+              <div className="relative overflow-hidden rounded-2xl aspect-[4/3] mb-6 border border-border bg-[#ebe4d8] flex items-center justify-center p-4">
+                <img src="/images/products/signature-series.png" alt="The Signature Series" className="max-w-full max-h-full object-contain mix-blend-multiply transform-gpu backface-hidden [transform:translateZ(0)] group-hover:scale-[1.03] transition-transform duration-700 ease-out will-change-transform" />
               </div>
               <h4 className="font-display text-2xl font-bold mb-2">The Signature Series</h4>
               <p className="text-muted-foreground text-sm">Luxury printed booklets with gold foil stamping.</p>
-            </div>
-            <div className="group cursor-pointer">
+            </Link>
+            <Link to="/products/protective-tubes" className="group block cursor-pointer">
               <div className="relative overflow-hidden rounded-2xl aspect-[4/3] mb-6 border border-border bg-white flex items-center justify-center p-4">
                 <img src="/images/jojo_assets/JOJO Website 26-06-2026/13.webp" alt="Protective Tubes" className="max-w-full max-h-full object-contain transform-gpu backface-hidden [transform:translateZ(0)] group-hover:scale-[1.03] transition-transform duration-700 ease-out mix-blend-multiply will-change-transform" />
               </div>
               <h4 className="font-display text-2xl font-bold mb-2">Protective Tubes</h4>
               <p className="text-muted-foreground text-sm">Airtight, moisture-resistant single packaging.</p>
-            </div>
+            </Link>
           </div>
         </div>
       </section>
@@ -319,13 +319,16 @@ const Index = () => {
               </div>
             </div>
 
-            {/* Box 4: Wide */}
-            <div className="md:col-span-2 md:row-span-1 relative rounded-3xl overflow-hidden group bg-slate-900 shadow-sm border border-border/50">
-              <div className="absolute inset-0 bg-black/5 z-10 group-hover:bg-transparent transition-colors duration-500" />
-              <img src="/images/jojo_assets/JOJO Website 26-06-2026/18.webp" alt="Classic Rolling Papers" className="w-full h-full object-cover object-center transform-gpu backface-hidden [transform:translateZ(0)] group-hover:scale-[1.03] transition-transform duration-700 ease-out will-change-transform" />
-              <div className="absolute bottom-0 left-0 p-6 md:p-8 z-20 w-full bg-gradient-to-t from-black/90 via-black/40 to-transparent">
-                <p className="text-white/80 text-sm tracking-widest uppercase font-semibold mb-2">Heritage</p>
-                <h4 className="text-white font-display text-2xl md:text-3xl font-bold">Classic Booklets & Materials</h4>
+            {/* Box 4: Wide (Light Theme for bright image) */}
+            <div className="md:col-span-2 md:row-span-1 relative rounded-3xl overflow-hidden group bg-white shadow-sm border border-border/50">
+              <img src="/images/products/emergency-kit-fanned.png" alt="Classic Rolling Papers" className="absolute inset-0 w-full h-full object-cover md:object-contain md:object-right transform-gpu backface-hidden [transform:translateZ(0)] group-hover:scale-[1.03] transition-transform duration-700 ease-out will-change-transform" />
+              <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-white via-white/90 to-transparent z-10" />
+              <div className="absolute bottom-0 left-0 p-6 md:p-10 z-20 w-full md:w-2/3 h-full flex flex-col justify-end md:justify-center">
+                <p className="text-slate-500 text-sm tracking-widest uppercase font-semibold mb-2">Heritage</p>
+                <h4 className="text-slate-900 font-display text-2xl md:text-4xl font-bold mb-4">Retail Ready Packaging</h4>
+                <p className="text-slate-600 font-sans max-w-md hidden md:block">
+                  Complete emergency kits and point-of-sale ready displays crafted for immediate retail impact.
+                </p>
               </div>
             </div>
           </div>

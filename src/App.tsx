@@ -8,11 +8,10 @@ import Index from "./pages/Index";
 import ProductDetail from "./pages/ProductDetail";
 import About from "./pages/About";
 import Products from "./pages/Products";
-import Shipping from "./pages/Shipping";
-import Warranty from "./pages/Warranty";
 import NotFound from "./pages/NotFound";
 import PrivateLabel from "./pages/PrivateLabel";
 import Contact from "./pages/Contact";
+import Distributor from "./pages/Distributor";
 
 const queryClient = new QueryClient();
 
@@ -30,8 +29,7 @@ const App = () => (
             <Route path="/about" element={<About />} />
             <Route path="/private-label" element={<PrivateLabel />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/shipping" element={<Shipping />} />
-            <Route path="/warranty" element={<Warranty />} />
+            <Route path="/distributor" element={<Distributor />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Layout>
