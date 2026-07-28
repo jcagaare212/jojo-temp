@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import { Linkedin, Mail, MapPin, Phone } from "lucide-react";
+import { Linkedin, Mail, MapPin, Phone, Instagram } from "lucide-react";
 
 const Footer = () => {
   const location = useLocation();
@@ -103,7 +103,10 @@ const Footer = () => {
           <p className="text-slate-500 text-sm text-center md:text-left">
             © {new Date().getFullYear()} JOJO Papers Manufacturing. All rights reserved.
           </p>
-          <div className="flex items-center justify-end w-full md:w-auto">
+          <div className="flex items-center justify-end w-full md:w-auto gap-3">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-white transition-colors bg-slate-800/50 p-2 rounded-full hover:bg-slate-700">
+              <Instagram className="w-4 h-4" />
+            </a>
             <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-white transition-colors bg-slate-800/50 p-2 rounded-full hover:bg-slate-700">
               <Linkedin className="w-4 h-4" />
             </a>
