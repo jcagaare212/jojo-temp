@@ -11,7 +11,10 @@ import Products from "./pages/Products";
 import NotFound from "./pages/NotFound";
 import PrivateLabel from "./pages/PrivateLabel";
 import Contact from "./pages/Contact";
-import Distributor from "./pages/Distributor";
+import PreRolledCones from "./pages/PreRolledCones";
+import ConeDetail from "./pages/ConeDetail";
+import BulkCones from "./pages/BulkCones";
+import Consultation from "./pages/Consultation";
 
 const queryClient = new QueryClient();
 
@@ -29,7 +32,10 @@ const App = () => (
             <Route path="/about" element={<About />} />
             <Route path="/private-label" element={<PrivateLabel />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/distributor" element={<Distributor />} />
+            <Route path="/pre-rolled-cones" element={<PreRolledCones />} />
+            <Route path="/pre-rolled-cones/:sizeId" element={<ConeDetail />} />
+            <Route path="/bulk-cones" element={<BulkCones />} />
+            <Route path="/consultation" element={<Consultation />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Layout>

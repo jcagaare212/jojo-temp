@@ -6,7 +6,7 @@ const bgImg = "/images/jojo_assets/JOJO Website 26-06-2026/27.webp";
 
 const Contact = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="bg-background">
       {/* Contact Header */}
       <section className="bg-slate-900 border-b border-slate-800 text-white overflow-hidden">
         <div className="flex flex-col lg:flex-row">
@@ -48,7 +48,7 @@ const Contact = () => {
               </div>
               <h3 className="font-display text-xl font-bold mb-2">Phone</h3>
               <p className="text-muted-foreground">
-                +91 XXXX XXXXXX<br />
+                +91 97179 27787<br />
                 <span className="text-xs opacity-70">Wholesale inquiries only</span>
               </p>
             </div>
@@ -66,21 +66,7 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Distributorship Callout */}
-      <section className="py-16 bg-white border-b border-border/50 text-center">
-        <div className="container mx-auto px-6 max-w-4xl">
-          <h2 className="font-display text-3xl font-bold mb-4">Partner Network</h2>
-          <p className="text-muted-foreground mb-8 text-lg">Interested in joining our global distribution network or finding a supplier near you?</p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link 
-              to="/distributor"
-              className="w-full sm:w-auto inline-flex items-center justify-center bg-transparent border-2 border-[#1B4D3E] text-[#1B4D3E] px-8 py-3 rounded-md font-semibold tracking-wide hover:bg-[#1B4D3E] hover:text-white transition-colors"
-            >
-              Become Our Distributor
-            </Link>
-          </div>
-        </div>
-      </section>
+
 
       {/* Inquiry Form */}
       <B2BForm />

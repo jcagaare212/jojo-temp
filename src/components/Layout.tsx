@@ -14,10 +14,10 @@ const ScrollToTop = () => {
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="min-h-screen bg-background relative">
+    <div className="min-h-screen bg-background relative flex flex-col">
       <ScrollToTop />
       <Header />
-      <main>{children}</main>
+      <main className="flex-grow">{children}</main>
       <Footer />
       <WhatsAppButton />
     </div>

@@ -41,7 +41,7 @@ const Index = () => {
     target: heroRef,
     offset: ["start start", "end start"]
   });
-  
+
   const scale = useTransform(scrollYProgress, [0, 1], [1, 0.7]);
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
@@ -50,7 +50,7 @@ const Index = () => {
       {/* Hero */}
       <section ref={heroRef} className="relative flex flex-col items-center w-full min-h-[200vh]">
         <div className="sticky top-0 flex flex-col items-center w-full h-screen">
-          <motion.div 
+          <motion.div
             style={{ scale, opacity }}
             className="relative w-full h-full"
           >
@@ -61,7 +61,7 @@ const Index = () => {
             />
             <div className="absolute inset-0 bg-black/30" />
             <div className="blur-vignette" />
-            
+
             <div className="absolute inset-0 flex flex-col justify-center px-8 md:px-16 lg:px-24">
               <div className="max-w-4xl">
                 <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white tracking-tight leading-[1.1] mb-4 drop-shadow-lg">
@@ -70,7 +70,7 @@ const Index = () => {
                 <h2 className="font-display text-xl sm:text-2xl md:text-3xl lg:text-4xl text-white/90 font-medium tracking-wide drop-shadow-md mb-12">
                   Premium stock ready to ship today. <br className="hidden md:block" />Custom orders built in just 4 weeks.
                 </h2>
-                
+
                 <button className="bg-transparent backdrop-blur-sm border-2 border-white/40 text-white px-10 py-4 uppercase tracking-[0.2em] text-sm font-semibold hover:bg-white hover:text-black transition-all duration-300">
                   Start Your Custom Build
                 </button>
@@ -94,24 +94,24 @@ const Index = () => {
               </div>
               <p className="text-xl font-display text-slate-900 font-semibold">Global Manufacturing Standard</p>
             </div>
-            
+
             <div className="hidden md:block w-px h-16 bg-slate-200"></div>
-            
-            {/* Brands (Clickable) */}
-            <a href="#brands-marquee" className="flex flex-col items-center text-center group cursor-pointer p-4 rounded-2xl hover:bg-slate-50 transition-colors">
+
+            {/* Global Reach */}
+            <div className="flex flex-col items-center text-center group">
               <div className="flex items-center gap-3 mb-2">
-                <div className="bg-primary/10 text-primary p-2 rounded-full ring-1 ring-primary/20 group-hover:scale-110 transition-transform duration-300">
+                <div className="bg-indigo-50 text-indigo-600 p-2 rounded-full ring-1 ring-indigo-600/20 group-hover:scale-110 transition-transform duration-300">
                   <Globe className="w-5 h-5" />
                 </div>
-                <p className="text-sm tracking-widest text-primary uppercase font-bold flex items-center gap-1 group-hover:text-primary/80 transition-colors">
-                  Trusted Partner <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                <p className="text-sm tracking-widest text-slate-500 uppercase font-semibold">
+                  Worldwide Export
                 </p>
               </div>
-              <p className="text-xl font-display text-slate-900 font-semibold">500+ Global Brands Supplied</p>
-            </a>
-            
+              <p className="text-xl font-display text-slate-900 font-semibold">Trusted by Global Brands</p>
+            </div>
+
             <div className="hidden md:block w-px h-16 bg-slate-200"></div>
-            
+
             {/* Massive Scale */}
             <div className="flex flex-col items-center text-center group">
               <div className="flex items-center gap-3 mb-2">
@@ -126,65 +126,36 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Premium Collections (Moved Up) */}
-      <section className="py-24 md:py-32 bg-background">
-        <div className="container mx-auto px-6">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
+      {/* Pre-Rolled Cones Size Chart */}
+      <section className="py-16 md:py-24 bg-white border-y border-border">
+        <div className="container mx-auto px-6 max-w-6xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            {/* Text side */}
             <div>
-              <h3 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4 tracking-tight">Premium Collections</h3>
-              <p className="text-lg text-muted-foreground max-w-xl">Explore our diverse manufacturing capabilities across distinct product lines.</p>
+              <div className="flex items-center gap-3 mb-4">
+                <div className="h-px bg-primary w-8"></div>
+                <span className="text-primary text-xs font-bold tracking-[0.2em] uppercase">Size Guide</span>
+              </div>
+              <h3 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 mb-6 tracking-tight uppercase">Pre-Rolled Cones</h3>
+              <p className="text-slate-600 mb-6 leading-relaxed">
+                From Dogwalker Minis to King Size, we offer a comprehensive range of pre-rolled cone sizes to suit every need. Explore our standard dimensions or ask us about custom sizing.
+              </p>
+              <ul className="space-y-3 mb-8">
+                <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 rounded-full bg-primary"></div><span className="text-slate-700">Dogwalker Mini (70mm)</span></li>
+                <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 rounded-full bg-primary"></div><span className="text-slate-700">Mini (78mm)</span></li>
+                <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 rounded-full bg-primary"></div><span className="text-slate-700">1 1/4 Size (84mm)</span></li>
+                <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 rounded-full bg-primary"></div><span className="text-slate-700">98mm Special (98mm)</span></li>
+                <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 rounded-full bg-primary"></div><span className="text-slate-700">King Size (109mm)</span></li>
+              </ul>
+              <Link to="/products" className="inline-block bg-primary text-white px-8 py-3 rounded-full text-sm font-semibold tracking-wide hover:bg-primary/90 transition-colors">
+                View All Sizes
+              </Link>
             </div>
-            <Link to="/products" className="inline-flex items-center justify-center bg-transparent border border-primary text-primary px-8 py-3 rounded-full text-sm font-semibold tracking-wider uppercase hover:bg-primary hover:text-primary-foreground transition-colors w-full md:w-auto">
-              Explore Full Catalog
-            </Link>
-          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Link to="/products/bulk-cones" className="group block cursor-pointer">
-              <div className="relative overflow-hidden rounded-2xl aspect-[4/3] mb-6 border border-border bg-slate-100">
-                <img src="/images/jojo_assets/JOJO Website 26-06-2026/33.webp" alt="The Pink Series" className="w-full h-full object-cover transform-gpu backface-hidden [transform:translateZ(0)] group-hover:scale-[1.03] transition-transform duration-700 ease-out will-change-transform" />
-              </div>
-              <h4 className="font-display text-2xl font-bold mb-2">The Pink Series</h4>
-              <p className="text-muted-foreground text-sm">Ultra-thin, slow-burning colored papers.</p>
-            </Link>
-            <Link to="/products/signature-series" className="group block cursor-pointer md:-translate-y-8">
-              <div className="relative overflow-hidden rounded-2xl aspect-[4/3] mb-6 border border-border bg-[#ebe4d8] flex items-center justify-center p-4">
-                <img src="/images/products/signature-series.png" alt="The Signature Series" className="max-w-full max-h-full object-contain mix-blend-multiply transform-gpu backface-hidden [transform:translateZ(0)] group-hover:scale-[1.03] transition-transform duration-700 ease-out will-change-transform" />
-              </div>
-              <h4 className="font-display text-2xl font-bold mb-2">The Signature Series</h4>
-              <p className="text-muted-foreground text-sm">Luxury printed booklets with gold foil stamping.</p>
-            </Link>
-            <Link to="/products/protective-tubes" className="group block cursor-pointer">
-              <div className="relative overflow-hidden rounded-2xl aspect-[4/3] mb-6 border border-border bg-white flex items-center justify-center p-4">
-                <img src="/images/jojo_assets/JOJO Website 26-06-2026/13.webp" alt="Protective Tubes" className="max-w-full max-h-full object-contain transform-gpu backface-hidden [transform:translateZ(0)] group-hover:scale-[1.03] transition-transform duration-700 ease-out mix-blend-multiply will-change-transform" />
-              </div>
-              <h4 className="font-display text-2xl font-bold mb-2">Protective Tubes</h4>
-              <p className="text-muted-foreground text-sm">Airtight, moisture-resistant single packaging.</p>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Brands We Serve - Marquee */}
-      <section id="brands-marquee" className="py-16 bg-white border-y border-border overflow-hidden flex flex-col items-center scroll-mt-20">
-        <h3 className="font-display text-sm tracking-[0.3em] uppercase text-muted-foreground font-semibold mb-10 text-center">Trusted by Global Brands</h3>
-        <div className="relative w-full flex overflow-hidden group max-w-7xl mx-auto">
-          {/* Fade edges */}
-          <div className="absolute top-0 left-0 w-32 h-full bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
-          <div className="absolute top-0 right-0 w-32 h-full bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
-          
-          <div className="animate-marquee flex whitespace-nowrap items-center hover:[animation-play-state:paused] cursor-default">
-            {/* Two sets of logos to create seamless loop */}
-            {[...Array(2)].map((_, i) => (
-              <div key={i} className="flex gap-20 md:gap-32 px-10 items-center justify-center">
-                <span className="font-display text-3xl md:text-4xl font-bold text-slate-300 transition-colors hover:text-primary">BRAND 1</span>
-                <span className="font-display text-3xl md:text-4xl font-bold text-slate-300 transition-colors hover:text-primary">BRAND 2</span>
-                <span className="font-display text-3xl md:text-4xl font-bold text-slate-300 transition-colors hover:text-primary">BRAND 3</span>
-                <span className="font-display text-3xl md:text-4xl font-bold text-slate-300 transition-colors hover:text-primary">BRAND 4</span>
-                <span className="font-display text-3xl md:text-4xl font-bold text-slate-300 transition-colors hover:text-primary">BRAND 5</span>
-                <span className="font-display text-3xl md:text-4xl font-bold text-slate-300 transition-colors hover:text-primary">BRAND 6</span>
-              </div>
-            ))}
+            {/* Image side */}
+            <div className="rounded-2xl overflow-hidden shadow-2xl shadow-black/5 bg-[#F9F7F2] p-6 border border-slate-100 flex items-center justify-center">
+              <img src="/images/size_chart.png" alt="Pre-Rolled Cone Size Chart" className="w-full h-auto object-contain scale-[1.02]" />
+            </div>
           </div>
         </div>
       </section>
@@ -193,9 +164,9 @@ const Index = () => {
       <section className="py-24 bg-white border-b border-border">
         <div className="container mx-auto px-6 max-w-6xl">
           <div className="text-center mb-16">
-            <h3 className="font-display text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">Products we make for you</h3>
+            <h3 className="font-display text-3xl md:text-4xl font-bold text-slate-900 tracking-tight uppercase">Our Core Capabilities</h3>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             {/* Pre-rolled cones */}
             <div className="flex flex-col items-center text-center group">
@@ -230,12 +201,12 @@ const Index = () => {
               <div className="w-full h-48 md:h-64 mb-8 overflow-hidden flex items-center justify-center">
                 <img src="/images/jojo_assets/JOJO Website 26-06-2026/16.webp" alt="Custom branding and textures" className="w-full h-full object-contain transform-gpu group-hover:scale-105 transition-transform duration-500 rounded-xl" />
               </div>
-              <h4 className="font-display text-xl md:text-2xl font-bold text-slate-900 mb-4">Custom Branding & Textures</h4>
+              <h4 className="font-display text-xl md:text-2xl font-bold text-slate-900 mb-4">Private Label</h4>
               <p className="text-slate-500 font-sans leading-relaxed mb-6">
                 Elevate your product with custom watermarks, printed tips, and unique paper blends.
               </p>
-              <Link to="/products" className="text-primary font-bold text-sm tracking-wide uppercase hover:text-slate-600 transition-colors">
-                Learn more
+              <Link to="/private-label" className="text-primary font-bold text-sm tracking-wide uppercase hover:text-slate-600 transition-colors">
+                Private Label
               </Link>
             </div>
           </div>
@@ -248,7 +219,7 @@ const Index = () => {
           <div className="text-center mb-16">
             <h3 className="font-display text-3xl md:text-4xl font-bold text-foreground tracking-tight">The Ultimate Private Label Experience</h3>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mb-16">
             {[
               { title: "CUSTOM SIZES", img: "/images/concept/size.png" },
