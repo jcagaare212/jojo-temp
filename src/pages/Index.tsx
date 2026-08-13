@@ -205,7 +205,7 @@ export default function Index() {
             {[
               { title: 'Drawer-Box Packs', desc: 'A premium format for colour-led launches and modern retail presentation.', img: '/images/jojo_assets/JOJO Website 26-06-2026/3.webp' },
               { title: 'Premium Metal Tins', desc: 'Durable, elevated packaging for gifting, storage and premium retail shelves.', img: '/images/jojo_assets/JOJO Website 26-06-2026/28.webp' },
-              { title: 'Tube Packaging', desc: 'Compact, protective paper and metal-lid tubes for cone-based retail formats.', img: '/images/products/emergency-kit-fanned.png' },
+              { title: 'Tube Packaging', desc: 'Compact, protective paper and metal-lid tubes for cone-based retail formats.', img: '/images/jojo_assets/JOJO Website 26-06-2026/13.webp' },
               { title: 'Retail Displays & Kits', desc: 'Emergency kits, cone loaders and point-of-sale displays that round out a full shelf story.', img: '/images/jojo_assets/JOJO Website 26-06-2026/23.webp' },
             ].map((cat, i) => (
               <motion.div key={i} className="flex flex-col gap-5 group" variants={fadeInUp}>
