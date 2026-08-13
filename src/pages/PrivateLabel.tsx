@@ -1,139 +1,126 @@
+import { useEffect } from "react";
+import { motion, Variants } from "framer-motion";
 import { Link } from "react-router-dom";
-import B2BForm from "@/components/B2BForm";
 
-const PrivateLabel = () => {
+const formats = [
+  {
+    id: "packaging-solutions",
+    name: "Packaging Formats",
+    tag: "Format 01 · Tins, Tubes, & Boxes",
+    desc: "Metal tins, plastic jars, paper tubes, kraft boxes, drawer boxes, and display units designed to elevate your brand presence on the shelf.",
+    img: "/images/products/oem/oem-packaging-formats.webp",
+  },
+  {
+    id: "booklet-options",
+    name: "Rolling Paper Booklets",
+    tag: "Format 02 · Custom Finishes",
+    desc: "Fully customizable booklets in different styles, finishes & designs. From classic and natural to holographic, marble, and embossed effects.",
+    img: "/images/products/oem/oem-booklet-options.webp",
+  },
+  {
+    id: "custom-boxes",
+    name: "Custom Box Design",
+    tag: "Format 03 · Retail Ready",
+    desc: "Endless color options. Infinite possibilities. Custom drawer boxes, tube packaging, pouch packaging, and retail display boxes.",
+    img: "/images/products/oem/oem-custom-boxes.webp",
+  }
+];
+
+export default function PrivateLabel() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  const stagger: Variants = {
+    initial: {},
+    whileInView: { transition: { staggerChildren: 0.15 } }
+  };
+
+  const fadeInUp: Variants = {
+    initial: { opacity: 0, y: 30 },
+    whileInView: { opacity: 1, y: 0, transition: { duration: 0.8, ease: 'easeOut' } }
+  };
+
   return (
-    <div className="min-h-screen bg-background">
-      {/* Hero Section */}
-      <section className="relative pt-32 pb-24 md:pt-48 md:pb-40 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <img 
-            src="/images/jojo_assets/JOJO Website 26-06-2026/11.webp" 
-            alt="Factory Layout" 
-            className="w-full h-full object-cover opacity-90"
-          />
-          <div className="absolute inset-0 bg-slate-900/70" />
+    <div className="bg-background text-foreground overflow-hidden font-sans">
+      <div className="max-w-[1180px] mx-auto px-6 md:px-8 py-8 mt-24">
+        <div className="font-sans text-[11.5px] text-muted-foreground uppercase tracking-widest">
+          <Link to="/" className="hover:text-foreground transition-colors pb-0.5 border-b border-transparent hover:border-foreground">Home</Link> / Private Label & Branding
         </div>
-        
-        <div className="container relative z-10 mx-auto px-6 text-center">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-white mb-6 tracking-tight">
-            End-to-End <br className="md:hidden" /> Custom Manufacturing
-          </h1>
-          <p className="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto mb-10 leading-relaxed">
-            Elevate your brand with world-class OEM capabilities. From custom watermarked papers to luxury printed tins, we build premium smoking essentials at global scale.
-          </p>
-        </div>
+      </div>
+
+      {/* PAGE HERO */}
+      <section className="pt-4 pb-14">
+        <motion.div className="max-w-[1180px] mx-auto text-center px-6 md:px-8" initial="initial" whileInView="whileInView" viewport={{ once: true }} variants={stagger}>
+          <motion.div className="eyebrow center justify-center mb-6" variants={fadeInUp}>
+            05 — OEM & Custom Manufacturing
+          </motion.div>
+          <motion.h1 className="text-[clamp(32px,4.4vw,50px)] leading-[1.1] mb-6 font-['Cormorant_Garamond'] font-medium max-w-[20ch] mx-auto" variants={fadeInUp}>
+            Your Brand. Your Packaging.
+          </motion.h1>
+          <motion.p className="text-[16px] text-muted-foreground max-w-[56ch] mx-auto leading-relaxed mb-12" variants={fadeInUp}>
+            We guide you from a design idea to a finished, retail-ready product. End-to-end custom manufacturing engineered to meet the exacting standards of the world's top brands.
+          </motion.p>
+          <motion.div className="w-full relative overflow-hidden flex items-center justify-center group bg-white border border-border" variants={fadeInUp}>
+            <img 
+              src="/images/products/oem/oem-hero-collage.webp" 
+              alt="OEM Products Spread" 
+              className="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-700" 
+            />
+          </motion.div>
+        </motion.div>
       </section>
 
-      {/* Capabilities Breakdown (Bento Style) */}
-      <section className="py-24 md:py-32 bg-slate-50 border-b border-border">
-        <div className="container mx-auto px-6">
-          <div className="mb-16">
-            <h3 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">OEM Capabilities</h3>
-            <p className="text-muted-foreground text-lg max-w-2xl">We don't just print logos. We engineer products from the pulp up to meet the exacting standards of the world's top brands.</p>
-          </div>
+      {/* FORMATS */}
+      <section className="py-14">
+        <div className="max-w-[1180px] mx-auto px-6 md:px-8">
+          <div className="flex flex-col">
+            {formats.map((item, index) => (
+              <motion.div 
+                key={item.id}
+                id={item.id}
+                className={`flex flex-col md:flex-row items-center gap-10 md:gap-16 py-14 border-t border-border ${index === formats.length - 1 ? 'border-b' : ''} ${index % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}
+                initial="initial" whileInView="whileInView" viewport={{ once: true, margin: "-100px" }} variants={stagger}
+              >
+                {/* Image Side */}
+                <motion.div className="w-full md:w-[60%] bg-white border border-border flex items-center justify-center p-2 relative overflow-hidden group" variants={fadeInUp}>
+                  <img 
+                    src={item.img} 
+                    alt={`${item.name}`} 
+                    className="w-full h-auto object-contain mix-blend-multiply group-hover:scale-105 transition-transform duration-700 drop-shadow-sm" 
+                  />
+                </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* Capability 1 */}
-            <div className="group relative rounded-3xl overflow-hidden bg-white shadow-sm border border-border/50 aspect-video md:aspect-auto md:h-[400px]">
-              <div className="absolute inset-0 z-10 bg-black/10 group-hover:bg-transparent transition-colors duration-500" />
-              <img src="/images/jojo_assets/JOJO Website 26-06-2026/24.webp" alt="Custom Watermarks" className="w-full h-full object-cover transform-gpu backface-hidden [transform:translateZ(0)] group-hover:scale-[1.03] transition-transform duration-700 ease-out will-change-transform" />
-              <div className="absolute bottom-0 left-0 p-8 z-20 w-full bg-gradient-to-t from-black/90 via-black/40 to-transparent">
-                <h4 className="text-white font-display text-2xl md:text-3xl font-bold mb-2">Custom Watermarks & Blends</h4>
-                <p className="text-slate-200 text-sm max-w-md">We engineer proprietary paper blends featuring custom watermarks that protect your brand identity while delivering an exceptional, slow-burning smoking experience.</p>
-              </div>
-            </div>
-
-            {/* Capability 2 */}
-            <div className="group relative rounded-3xl overflow-hidden bg-white shadow-sm border border-border/50 aspect-video md:aspect-auto md:h-[400px]">
-              <div className="absolute inset-0 z-10 bg-black/10 group-hover:bg-transparent transition-colors duration-500" />
-              <img src="/images/jojo_assets/JOJO Website 26-06-2026/4.webp" alt="Luxury Packaging" className="w-full h-full object-cover transform-gpu backface-hidden [transform:translateZ(0)] group-hover:scale-[1.03] transition-transform duration-700 ease-out will-change-transform" />
-              <div className="absolute bottom-0 left-0 p-8 z-20 w-full bg-gradient-to-t from-black/90 via-black/40 to-transparent">
-                <h4 className="text-white font-display text-2xl md:text-3xl font-bold mb-2">Luxury Retail Packaging</h4>
-                <p className="text-slate-200 text-sm max-w-md">Stand out on the shelf with bespoke packaging solutions. We offer everything from embossed metal tins to premium magnetic closure boxes and minimalist glass tubes.</p>
-              </div>
-            </div>
-
-            {/* Capability 3 */}
-            <div className="group relative rounded-3xl overflow-hidden bg-white shadow-sm border border-border/50 aspect-video md:aspect-auto md:h-[400px]">
-              <div className="absolute inset-0 z-10 bg-black/10 group-hover:bg-transparent transition-colors duration-500" />
-              <img src="/images/jojo_assets/JOJO Website 26-06-2026/30.webp" alt="Pre-rolled Cones" className="w-full h-full object-cover object-top transform-gpu backface-hidden [transform:translateZ(0)] group-hover:scale-[1.03] transition-transform duration-700 ease-out will-change-transform" />
-              <div className="absolute bottom-0 left-0 p-8 z-20 w-full bg-gradient-to-t from-black/90 via-black/40 to-transparent">
-                <h4 className="text-white font-display text-2xl md:text-3xl font-bold mb-2">Precision Pre-Rolled Cones</h4>
-                <p className="text-slate-200 text-sm max-w-md">Manufactured to exact tolerances, our pre-rolled cones are crafted for perfect airflow. Available in various sizes, custom paper blends, and featuring custom-printed crutches.</p>
-              </div>
-            </div>
-
-            {/* Capability 4 */}
-            <div className="group relative rounded-3xl overflow-hidden bg-white shadow-sm border border-border/50 aspect-video md:aspect-auto md:h-[400px]">
-              <div className="absolute inset-0 z-10 bg-black/10 group-hover:bg-transparent transition-colors duration-500" />
-              <img src="/images/jojo_assets/JOJO Website 26-06-2026/28.webp" alt="Retail Displays" className="w-full h-full object-cover transform-gpu backface-hidden [transform:translateZ(0)] group-hover:scale-[1.03] transition-transform duration-700 ease-out will-change-transform" />
-              <div className="absolute bottom-0 left-0 p-8 z-20 w-full bg-gradient-to-t from-black/90 via-black/40 to-transparent">
-                <h4 className="text-white font-display text-2xl md:text-3xl font-bold mb-2">Retail Display Solutions</h4>
-                <p className="text-slate-200 text-sm max-w-md">Drive point-of-sale impact with custom-engineered retail displays. We design counter-ready solutions that perfectly showcase your pre-rolls and booklets.</p>
-              </div>
-            </div>
+                {/* Text Side */}
+                <motion.div className="w-full md:w-[40%]" variants={fadeInUp}>
+                  <div className="font-sans text-[11px] text-muted-foreground uppercase tracking-[0.06em] mb-3">
+                    {item.tag}
+                  </div>
+                  <h3 className="font-['Cormorant_Garamond'] text-[26px] font-medium mb-3">{item.name}</h3>
+                  <p className="text-[16px] text-muted-foreground mb-6 max-w-[44ch] leading-relaxed">
+                    {item.desc}
+                  </p>
+                </motion.div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* The OEM Pipeline */}
-      <section className="py-24 bg-white border-b border-border">
-        <div className="container mx-auto px-6 max-w-6xl">
-          <div className="text-center mb-16">
-            <h3 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">The Manufacturing Pipeline</h3>
-            <p className="text-muted-foreground text-lg">A seamless, proven process to take your brand from concept to global distribution.</p>
+      {/* FINAL CTA */}
+      <section className="bg-foreground text-background py-20">
+        <div className="max-w-[1180px] mx-auto px-6 md:px-8 text-center">
+          <div className="font-sans text-[11px] tracking-widest uppercase text-white/60 flex items-center justify-center gap-2.5 mb-4 before:content-[''] before:w-5 before:h-[1px] before:bg-white/60">
+            Start Your Brand
           </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-            <div className="space-y-12">
-              {[
-                {
-                  step: "01",
-                  title: "Consultation & Prototyping",
-                  desc: "We start by understanding your brand vision and target market. Our design team works closely with you to prototype custom paper blends, tip designs, and primary packaging."
-                },
-                {
-                  step: "02",
-                  title: "Sampling & Refinement",
-                  desc: "Before full-scale production, we provide physical samples of your products. This ensures every detail—from the watermark clarity to the foil stamping—meets your exact specifications."
-                },
-                {
-                  step: "03",
-                  title: "Automated Mass Production",
-                  desc: "Once approved, your products enter our state-of-the-art manufacturing facility. High-volume automation ensures precision consistency across production runs of any scale."
-                },
-                {
-                  step: "04",
-                  title: "QC & Global Logistics",
-                  desc: "Every batch undergoes rigorous quality assurance testing. Finally, our logistics network ensures your premium private label products are delivered securely anywhere in the world."
-                }
-              ].map((item, i) => (
-                <div key={i} className="flex flex-col md:flex-row gap-6 md:gap-8 items-start md:items-center group">
-                  <div className="shrink-0 w-16 h-16 rounded-full bg-primary/5 group-hover:bg-primary/10 transition-colors flex items-center justify-center border border-primary/20">
-                    <span className="font-display text-2xl font-bold text-primary">{item.step}</span>
-                  </div>
-                  <div>
-                    <h4 className="font-display text-2xl font-bold mb-2">{item.title}</h4>
-                    <p className="text-muted-foreground leading-relaxed">{item.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-            
-            {/* Mass Production Visual */}
-            <div className="relative aspect-square md:aspect-[4/5] rounded-3xl overflow-hidden bg-[#e0d6c8] shadow-sm flex items-center justify-center p-8 lg:p-12 border border-border/50">
-              <img
-                src="/images/about/bulk-multi-cones.png"
-                alt="Automated Mass Production"
-                className="w-full h-full object-contain mix-blend-multiply transform-gpu hover:scale-[1.03] transition-transform duration-700"
-              />
-            </div>
+          <h2 className="text-[clamp(26px,3.6vw,40px)] font-['Cormorant_Garamond'] font-medium max-w-[18ch] mx-auto mb-5 leading-[1.15]">
+            Let's build your next premium product line.
+          </h2>
+          <div className="flex gap-4 justify-center flex-wrap mt-8">
+            <Link to="/contact" className="btn-premium-solid bg-background text-foreground hover:bg-white/90">Contact Us</Link>
           </div>
         </div>
       </section>
     </div>
   );
-};
-
-export default PrivateLabel;
+}

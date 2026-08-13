@@ -19,7 +19,8 @@ export default function Footer() {
             <h5 className="font-sans text-xs tracking-[0.2em] uppercase text-background mb-6 font-semibold">What We Offer</h5>
             <ul className="flex flex-col gap-4">
               <li><Link to="/pre-rolled-cones" className="text-sm text-background/60 hover:text-background transition-colors">Pre-Rolled Cones</Link></li>
-              <li><a href="/#bulk" className="text-sm text-background/60 hover:text-background transition-colors">Bulk Cones</a></li>
+              <li><Link to="/bulk-cones" className="text-sm text-background/60 hover:text-background transition-colors">Bulk Cones</Link></li>
+              <li><Link to="/filters" className="text-sm text-background/60 hover:text-background transition-colors">Filter Tips</Link></li>
               <li><a href="#" className="text-sm text-background/60 hover:text-background transition-colors">Bespoke Packaging</a></li>
               <li><a href="/JOJO-QC-Inspection-Template.pdf" download target="_blank" rel="noreferrer" className="text-sm text-background/60 hover:text-background transition-colors">Quality Control</a></li>
             </ul>

@@ -1,4 +1,5 @@
 import { motion, Variants } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 export default function Index() {
   const stagger: Variants = {
@@ -54,7 +55,7 @@ export default function Index() {
           transition={{ duration: 1, delay: 0.4 }}
         >
           <div className="w-full aspect-[16/7] bg-secondary border border-border relative overflow-hidden flex items-center justify-center rounded-sm">
-             <img src="/images/12.png" alt="JOJO Papers Hero" className="w-full h-full object-contain p-4 mix-blend-multiply opacity-90 hover:scale-105 transition-transform duration-700" />
+             <img src="/images/12.webp" alt="JOJO Papers Hero" className="w-full h-full object-contain p-4 mix-blend-multiply opacity-90 hover:scale-105 transition-transform duration-700" />
           </div>
         </motion.div>
 
@@ -124,8 +125,8 @@ export default function Index() {
           </motion.div>
 
           <motion.div className="flex justify-center mb-10" initial="initial" whileInView="whileInView" viewport={{ once: true }} variants={stagger}>
-            <motion.div className="w-full max-w-3xl bg-secondary border border-border p-8 md:p-12 flex items-center justify-center group" variants={fadeInUp}>
-              <img src="/images/size_chart.png" alt="Size Chart Graphic" className="w-full h-auto max-h-[600px] object-contain mix-blend-multiply group-hover:scale-105 transition-transform duration-500" />
+            <motion.div className="w-full max-w-4xl relative overflow-hidden flex items-center justify-center group" variants={fadeInUp}>
+              <img src="/images/products/cones/cones-hero-size-chart.webp" alt="JOJO Pre-Rolled Cones Size Chart" className="w-full h-auto max-h-[700px] object-contain mix-blend-multiply drop-shadow-xl group-hover:scale-105 transition-transform duration-700" />
             </motion.div>
           </motion.div>
 
@@ -138,17 +139,16 @@ export default function Index() {
         <div className="max-w-[1400px] mx-auto px-6 md:px-12">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <motion.div 
-              className="aspect-[4/3] ph-image bg-white border border-border relative overflow-hidden flex items-center justify-center" 
+              className="relative overflow-hidden flex items-center justify-center" 
               initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}
             >
-              <div className="absolute inset-0 bg-secondary/50"></div>
-              <span className="relative z-10 text-[11px] max-w-[150px] text-center font-sans tracking-widest text-muted-foreground uppercase">Bulk Tower Photo Placeholder</span>
+              <img src="/images/products/cones/bulk-cones-hero.webp" alt="JOJO Bulk Cones Packaging" className="w-full h-auto object-contain mix-blend-multiply drop-shadow-xl hover:scale-105 transition-transform duration-700" />
             </motion.div>
             <motion.div variants={fadeInUp} initial="initial" whileInView="whileInView" viewport={{ once: true }}>
               <div className="eyebrow">02 — Bulk Cones</div>
               <h2 className="text-[clamp(24px,3vw,34px)] font-['Cormorant_Garamond'] font-medium mb-4">High-volume supply, built for scale.</h2>
               <p className="text-muted-foreground mb-8 max-w-[40ch]">Dependable counts from 200 to 1,000+ pieces per tower, for dispensaries, distributors, contract packers and private-label operators who need repeatable specifications on every reorder.</p>
-              <a href="#" className="btn-premium border-transparent hover:border-foreground bg-transparent">View Bulk Configurations</a>
+              <Link to="/bulk-cones" className="btn-premium border-transparent hover:border-foreground bg-transparent">View Bulk Configurations</Link>
             </motion.div>
           </div>
         </div>
@@ -228,14 +228,14 @@ export default function Index() {
       <section id="private-label" className="py-20">
         <div className="max-w-[1400px] mx-auto px-6 md:px-12">
           <div className="grid md:grid-cols-2 gap-16 items-center">
-            <motion.div className="aspect-[4/3] bg-secondary border border-border p-6 relative group overflow-hidden" initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
-              <img src="/images/jojo_assets/JOJO Website 26-06-2026/16.webp" alt="Custom Branding" className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700 mix-blend-multiply" />
+            <motion.div className="relative group overflow-hidden flex items-center justify-center" initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
+              <img src="/images/products/oem/oem-branding-hero.webp" alt="Private Label Custom Branding" className="w-full h-auto object-contain mix-blend-multiply group-hover:scale-105 transition-transform duration-700 drop-shadow-xl" />
             </motion.div>
             <motion.div variants={fadeInUp} initial="initial" whileInView="whileInView" viewport={{ once: true }}>
               <div className="eyebrow">05 — Private Label & Branding</div>
               <h2 className="text-[clamp(24px,3vw,34px)] font-['Cormorant_Garamond'] font-medium mb-4">We guide you from a design idea to a finished, retail-ready product.</h2>
               <p className="text-muted-foreground mb-6 max-w-[40ch]">You bring the brand — the name, the idea, the market you're selling to. We handle everything after that: artwork, cone sizing, paper and colour, and the packaging formats from Chapter 04 — turning your design into a real product on the shelf.</p>
-              <a href="#" className="btn-premium border-transparent hover:border-foreground bg-transparent">Start Your Brand</a>
+              <Link to="/private-label" className="btn-premium border-transparent hover:border-foreground bg-transparent">Start Your Brand</Link>
             </motion.div>
           </div>
         </div>

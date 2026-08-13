@@ -162,7 +162,7 @@ const ProductDetail = () => {
               <div className="order-1 lg:order-2">
                 <div className="relative flex items-center justify-center p-8 bg-white/40 rounded-3xl border border-white/60 shadow-sm aspect-square md:aspect-[4/3]">
                   <img
-                    src="/images/about/jojo-standard.png"
+                    src="/images/about/jojo-standard.webp"
                     alt="The JOJO Standard Infographic"
                     className="w-full h-full object-contain mix-blend-multiply transform-gpu hover:scale-[1.02] transition-transform duration-700"
                     loading="lazy"

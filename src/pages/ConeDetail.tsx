@@ -1,6 +1,6 @@
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { motion, Variants } from "framer-motion";
+import { motion, Variants, AnimatePresence } from "framer-motion";
 
 const coneData: Record<string, any> = {
   "dogwalker": {
@@ -13,7 +13,7 @@ const coneData: Record<string, any> = {
       "Filter Tip": "140-160 GSM\nM/W or Spiral Shape",
       "Branding": "Unbranded Standard\nCustom Printing Available"
     },
-    img: "/images/products/cones/dogwalker-mini-70mm.png"
+    img: "/images/products/cones/dogwalker-mini-70mm.webp"
   },
   "mini": {
     sizeNum: "78mm Pre-Rolled Cone",
@@ -25,7 +25,7 @@ const coneData: Record<string, any> = {
       "Filter Tip": "140-160 GSM\nM/W or Spiral Shape",
       "Branding": "Unbranded Standard\nCustom Printing Available"
     },
-    img: "/images/products/cones/mini-78mm.png"
+    img: "/images/products/cones/mini-78mm.webp"
   },
   "1-1-4-size": {
     sizeNum: "84mm Pre-Rolled Cone",
@@ -37,7 +37,7 @@ const coneData: Record<string, any> = {
       "Filter Tip": "140-160 GSM\nM/W or Spiral Shape",
       "Branding": "Unbranded Standard\nCustom Printing Available"
     },
-    img: "/images/products/cones/1-1-4-size-84mm.png"
+    img: "/images/products/cones/1-1-4-size-84mm.webp"
   },
   "98mm-special": {
     sizeNum: "98mm Pre-Rolled Cone",
@@ -49,7 +49,7 @@ const coneData: Record<string, any> = {
       "Filter Tip": "140-160 GSM\nM/W or Spiral Shape",
       "Branding": "Unbranded Standard\nCustom Printing Available"
     },
-    img: "/images/products/cones/98mm-special.png"
+    img: "/images/products/cones/98mm-special.webp"
   },
   "king-size": {
     sizeNum: "109mm Pre-Rolled Cone",
@@ -61,18 +61,18 @@ const coneData: Record<string, any> = {
       "Filter Tip": "140-160 GSM\nM/W or Spiral Shape",
       "Branding": "Unbranded Standard\nCustom Printing Available"
     },
-    img: "/images/products/cones/king-size-109mm.png"
+    img: "/images/products/cones/king-size-109mm.webp"
   }
 };
 
 const colors = [
-  { name: "Unbleached Brown", paper: "#c89d66", tip: "#b77b3e" },
-  { name: "Bleached White", paper: "#fbfbfb", tip: "#e2e2e2" },
-  { name: "Rose Pink", paper: "#f0b8c6", tip: "#d99fb3" },
-  { name: "Mint Green", paper: "#a4d3b6", tip: "#8bc2a2" },
-  { name: "Lavender Purple", paper: "#b4a0cd", tip: "#9a87b5" },
-  { name: "Midnight Black", paper: "#2b2b2b", tip: "#1c1c1c" },
-  { name: "Ocean Blue", paper: "#a4c4e0", tip: "#8caacf" }
+  { name: "Unbleached Brown", paper: "#c89d66", tip: "#b77b3e", img: "/images/products/cones/colors/unbleached-brown.webp" },
+  { name: "Bleached White", paper: "#fbfbfb", tip: "#e2e2e2", img: "/images/products/cones/colors/bleached-white.webp" },
+  { name: "Rose Pink", paper: "#f0b8c6", tip: "#d99fb3", img: "/images/products/cones/colors/rose-pink.webp" },
+  { name: "Mint Green", paper: "#a4d3b6", tip: "#8bc2a2", img: "/images/products/cones/colors/mint-green.webp" },
+  { name: "Lavender Purple", paper: "#b4a0cd", tip: "#9a87b5", img: "/images/products/cones/colors/lavender-purple.webp" },
+  { name: "Midnight Black", paper: "#2b2b2b", tip: "#1c1c1c", img: "/images/products/cones/colors/midnight-black.webp" },
+  { name: "Ocean Blue", paper: "#a4c4e0", tip: "#8caacf", img: "/images/products/cones/colors/ocean-blue.webp" }
 ];
 
 const coneOrder = ["dogwalker", "mini", "1-1-4-size", "98mm-special", "king-size"];
@@ -191,45 +191,38 @@ const ConeDetail = () => {
             <p className="text-[16px] text-muted-foreground max-w-[56ch]">Go beyond standard white and brown. We offer food-grade, safe dye options to match your brand's palette, from subtle pastels to deep, solid blacks.</p>
           </div>
           
-          <div className="border border-border bg-white p-6 md:p-10">
+          <div className="mt-8">
             {/* Cone Visualizer Stage */}
-            <div className="min-h-[220px] md:min-h-[340px] flex items-center justify-center py-4 md:py-6">
-              <div className="w-[min(750px,95%)] flex items-center drop-shadow-xl transition-all duration-500">
-                <div 
-                  className="w-[25%] h-[52px] md:h-[76px] rounded-l-full border border-black/10 flex items-center justify-center font-bold text-white/50 text-[15px] md:text-[21px] relative z-10 transition-colors duration-500"
-                  style={{ 
-                    background: `linear-gradient(90deg, rgba(255,255,255,0.14), transparent 26%, rgba(0,0,0,0.06)), ${activeColor.tip}` 
-                  }}
-                >
-                  JOJO
-                </div>
-                <div 
-                  className="flex-1 h-[82px] md:h-[120px] ml-[-2px] border border-black/10 transition-colors duration-500"
-                  style={{
-                    borderRadius: '0 60px 60px 0',
-                    clipPath: 'polygon(0 18%, 100% 0, 100% 100%, 0 82%)',
-                    background: `repeating-linear-gradient(24deg, rgba(255,255,255,0.14) 0 2px, transparent 2px 8px), repeating-linear-gradient(116deg, rgba(0,0,0,0.025) 0 1px, transparent 1px 9px), ${activeColor.paper}`
-                  }}
+            <div className="min-h-[300px] md:min-h-[480px] flex items-center justify-center py-8 relative">
+              <AnimatePresence mode="wait">
+                <motion.img 
+                  key={activeColor.name}
+                  src={activeColor.img}
+                  alt={activeColor.name}
+                  className="w-full max-w-[900px] object-contain mix-blend-multiply"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.4, ease: "easeOut" }}
                 />
-              </div>
+              </AnimatePresence>
             </div>
 
             {/* Swatches */}
-            <div className="flex justify-center gap-4 flex-wrap mt-4">
+            <div className="flex justify-center gap-6 md:gap-8 flex-wrap mt-8">
               {colors.map((c, i) => (
-                <div key={i} className="flex flex-col items-center gap-2">
+                <div key={i} className="flex flex-col items-center gap-3 group">
                   <button 
                     onClick={() => setActiveColor(c)}
-                    className={`w-10 h-10 rounded-full border border-black/20 cursor-pointer relative ${activeColor.name === c.name ? "after:content-[''] after:absolute after:-inset-[5px] after:border after:border-foreground after:rounded-full" : ""}`}
+                    className={`w-12 h-12 md:w-14 md:h-14 rounded-full border border-black/10 cursor-pointer relative shadow-sm transition-transform duration-300 hover:scale-110 ${activeColor.name === c.name ? "after:content-[''] after:absolute after:-inset-[6px] after:border after:border-foreground after:rounded-full scale-110" : ""}`}
                     style={{ background: c.paper }}
                     aria-label={`Select ${c.name}`}
                   />
-                  <small className="font-sans text-[8px] uppercase text-muted-foreground hidden md:block">{c.name.split(' ')[0]}</small>
+                  <small className={`font-sans text-[9px] uppercase tracking-wider transition-colors duration-300 ${activeColor.name === c.name ? "text-foreground font-semibold" : "text-muted-foreground group-hover:text-foreground"}`}>
+                    {c.name.split(' ')[0]}
+                  </small>
                 </div>
               ))}
-            </div>
-            <div className="mt-8 text-center font-sans text-[9px] uppercase tracking-[0.08em] text-muted-foreground">
-              Selected Colour: <b className="text-foreground font-medium">{activeColor.name}</b>
             </div>
           </div>
         </div>
@@ -245,10 +238,17 @@ const ConeDetail = () => {
               <div className="p-4 bg-secondary border-l-2 border-foreground text-[12px] text-muted-foreground mb-5">
                 All filter tips can be custom-printed with your logo, text, or brand pattern. Food-grade inks are used on both the inside and outside of the tip.
               </div>
+              <div className="mt-4">
+                <Link to="/filters" className="inline-flex items-center text-[11px] font-sans uppercase tracking-[0.06em] border-b border-foreground pb-1 hover:text-muted-foreground transition-colors">
+                  Need a different filter-tip construction?
+                </Link>
+              </div>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="border border-border bg-white">
-                <img src="/images/tips/m-shape-tip.jpeg" alt="M/W Shape Filter" className="aspect-[4/3] object-cover w-full" onError={(e) => { e.currentTarget.src = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNmMmYyZjIiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNmMmYyZjIiIC8+PC9zdmc+'}} />
+                <div className="bg-secondary p-4 flex items-center justify-center">
+                  <img src="/images/products/tips/m-shape-tip.webp" alt="M/W Shape Filter" className="aspect-[4/3] object-contain mix-blend-multiply w-full max-h-[200px] drop-shadow-sm hover:scale-105 transition-transform duration-500" onError={(e) => { e.currentTarget.src = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNmMmYyZjIiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNmMmYyZjIiIC8+PC9zdmc+'}} />
+                </div>
                 <div className="p-4 border-t border-border">
                   <small className="block font-sans text-[8px] uppercase tracking-[0.07em] text-muted-foreground mb-1">Standard Option</small>
                   <h3 className="font-['Cormorant_Garamond'] text-[20px] font-medium">M/W Shape</h3>
@@ -256,7 +256,9 @@ const ConeDetail = () => {
                 </div>
               </div>
               <div className="border border-border bg-white">
-                <img src="/images/tips/spiral-tip.jpeg" alt="Spiral Shape Filter" className="aspect-[4/3] object-cover w-full" onError={(e) => { e.currentTarget.src = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNmMmYyZjIiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNmMmYyZjIiIC8+PC9zdmc+'}} />
+                <div className="bg-secondary p-4 flex items-center justify-center">
+                  <img src="/images/products/tips/spiral-tip.webp" alt="Spiral Shape Filter" className="aspect-[4/3] object-contain mix-blend-multiply w-full max-h-[200px] drop-shadow-sm hover:scale-105 transition-transform duration-500" onError={(e) => { e.currentTarget.src = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNmMmYyZjIiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNmMmYyZjIiIC8+PC9zdmc+'}} />
+                </div>
                 <div className="p-4 border-t border-border">
                   <small className="block font-sans text-[8px] uppercase tracking-[0.07em] text-muted-foreground mb-1">Alternative Option</small>
                   <h3 className="font-['Cormorant_Garamond'] text-[20px] font-medium">Spiral Shape</h3>

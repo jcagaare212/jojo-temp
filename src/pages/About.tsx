@@ -112,7 +112,7 @@ const About = () => {
           <div className="grid md:grid-cols-[1fr_1fr] gap-12 md:gap-20 items-center">
             <motion.div className="order-2 md:order-1 relative aspect-square bg-white border border-border p-8 flex items-center justify-center overflow-hidden group" initial="initial" whileInView="whileInView" viewport={{ once: true }} variants={fadeInUp}>
               <img
-                src="/images/about/bulk-brown-cones.png"
+                src="/images/about/bulk-brown-cones.webp"
                 alt="B2B Manufacturing"
                 className="w-full h-full object-contain mix-blend-multiply group-hover:scale-105 transition-transform duration-700"
                 onError={(e) => { e.currentTarget.style.display = 'none'; }}
@@ -163,7 +163,7 @@ const About = () => {
             </motion.div>
             <motion.div className="relative aspect-square bg-secondary border border-border p-12 flex items-center justify-center overflow-hidden group" initial="initial" whileInView="whileInView" viewport={{ once: true }} variants={fadeInUp}>
               <img
-                src="/images/about/jojo-standard.png"
+                src="/images/about/jojo-standard.webp"
                 alt="The JOJO Standard Philosophy"
                 className="w-full h-full object-contain mix-blend-multiply group-hover:scale-105 transition-transform duration-700"
                 onError={(e) => { e.currentTarget.style.display = 'none'; }}

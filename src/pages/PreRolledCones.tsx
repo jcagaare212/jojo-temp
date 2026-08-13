@@ -9,7 +9,7 @@ const sizes = [
     size: "70mm",
     tag: "Size 01 · 70mm",
     desc: "The shortest cone in the range, built for small, quick fills.",
-    img: "/images/products/cones/dogwalker-mini-70mm.png",
+    img: "/images/products/cones/dogwalker-mini-70mm.webp",
   },
   {
     id: "mini",
@@ -17,7 +17,7 @@ const sizes = [
     size: "78mm",
     tag: "Size 02 · 78mm",
     desc: "Slightly longer than the DogWalker, still light and easy to fill.",
-    img: "/images/products/cones/mini-78mm.png",
+    img: "/images/products/cones/mini-78mm.webp",
   },
   {
     id: "1-1-4-size",
@@ -25,7 +25,7 @@ const sizes = [
     size: "84mm",
     tag: "Size 03 · 84mm",
     desc: "The most common size in the category, balancing length and fill.",
-    img: "/images/products/cones/1-1-4-size-84mm.png",
+    img: "/images/products/cones/1-1-4-size-84mm.webp",
   },
   {
     id: "98mm-special",
@@ -33,7 +33,7 @@ const sizes = [
     size: "98mm",
     tag: "Size 04 · 98mm",
     desc: "Longer than 1¼, sitting between the standard size and King Size.",
-    img: "/images/products/cones/98mm-special.png",
+    img: "/images/products/cones/98mm-special.webp",
   },
   {
     id: "king-size",
@@ -41,7 +41,7 @@ const sizes = [
     size: "109mm",
     tag: "Size 05 · 109mm",
     desc: "The longest cone in the range, built for maximum fill capacity.",
-    img: "/images/products/cones/king-size-109mm.png",
+    img: "/images/products/cones/king-size-109mm.webp",
   }
 ];
 

@@ -27,10 +27,11 @@ export default function Header() {
         { name: 'King Size (109mm)', href: '/pre-rolled-cones/king-size' },
       ]
     },
-    { name: 'Bulk Cones', href: '/#bulk' },
+    { name: 'Bulk Cones', href: '/bulk-cones' },
+    { name: 'Filter Tips', href: '/filters' },
     { name: 'Rolling Papers', href: '/#paper' },
     { name: 'Retail & Packaging', href: '/#retail' },
-    { name: 'Private Label & Branding', href: '/#private-label' },
+    { name: 'Private Label & Branding', href: '/private-label' },
     { name: 'Consultation', href: '/consultation' },
     { name: 'About', href: '/about' },
   ];
