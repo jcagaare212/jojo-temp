@@ -1,56 +1,38 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@100;200;300;400;500;600;700&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 0%;
+    --background: 0 0% 100%; /* crisp white */
+    --foreground: 0 0% 5%; /* ink black */
 
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 0%;
+    --card-foreground: 0 0% 5%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 0%;
+    --popover-foreground: 0 0% 5%;
 
-    --primary: 0 0% 9%;
-    --primary-foreground: 0 0% 98%;
+    --primary: 0 0% 5%; /* ink black */
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 96%;
-    --secondary-foreground: 0 0% 0%;
+    --secondary: 0 0% 98%; /* very light gray */
+    --secondary-foreground: 0 0% 5%;
 
     --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 45%;
+    --muted-foreground: 0 0% 40%; /* soft gray */
 
     --accent: 0 0% 96%;
-    --accent-foreground: 0 0% 9%;
+    --accent-foreground: 0 0% 5%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 82%;
-    --input: 0 0% 82%;
-    --ring: 0 0% 9%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 0 0% 5%;
 
-    --radius: 0.25rem;
-
-    --copper: 28 55% 46%;
-    --copper-light: 30 40% 68%;
-    --copper-dark: 25 55% 36%;
-    --bronze: 30 60% 50%;
-    --navy: 0 0% 100%;
-    --charcoal: 0 0% 96%;
-
-    --sidebar-background: 0 0% 100%;
-    --sidebar-foreground: 0 0% 0%;
-    --sidebar-primary: 28 55% 46%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 0 0% 96%;
-    --sidebar-accent-foreground: 0 0% 0%;
-    --sidebar-border: 0 0% 82%;
-    --sidebar-ring: 28 55% 46%;
+    --radius: 0rem; /* Sharp edges for a sleek, editorial B&W look */
   }
 }
 
@@ -58,93 +40,66 @@
   * {
     @apply border-border;
   }
-
-  body {
-    @apply bg-background text-foreground font-sans antialiased;
-    font-family: 'Inter', system-ui, sans-serif;
+  html {
+    scroll-behavior: smooth;
+    background-color: hsl(var(--background));
   }
-
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: 'Outfit', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Playfair Display', Georgia, serif;
+    font-family: 'Cormorant Garamond', serif;
   }
 }
 
+@layer components {
+  /* Premium Ghost Button */
+  .btn-premium {
+    @apply inline-flex items-center justify-center px-8 py-4 border border-primary text-primary font-medium tracking-wide transition-all duration-300 hover:bg-primary hover:text-primary-foreground;
+  }
+  
+  /* Premium Solid Button */
+  .btn-premium-solid {
+    @apply inline-flex items-center justify-center px-8 py-4 bg-primary text-primary-foreground font-medium tracking-wide transition-all duration-300 hover:bg-primary/90;
+  }
+
+  /* Eyebrow Text */
+  .eyebrow {
+    @apply font-sans uppercase tracking-[0.2em] text-[12px] text-muted-foreground flex items-center gap-3 mb-4 font-medium;
+  }
+  .eyebrow::before {
+    content: "";
+    @apply w-6 h-[1px] bg-foreground block;
+  }
+  .eyebrow.center {
+    @apply justify-center;
+  }
+  .eyebrow.center-white::before {
+    @apply bg-white/60;
+  }
+  
+  /* Bento Box */
+  .bento-card {
+    @apply bg-card border border-border overflow-hidden relative transition-all duration-500 hover:border-primary/30;
+  }
+  
+  /* Placeholders for images when none are available */
+  .ph-image {
+    background: repeating-linear-gradient(135deg, #f5f5f5, #f5f5f5 10px, #eeeeee 10px, #eeeeee 20px);
+    @apply flex items-center justify-center text-muted-foreground font-sans text-xs tracking-widest uppercase text-center p-4;
+  }
+}
+
+/* Utilities for glassmorphism */
 @layer utilities {
-  .text-copper {
-    color: hsl(var(--copper));
+  .glass {
+    @apply bg-white/90 backdrop-blur-xl border-b border-black/5;
   }
-  .text-copper-light {
-    color: hsl(var(--copper-light));
-  }
-  .text-copper-dark {
-    color: hsl(var(--copper-dark));
-  }
-  .bg-copper {
-    background-color: hsl(var(--copper));
-  }
-  .bg-copper-dark {
-    background-color: hsl(var(--copper-dark));
-  }
-  .border-copper {
-    border-color: hsl(var(--copper));
-  }
-  .bg-navy {
-    background-color: hsl(var(--navy));
-  }
-  .bg-charcoal {
-    background-color: hsl(var(--charcoal));
-  }
-  .ring-copper {
-    --tw-ring-color: hsl(var(--copper));
-  }
-
-  .blur-vignette {
-    --inset: 0px;
-    --transition-length: 30%;
-    --blur: 20px;
-
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    -webkit-backdrop-filter: blur(var(--blur));
-    backdrop-filter: blur(var(--blur));
-
-    /* Mask: transparent center, opaque edges */
-    -webkit-mask-image:
-      linear-gradient(to right,
-        black 0%, transparent var(--transition-length),
-        transparent calc(100% - var(--transition-length)), black 100%),
-      linear-gradient(to bottom,
-        black 0%, transparent var(--transition-length),
-        transparent calc(100% - var(--transition-length)), black 100%);
-    -webkit-mask-composite: source-over;
-    mask-image:
-      linear-gradient(to right,
-        black 0%, transparent var(--transition-length),
-        transparent calc(100% - var(--transition-length)), black 100%),
-      linear-gradient(to bottom,
-        black 0%, transparent var(--transition-length),
-        transparent calc(100% - var(--transition-length)), black 100%);
-    mask-composite: add;
-
-    /* Black tint on top of blur so edges fade to pure black */
-    background: radial-gradient(
-      ellipse 65% 55% at center,
-      transparent 0%,
-      rgba(0,0,0,0.15) 40%,
-      rgba(0,0,0,0.5) 65%,
-      rgba(0,0,0,0.85) 80%,
-      #000 100%
-    );
-  }
-
-  @keyframes marquee {
-    0% { transform: translateX(0%); }
-    100% { transform: translateX(-50%); }
-  }
-  .animate-marquee {
-    animation: marquee 30s linear infinite;
-    display: inline-flex;
-    width: max-content;
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-md border border-black/5;
   }
 }

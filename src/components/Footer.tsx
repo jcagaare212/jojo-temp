@@ -1,120 +1,59 @@
-import { Link, useLocation } from "react-router-dom";
-import { Linkedin, Mail, MapPin, Phone, Instagram } from "lucide-react";
+import { Link } from 'react-router-dom';
 
-const Footer = () => {
-  const location = useLocation();
-  const hideCta = location.pathname === '/contact';
-
+export default function Footer() {
   return (
-    <>
-      {/* Global CTA Section (Hidden on Contact & Distributor Pages) */}
-      {!hideCta && (
-        <section className="bg-white py-24 border-t border-slate-100 relative overflow-hidden">
-          {/* Abstract decorative graphics simulating the screenshot */}
-          <div className="absolute left-0 top-1/2 -translate-y-1/2 w-48 md:w-80 opacity-10 pointer-events-none -translate-x-1/4">
-            <svg viewBox="0 0 100 100" className="w-full h-full text-slate-900 stroke-current" fill="none" strokeWidth="0.5">
-              <path d="M0,30 L90,45 L0,50 Z" />
-              <path d="M0,45 L95,50 L0,55 Z" />
-              <path d="M0,55 L90,55 L0,65 Z" />
-            </svg>
-          </div>
-          <div className="absolute right-0 top-1/2 -translate-y-1/2 w-48 md:w-80 opacity-10 pointer-events-none translate-x-1/4 rotate-180">
-            <svg viewBox="0 0 100 100" className="w-full h-full text-slate-900 stroke-current" fill="none" strokeWidth="0.5">
-              <path d="M0,30 L90,45 L0,50 Z" />
-              <path d="M0,45 L95,50 L0,55 Z" />
-              <path d="M0,55 L90,55 L0,65 Z" />
-            </svg>
-          </div>
-
-          <div className="container mx-auto px-6 text-center relative z-10 max-w-3xl">
-            <h2 className="text-3xl md:text-4xl font-display text-slate-900 mb-4 font-medium">Start Your Private Label Journey</h2>
-            <p className="text-slate-500 text-lg mb-8 leading-relaxed font-sans max-w-2xl mx-auto">
-              From custom paper blends and unique watermarks to bespoke retail packaging, our OEM manufacturing solutions are designed to elevate your brand. Let our design team bring your vision to life.
-            </p>
-            <Link to="/contact" className="inline-block bg-primary text-primary-foreground px-8 py-3 rounded text-sm font-semibold tracking-wide hover:opacity-90 transition-opacity duration-300">
-              Get in touch
+    <footer className="bg-foreground text-background pt-24 pb-12 relative overflow-hidden">
+      <div className="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8 pb-16 border-b border-white/15">
+          <div className="col-span-1 md:col-span-1">
+            <Link to="/" className="flex flex-col inline-block mb-6 group">
+              <span className="font-['Cormorant_Garamond'] text-4xl font-semibold leading-none tracking-tight text-background group-hover:text-background/80 transition-colors">JOJO</span>
+              <span className="font-sans text-[10px] tracking-[0.35em] text-background/60 mt-1.5 ml-0.5">PAPERS</span>
             </Link>
-          </div>
-        </section>
-      )}
-
-      <footer className="bg-black pt-20 pb-10 border-t-4 border-primary">
-        <div className="container mx-auto px-6 max-w-7xl">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
-            {/* Brand Column */}
-            <div className="space-y-6">
-              <Link to="/" className="inline-block">
-                <span className="text-3xl font-bold tracking-widest text-white font-display uppercase leading-none block">JOJO</span>
-                <span className="text-sm tracking-[0.4em] text-neutral-400 font-display uppercase mt-1 block">PAPERS</span>
-              </Link>
-              <p className="text-neutral-400 text-sm leading-relaxed max-w-xs">
-                Your trusted manufacturing partner for custom rolling papers and pre-rolled cones. We build and supply products for brands around the world.
-              </p>
-              <div className="pt-4">
-                <img src="/images/make_in_india.svg" alt="Make in India" className="h-24 md:h-28 w-auto opacity-100 drop-shadow-md" />
-              </div>
-            </div>
-
-            {/* Capabilities Column */}
-            <div className="space-y-6">
-              <h4 className="text-white font-display font-bold tracking-wider uppercase text-sm">Capabilities</h4>
-              <ul className="space-y-4">
-                <li><Link to="/private-label" className="text-neutral-400 hover:text-white transition-colors text-sm">Wholesale Manufacturing</Link></li>
-                <li><Link to="/products" className="text-neutral-400 hover:text-white transition-colors text-sm">Custom Rolling Papers</Link></li>
-                <li><Link to="/products" className="text-neutral-400 hover:text-white transition-colors text-sm">Pre-Rolled Cones</Link></li>
-                <li><Link to="/products" className="text-neutral-400 hover:text-white transition-colors text-sm">Custom Packaging</Link></li>
-              </ul>
-            </div>
-
-            {/* Quick Links Column */}
-            <div className="space-y-6">
-              <h4 className="text-white font-display font-bold tracking-wider uppercase text-sm">Quick Links</h4>
-              <ul className="space-y-4">
-                <li><Link to="/products" className="text-neutral-400 hover:text-white transition-colors text-sm">Products</Link></li>
-                <li><Link to="/private-label" className="text-neutral-400 hover:text-white transition-colors text-sm">Private Label</Link></li>
-                <li><Link to="/about" className="text-neutral-400 hover:text-white transition-colors text-sm">About Us</Link></li>
-                <li><Link to="/contact" className="text-neutral-400 hover:text-white transition-colors text-sm">Contact Us</Link></li>
-              </ul>
-            </div>
-
-            {/* Contact Column */}
-            <div className="space-y-6">
-              <h4 className="text-white font-display font-bold tracking-wider uppercase text-sm">Global Headquarters</h4>
-              <ul className="space-y-4">
-                <li className="flex items-start gap-3 group">
-                  <Mail className="w-5 h-5 text-neutral-500 shrink-0 mt-0.5 group-hover:text-primary transition-colors" />
-                  <a href="mailto:info@jojopapers.com" className="text-neutral-400 group-hover:text-white transition-colors text-sm">info@jojopapers.com</a>
-                </li>
-                <li className="flex items-start gap-3 group">
-                  <Phone className="w-5 h-5 text-neutral-500 shrink-0 mt-0.5 group-hover:text-primary transition-colors" />
-                  <span className="text-neutral-400 text-sm leading-relaxed group-hover:text-white transition-colors">+91 97179 27787</span>
-                </li>
-                <li className="flex items-start gap-3 group">
-                  <MapPin className="w-5 h-5 text-neutral-500 shrink-0 mt-0.5 group-hover:text-primary transition-colors" />
-                  <span className="text-neutral-400 text-sm leading-relaxed group-hover:text-white transition-colors">Vasant Kunj, New Delhi, Delhi</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          {/* Bottom Bar */}
-          <div className="pt-8 border-t border-neutral-800 flex flex-col md:flex-row items-center justify-between gap-6">
-            <p className="text-neutral-500 text-sm text-center md:text-left">
-              © {new Date().getFullYear()} JOJO Papers. All rights reserved.
+            <p className="text-sm text-background/60 max-w-[32ch] leading-relaxed">
+              The premier OEM manufacturing partner for dispensaries, distributors, and luxury private-label brands. Precision craftsmanship, made in India since 2014.
             </p>
-            <div className="flex items-center justify-center md:justify-end w-full md:w-auto gap-3 mt-4 md:mt-0">
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-neutral-500 hover:text-white transition-colors bg-neutral-900 p-2 rounded-full hover:bg-neutral-800">
-                <Instagram className="w-4 h-4" />
-              </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-neutral-500 hover:text-white transition-colors bg-neutral-900 p-2 rounded-full hover:bg-neutral-800">
-                <Linkedin className="w-4 h-4" />
-              </a>
-            </div>
+          </div>
+          
+          <div>
+            <h5 className="font-sans text-xs tracking-[0.2em] uppercase text-background mb-6 font-semibold">What We Offer</h5>
+            <ul className="flex flex-col gap-4">
+              <li><Link to="/pre-rolled-cones" className="text-sm text-background/60 hover:text-background transition-colors">Pre-Rolled Cones</Link></li>
+              <li><a href="/#bulk" className="text-sm text-background/60 hover:text-background transition-colors">Bulk Cones</a></li>
+              <li><a href="#" className="text-sm text-background/60 hover:text-background transition-colors">Bespoke Packaging</a></li>
+              <li><a href="/JOJO-QC-Inspection-Template.pdf" download target="_blank" rel="noreferrer" className="text-sm text-background/60 hover:text-background transition-colors">Quality Control</a></li>
+            </ul>
+          </div>
+          
+          <div>
+            <h5 className="font-sans text-xs tracking-[0.2em] uppercase text-background mb-6 font-semibold">Company</h5>
+            <ul className="flex flex-col gap-4">
+              <li><Link to="/about" className="text-sm text-background/60 hover:text-background transition-colors">Our Story</Link></li>
+              <li><a href="#" className="text-sm text-background/60 hover:text-background transition-colors">Sustainability</a></li>
+              <li><Link to="/consultation" className="text-sm text-background/60 hover:text-background transition-colors">Consultation</Link></li>
+              <li><Link to="/contact" className="text-sm text-background/60 hover:text-background transition-colors">Contact</Link></li>
+            </ul>
+          </div>
+          
+          <div>
+            <h5 className="font-sans text-xs tracking-[0.2em] uppercase text-background mb-6 font-semibold">Connect</h5>
+            <ul className="flex flex-col gap-4">
+              <li><a href="mailto:info@jojopapers.com" className="text-sm text-background/60 hover:text-background transition-colors">info@jojopapers.com</a></li>
+              <li><a href="tel:+919971508200" className="text-sm text-background/60 hover:text-background transition-colors">+91 99715 08200</a></li>
+              <li className="text-sm text-background/60 mt-2">Vasant Kunj, New Delhi, India</li>
+            </ul>
           </div>
         </div>
-      </footer>
-    </>
+        
+        <div className="flex flex-col md:flex-row justify-between items-center pt-8 text-xs text-background/40 gap-6">
+          <span className="text-center md:text-left">&copy; {new Date().getFullYear()} JOJO Papers. All Rights Reserved.</span>
+          <div className="flex flex-wrap justify-center gap-6">
+            <a href="#" className="hover:text-background transition-colors">Instagram</a>
+            <a href="#" className="hover:text-background transition-colors">LinkedIn</a>
+            <a href="#" className="hover:text-background transition-colors">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </footer>
   );
-};
-
-export default Footer;
+}

@@ -1,162 +1,228 @@
-import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { Menu, X, ChevronDown, Mail, Instagram } from "lucide-react";
+import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Menu, X, Phone, Mail, Instagram } from 'lucide-react';
 
-import { Button } from "@/components/ui/button";
-
-const Header = () => {
-  const [mobileOpen, setMobileOpen] = useState(false);
-  const [isPreRolledOpen, setIsPreRolledOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
+export default function Header() {
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      setScrolled(window.scrollY > 50);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const navLinks = [
+    { 
+      name: 'Pre-Rolled Cones', 
+      href: '/pre-rolled-cones',
+      dropdown: [
+        { name: 'DogWalker (70mm)', href: '/pre-rolled-cones/dogwalker' },
+        { name: 'Mini (78mm)', href: '/pre-rolled-cones/mini' },
+        { name: '1 ¼ Size (84mm)', href: '/pre-rolled-cones/1-1-4-size' },
+        { name: '98mm Special (98mm)', href: '/pre-rolled-cones/98mm-special' },
+        { name: 'King Size (109mm)', href: '/pre-rolled-cones/king-size' },
+      ]
+    },
+    { name: 'Bulk Cones', href: '/#bulk' },
+    { name: 'Rolling Papers', href: '/#paper' },
+    { name: 'Retail & Packaging', href: '/#retail' },
+    { name: 'Private Label & Branding', href: '/#private-label' },
+    { name: 'Consultation', href: '/consultation' },
+    { name: 'About', href: '/about' },
+  ];
+
+  // Animation variants
+  const headerVariants = {
+    hidden: { y: -100 },
+    visible: { 
+      y: 0,
+      transition: { 
+        duration: 0.8, 
+        ease: [0.22, 1, 0.36, 1],
+        when: "beforeChildren",
+        staggerChildren: 0.05
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: -10 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.4, ease: "easeOut" }
+    }
+  };
+
   return (
-    <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b">
-      {/* Top Row */}
-      <div className={`container mx-auto px-6 flex items-center justify-between border-b border-slate-100 transition-all duration-500 ${isScrolled ? 'py-1.5' : 'py-4'}`}>
+    <>
+      <motion.header 
+        className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-500 ${scrolled ? 'bg-white/95 backdrop-blur-md shadow-sm' : 'bg-white/40 backdrop-blur-sm'}`}
+        initial="hidden"
+        animate="visible"
+        variants={headerVariants}
+      >
+      {/* Top Bar - Now visible on scroll as requested */}
+      <motion.div variants={itemVariants} className="hidden md:flex justify-between items-center max-w-[1400px] mx-auto px-6 md:px-12 py-3 border-b border-border transition-all duration-300">
+        <div className="flex items-center gap-6 text-[10px] uppercase tracking-widest text-muted-foreground font-sans">
+          <a href="tel:+919971508200" className="flex items-center gap-1.5 hover:text-foreground transition-colors group">
+            <Phone size={12} className="text-emerald-600 group-hover:scale-110 transition-transform" />
+            +91 99715 08200
+          </a>
+          <a href="mailto:info@jojopapers.com" className="flex items-center gap-1.5 hover:text-foreground transition-colors group">
+            <Mail size={12} className="text-blue-500 group-hover:scale-110 transition-transform" />
+            info@jojopapers.com
+          </a>
+          <a href="https://instagram.com/jojopapers.co" target="_blank" rel="noreferrer" className="flex items-center gap-1.5 hover:text-foreground transition-colors group">
+            <Instagram size={12} className="text-[#E1306C] group-hover:scale-110 transition-transform" />
+            @jojopapers.co
+          </a>
+        </div>
+        <div className="text-[10px] uppercase tracking-widest text-muted-foreground font-sans">
+          MADE IN INDIA · SINCE 2014
+        </div>
+      </motion.div>
+
+      <div className={`max-w-[1400px] mx-auto px-6 md:px-12 flex items-center justify-between transition-all duration-500 ${scrolled ? 'py-3' : 'py-5'}`}>
         {/* Logo */}
-        <div className="flex flex-1 items-center justify-start">
-          <Link to="/" className="flex flex-col items-center justify-center">
-            <span className={`font-bold tracking-widest text-foreground font-display uppercase leading-none transition-all duration-500 ${isScrolled ? 'text-2xl' : 'text-3xl'}`}>JOJO</span>
-            <span className={`font-medium tracking-[0.3em] text-foreground/80 uppercase mt-1 transition-all duration-500 ${isScrolled ? 'text-[0.6rem]' : 'text-[0.7rem]'}`}>PAPERS</span>
+        <motion.div variants={itemVariants}>
+          <Link to="/" className="flex flex-col relative z-50 group">
+            <span className="font-['Cormorant_Garamond'] text-3xl md:text-[34px] font-semibold leading-none tracking-tight text-foreground group-hover:text-foreground/80 transition-colors">JOJO</span>
+            <span className="font-sans text-[9px] md:text-[10px] tracking-[0.35em] text-muted-foreground mt-1 ml-0.5">PAPERS</span>
           </Link>
-        </div>
-
-        {/* Desktop Socials & CTA */}
-        <div className="hidden lg:flex flex-1 items-center justify-end gap-6">
-          <div className="flex items-center gap-4 text-slate-700">
-            <a href="https://wa.me/919717927787" target="_blank" rel="noreferrer" className="flex items-center gap-2 group" aria-label="WhatsApp">
-              <img src="/whatsapp.svg" alt="WhatsApp" className="w-5 h-5 object-contain transition-transform group-hover:scale-110" />
-              <span className="text-[15px] font-bold group-hover:text-[#25D366] transition-colors whitespace-nowrap">+91 97179 27787</span>
-            </a>
-            
-            <div className="w-[1px] h-5 bg-slate-300 mx-1"></div>
-            
-            <a href="https://instagram.com/jojopapers.co" target="_blank" rel="noreferrer" className="flex items-center gap-2 group" aria-label="Instagram">
-              <img src="/instagram.svg" alt="Instagram" className="w-5 h-5 object-contain transition-transform group-hover:scale-110" />
-              <span className="text-[15px] font-bold group-hover:text-[#E1306C] transition-colors whitespace-nowrap">@jojopapers.co</span>
-            </a>
-
-            <div className="w-[1px] h-5 bg-slate-300 mx-1"></div>
-
-            <a href="mailto:info@jojopapers.com" className="flex items-center gap-2 hover:text-primary transition-colors group" aria-label="Email">
-              <Mail className="w-5 h-5 text-slate-700 group-hover:text-primary transition-colors" />
-            </a>
-          </div>
-          <Button asChild variant="default" className={`rounded-full tracking-wide font-bold shadow-md hover:shadow-lg transition-all ml-2 duration-500 ${isScrolled ? 'px-6 py-4 text-sm' : 'px-8 py-6 text-base'}`}>
-            <Link to="/contact">Contact Us Today</Link>
-          </Button>
-        </div>
+        </motion.div>
+        
+        {/* Desktop Nav */}
+        <nav className="hidden lg:flex items-center justify-center gap-6 xl:gap-8 flex-1 px-8">
+          {navLinks.map((link) => (
+            <motion.div 
+              key={link.name} 
+              variants={itemVariants}
+              className="relative group"
+            >
+              {link.href.startsWith('/') && !link.href.includes('#') ? (
+                <Link to={link.href} className="text-[13px] font-medium text-foreground/80 hover:text-foreground transition-colors py-4 inline-block">
+                  {link.name}
+                  <span className="absolute bottom-3 left-0 w-0 h-[1px] bg-foreground transition-all duration-300 group-hover:w-full"></span>
+                </Link>
+              ) : (
+                <a href={link.href} className="text-[13px] font-medium text-foreground/80 hover:text-foreground transition-colors py-4 inline-block">
+                  {link.name}
+                  <span className="absolute bottom-3 left-0 w-0 h-[1px] bg-foreground transition-all duration-300 group-hover:w-full"></span>
+                </a>
+              )}
+              
+              {link.dropdown && (
+                <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-300 z-50">
+                  <div className="bg-white border border-border shadow-xl min-w-[200px] flex flex-col py-2">
+                    {link.dropdown.map(dropItem => (
+                      <Link 
+                        key={dropItem.name} 
+                        to={dropItem.href}
+                        className="px-6 py-2.5 text-[13px] text-foreground/80 hover:text-foreground hover:bg-secondary/50 transition-colors whitespace-nowrap"
+                      >
+                        {dropItem.name}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </motion.div>
+          ))}
+        </nav>
+        
+        {/* Contact Button */}
+        <motion.div variants={itemVariants} className="hidden lg:flex items-center">
+          <Link to="/contact" className="btn-premium-solid py-2.5 px-6 text-[11px]">
+            Contact Us
+          </Link>
+        </motion.div>
 
         {/* Mobile Toggle */}
-        <button
-          className="lg:hidden text-foreground flex items-center justify-end"
-          onClick={() => setMobileOpen(!mobileOpen)}
-          aria-label="Toggle menu"
+        <motion.button 
+          variants={itemVariants}
+          className="lg:hidden text-foreground relative z-10 p-2 -mr-2"
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
-          {mobileOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
-        </button>
+          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+        </motion.button>
       </div>
 
-      {/* Bottom Row - Desktop Nav */}
-      <div className="hidden lg:flex container mx-auto px-6 h-14 bg-white/50 transition-all duration-500">
-        <nav className="flex items-center justify-center gap-6 xl:gap-8 w-full text-[13px] xl:text-sm font-semibold tracking-wider uppercase">
-          
-          {/* Dropdown */}
-          <div className="relative group h-full flex items-center"
-               onMouseEnter={() => setIsPreRolledOpen(true)}
-               onMouseLeave={() => setIsPreRolledOpen(false)}>
-            <Link to="/pre-rolled-cones" className="flex items-center gap-1 hover:text-primary transition-colors h-full">
-              Pre Rolled Cones <ChevronDown className="w-4 h-4 text-slate-400 group-hover:text-primary transition-colors" />
-            </Link>
-            
-            {isPreRolledOpen && (
-              <div className="absolute top-[90%] left-0 bg-white border border-slate-100 shadow-2xl rounded-b-xl w-64 py-3 z-50 animate-in fade-in slide-in-from-top-2">
-                <div className="px-5 py-2 font-black text-[10px] tracking-widest text-slate-400 uppercase">Sizes</div>
-                <Link to="/pre-rolled-cones/dogwalker-mini" className="block px-5 py-2.5 text-sm font-medium hover:bg-slate-50 hover:text-primary transition-colors">Dogwalker Mini (70mm)</Link>
-                <Link to="/pre-rolled-cones/mini" className="block px-5 py-2.5 text-sm font-medium hover:bg-slate-50 hover:text-primary transition-colors">Mini (78mm)</Link>
-                <Link to="/pre-rolled-cones/1-1-4-size" className="block px-5 py-2.5 text-sm font-medium hover:bg-slate-50 hover:text-primary transition-colors">1 1/4 Size (84mm)</Link>
-                <Link to="/pre-rolled-cones/98mm-special" className="block px-5 py-2.5 text-sm font-medium hover:bg-slate-50 hover:text-primary transition-colors">98mm Special (98mm)</Link>
-                <Link to="/pre-rolled-cones/king-size" className="block px-5 py-2.5 text-sm font-medium hover:bg-slate-50 hover:text-primary transition-colors">King Size (109mm)</Link>
-              </div>
-            )}
-          </div>
-
-          <Link to="/bulk-cones" className="hover:text-primary transition-colors">Bulk Cones</Link>
-          <Link to="/products/classic-papers" className="hover:text-primary transition-colors">Rolling Paper</Link>
-          <Link to="/custom-branding" className="hover:text-primary transition-colors">Custom Branding</Link>
-          <Link to="/private-label" className="hover:text-primary transition-colors">OEM & Private Label</Link>
-          <Link to="/products/emergency-kit" className="hover:text-primary transition-colors">Retail Packaging Ideas</Link>
-          <Link to="/consultation" className="hover:text-primary transition-colors">Consultation</Link>
-          <Link to="/about" className="hover:text-primary transition-colors">About Us</Link>
-        </nav>
-      </div>
+      </motion.header>
 
       {/* Mobile Menu */}
-      {mobileOpen && (
-        <div className="fixed inset-x-0 top-[85px] bottom-0 h-[calc(100vh-85px)] w-full bg-white z-40 lg:hidden animate-fade-in overflow-y-auto flex flex-col">
-          <nav className="flex flex-col px-6 pt-2 pb-6">
-            <div className="border-b border-slate-100">
-              <div className="py-4">
-                <div 
-                  className="flex items-center justify-between font-semibold text-lg text-slate-900 cursor-pointer"
-                  onClick={() => setIsPreRolledOpen(!isPreRolledOpen)}
-                >
-                  <span>Pre Rolled Cones</span>
-                  <ChevronDown className={`w-5 h-5 transition-transform duration-300 ${isPreRolledOpen ? 'rotate-180 text-primary' : 'text-slate-400'}`} />
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div 
+            className="fixed inset-0 bg-white/98 backdrop-blur-xl z-40 flex flex-col pt-32 px-8"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3 }}
+          >
+            <nav className="flex flex-col gap-6 items-center text-center overflow-y-auto pb-20 w-full">
+              {navLinks.map((link) => (
+                <div key={link.name} className="flex flex-col items-center w-full">
+                  {link.href.startsWith('/') && !link.href.includes('#') ? (
+                    <Link 
+                      to={link.href}
+                      className="text-2xl font-['Cormorant_Garamond'] text-foreground hover:text-muted-foreground transition-colors"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      {link.name}
+                    </Link>
+                  ) : (
+                    <a 
+                      href={link.href}
+                      className="text-2xl font-['Cormorant_Garamond'] text-foreground hover:text-muted-foreground transition-colors"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      {link.name}
+                    </a>
+                  )}
+                  
+                  {link.dropdown && (
+                    <div className="flex flex-col items-center gap-3 mt-4 mb-2 bg-secondary/30 w-full py-4 border-y border-border">
+                      {link.dropdown.map(dropItem => (
+                        <Link 
+                          key={dropItem.name}
+                          to={dropItem.href}
+                          className="text-[14px] text-foreground/70 hover:text-foreground transition-colors"
+                          onClick={() => setMobileMenuOpen(false)}
+                        >
+                          {dropItem.name}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
                 </div>
-                {isPreRolledOpen && (
-                  <div className="pl-4 mt-3 flex flex-col gap-3 text-slate-600 animate-in slide-in-from-top-1 fade-in">
-                    <div className="font-bold text-xs tracking-wider text-slate-400 uppercase mb-1">Sizes</div>
-                    <Link to="/pre-rolled-cones/dogwalker-mini" onClick={() => setMobileOpen(false)} className="text-[15px] font-medium hover:text-primary transition-colors">Dogwalker Mini (70mm)</Link>
-                    <Link to="/pre-rolled-cones/mini" onClick={() => setMobileOpen(false)} className="text-[15px] font-medium hover:text-primary transition-colors">Mini (78mm)</Link>
-                    <Link to="/pre-rolled-cones/1-1-4-size" onClick={() => setMobileOpen(false)} className="text-[15px] font-medium hover:text-primary transition-colors">1 1/4 Size (84mm)</Link>
-                    <Link to="/pre-rolled-cones/98mm-special" onClick={() => setMobileOpen(false)} className="text-[15px] font-medium hover:text-primary transition-colors">98mm Special (98mm)</Link>
-                    <Link to="/pre-rolled-cones/king-size" onClick={() => setMobileOpen(false)} className="text-[15px] font-medium hover:text-primary transition-colors">King Size (109mm)</Link>
-                  </div>
-                )}
-              </div>
-            </div>
-            
-            <Link to="/bulk-cones" onClick={() => setMobileOpen(false)} className="block py-4 text-lg font-semibold text-slate-900 border-b border-slate-100">Bulk Cones</Link>
-            <Link to="/products/classic-papers" onClick={() => setMobileOpen(false)} className="block py-4 text-lg font-semibold text-slate-900 border-b border-slate-100">Rolling Paper</Link>
-            <Link to="/custom-branding" onClick={() => setMobileOpen(false)} className="block py-4 text-lg font-semibold text-slate-900 border-b border-slate-100">Custom Branding</Link>
-            <Link to="/private-label" onClick={() => setMobileOpen(false)} className="block py-4 text-lg font-semibold text-slate-900 border-b border-slate-100">OEM & Private Label</Link>
-            <Link to="/products/emergency-kit" onClick={() => setMobileOpen(false)} className="block py-4 text-lg font-semibold text-slate-900 border-b border-slate-100">Retail Packaging Ideas</Link>
-            <Link to="/consultation" onClick={() => setMobileOpen(false)} className="block py-4 text-lg font-semibold text-slate-900 border-b border-slate-100">Consultation</Link>
-            <Link to="/about" onClick={() => setMobileOpen(false)} className="block py-4 text-lg font-semibold text-slate-900">About Us</Link>
-          </nav>
-          
-          <div className="px-6 mt-auto pb-12 pt-6 flex flex-col gap-6 bg-slate-50 border-t border-slate-100">
-            <div className="flex justify-center gap-8 text-slate-500">
-              <a href="https://wa.me/919717927787" target="_blank" rel="noreferrer" className="hover:text-primary transition-colors hover:scale-110">
-                <img src="/whatsapp.svg" alt="WhatsApp" className="w-6 h-6 object-contain" />
-              </a>
-              <a href="mailto:info@jojopapers.com" className="hover:text-primary transition-colors hover:scale-110">
-                <Mail className="w-6 h-6" />
-              </a>
-              <a href="https://instagram.com/jojopapers" target="_blank" rel="noreferrer" className="hover:text-primary transition-colors hover:scale-110">
-                <img src="/instagram.svg" alt="Instagram" className="w-6 h-6 object-contain" />
-              </a>
-            </div>
-            <Button asChild className="w-full rounded-full py-6 text-lg font-semibold shadow-md">
-              <Link to="/contact" onClick={() => setMobileOpen(false)}>
+              ))}
+              <Link 
+                to="/contact"
+                className="bg-foreground text-background text-[13px] font-semibold uppercase tracking-widest px-8 py-4 w-full max-w-sm mt-8"
+                onClick={() => setMobileMenuOpen(false)}
+              >
                 Contact Us
               </Link>
-            </Button>
-          </div>
-        </div>
-      )}
-    </header>
+              
+              <div className="flex flex-col gap-4 mt-8 pt-8 border-t border-border w-full max-w-sm text-sm text-foreground/80">
+                <a href="tel:+919971508200" className="flex items-center justify-center gap-2">
+                  <Phone className="w-3.5 h-3.5" />
+                  +91 99715 08200
+                </a>
+                <a href="mailto:info@jojopapers.com" className="flex items-center justify-center gap-2">
+                  <Mail size={14} />
+                  info@jojopapers.com
+                </a>
+              </div>
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
-};
-
-export default Header;
-
+}
