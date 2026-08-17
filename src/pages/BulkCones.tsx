@@ -217,7 +217,7 @@ const BulkCones = () => {
                 Send us the cone size and expected total order quantity. We will suggest a practical tower configuration for the requirement.
               </p>
             </div>
-            <Button asChild variant="outline" size="lg" className="rounded-none px-8 font-sans tracking-wide uppercase text-xs border-background text-background hover:bg-background hover:text-foreground shrink-0">
+            <Button asChild variant="outline" size="lg" className="rounded-none px-8 font-sans tracking-wide uppercase text-xs border-background bg-transparent text-background hover:bg-background hover:text-foreground shrink-0">
               <Link to="/contact">Ask JOJO</Link>
             </Button>
           </div>
