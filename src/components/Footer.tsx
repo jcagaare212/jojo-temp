@@ -21,7 +21,7 @@ export default function Footer() {
               <li><Link to="/pre-rolled-cones" className="text-sm text-background/60 hover:text-background transition-colors">Pre-Rolled Cones</Link></li>
               <li><Link to="/bulk-cones" className="text-sm text-background/60 hover:text-background transition-colors">Bulk Cones</Link></li>
               <li><Link to="/filters" className="text-sm text-background/60 hover:text-background transition-colors">Filter Tips</Link></li>
-              <li><a href="/#paper" className="text-sm text-background/60 hover:text-background transition-colors">Rolling Papers</a></li>
+              <li><Link to="/rolling-papers" className="text-sm text-background/60 hover:text-background transition-colors">Rolling Papers</Link></li>
             </ul>
           </div>
           

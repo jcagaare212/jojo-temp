@@ -17,6 +17,7 @@ import BulkCones from "./pages/BulkCones";
 import Filters from "./pages/Filters";
 import RetailPackaging from "./pages/RetailPackaging";
 import Consultation from "./pages/Consultation";
+import RollingPapers from "./pages/RollingPapers";
 
 const queryClient = new QueryClient();
 
@@ -37,6 +38,7 @@ const App = () => (
             <Route path="/pre-rolled-cones" element={<PreRolledCones />} />
             <Route path="/pre-rolled-cones/:sizeId" element={<ConeDetail />} />
             <Route path="/bulk-cones" element={<BulkCones />} />
+            <Route path="/rolling-papers" element={<RollingPapers />} />
             <Route path="/filters" element={<Filters />} />
             <Route path="/retail-packaging" element={<RetailPackaging />} />
             <Route path="/consultation" element={<Consultation />} />

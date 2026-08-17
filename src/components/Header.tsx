@@ -29,7 +29,7 @@ export default function Header() {
     },
     { name: 'Bulk Cones', href: '/bulk-cones' },
     { name: 'Filter Tips', href: '/filters' },
-    { name: 'Rolling Papers', href: '/#paper' },
+    { name: 'Rolling Papers', href: '/rolling-papers' },
     { name: 'Retail & Packaging', href: '/retail-packaging' },
     { name: 'Private Label & Branding', href: '/private-label' },
     { name: 'Consultation', href: '/consultation' },
