@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import Breadcrumb from '../components/Breadcrumb';
 
 interface ColourInfo {
   key: string;
@@ -75,6 +76,8 @@ const RollingPapers = () => {
 
   return (
     <div className="pt-[73px] md:pt-[115px] bg-background text-foreground">
+      <Breadcrumb items={[{ label: "Rolling Papers" }]} />
+
       {/* HERO SECTION */}
       <section className="py-16 md:py-24 border-b border-border text-center bg-white" id="paper">
         <div className="max-w-[820px] mx-auto px-6">

@@ -3,6 +3,7 @@ import { motion, Variants } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight, CheckCircle2, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Breadcrumb from "../components/Breadcrumb";
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 20 },
@@ -62,7 +63,9 @@ const BulkCones = () => {
   }, [activeSection]);
 
   return (
-    <div className="pt-[73px] md:pt-[85px]">
+    <div className="pt-[73px] md:pt-[115px]">
+      <Breadcrumb items={[{ label: "Bulk Cones" }]} />
+
       {/* HERO SECTION */}
       <section className="relative overflow-hidden bg-background pt-16 pb-20 md:pt-24 md:pb-32 border-b border-border">
         <div className="container px-4 md:px-6">

@@ -2,6 +2,7 @@ import { useParams, Navigate, Link } from "react-router-dom";
 import { useInView } from "@/hooks/useInView";
 import { products } from "@/data/products";
 import { TriangleAlert, ShieldCheck } from "lucide-react";
+import Breadcrumb from "@/components/Breadcrumb";
 
 const FadeIn = ({
   children,
@@ -35,9 +36,15 @@ const ProductDetail = () => {
   }
 
   return (
-    <div className="bg-background min-h-screen text-foreground">
+    <div className="pt-[73px] md:pt-[115px] bg-background min-h-screen text-foreground">
+      <Breadcrumb
+        items={[
+          { label: "Products", href: "/products" },
+          { label: product.name },
+        ]}
+      />
       {/* Hero: Product info left (sticky), Gallery right (scrolling) */}
-      <div className="container mx-auto px-6 pt-32 lg:pt-40 pb-24">
+      <div className="container mx-auto px-6 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.4fr] gap-12 lg:gap-20">
           {/* Product Info — Sticky Left Column */}
           <div className="lg:sticky lg:top-32 lg:self-start space-y-8 order-2 lg:order-1">

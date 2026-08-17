@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
 import { allProductsList } from "@/data/products";
+import Breadcrumb from "@/components/Breadcrumb";
 
 const Products = () => {
   return (
-    <div className="bg-background min-h-screen">
-      <div className="container mx-auto px-6 pt-32 pb-24">
+    <div className="pt-[73px] md:pt-[115px] bg-background min-h-screen">
+      <Breadcrumb items={[{ label: "Products" }]} />
+      <div className="container mx-auto px-6 py-16">
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground font-display mb-4 tracking-tight">
             Our Catalog

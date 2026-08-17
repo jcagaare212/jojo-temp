@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { motion, Variants } from "framer-motion";
 import { Link } from "react-router-dom";
+import Breadcrumb from "../components/Breadcrumb";
 import Footer from "../components/Footer";
 
 const stagger: Variants = {
@@ -19,15 +20,11 @@ export default function Filters() {
   }, []);
 
   return (
-    <div className="bg-background text-foreground overflow-hidden font-sans">
-      <div className="max-w-[1200px] mx-auto px-6 md:px-10 py-8 mt-24">
-        <div className="font-sans text-[11.5px] text-muted-foreground uppercase tracking-widest">
-          <Link to="/" className="hover:text-foreground transition-colors pb-0.5 border-b border-transparent hover:border-foreground">Home</Link> / Filter Tips
-        </div>
-      </div>
+    <div className="pt-[73px] md:pt-[115px] bg-background text-foreground overflow-hidden font-sans">
+      <Breadcrumb items={[{ label: "Filter Tips" }]} />
 
       {/* HERO SECTION */}
-      <section className="pt-10 md:pt-24 bg-secondary border-b border-border">
+      <section className="py-16 md:py-24 bg-secondary border-b border-border">
         <div className="max-w-[1200px] mx-auto px-6 md:px-10">
           <div className="grid md:grid-cols-[1fr_0.92fr] gap-16 items-end">
             <motion.div className="pb-16" initial="initial" whileInView="whileInView" viewport={{ once: true }} variants={stagger}>

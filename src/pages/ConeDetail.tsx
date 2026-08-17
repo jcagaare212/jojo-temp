@@ -1,6 +1,7 @@
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { motion, Variants, AnimatePresence } from "framer-motion";
+import Breadcrumb from "../components/Breadcrumb";
 
 const coneData: Record<string, any> = {
   "dogwalker": {
@@ -107,17 +108,16 @@ const ConeDetail = () => {
   };
 
   return (
-    <div className="bg-background text-foreground font-sans overflow-hidden">
-      
-      {/* BREADCRUMB */}
-      <div className="max-w-[1180px] mx-auto px-6 md:px-8 py-8 mt-24">
-        <div className="font-sans text-[11px] text-muted-foreground uppercase tracking-widest">
-          <Link to="/" className="hover:text-foreground transition-colors pb-0.5 border-b border-transparent hover:border-foreground">Home</Link> / <Link to="/pre-rolled-cones" className="hover:text-foreground transition-colors pb-0.5 border-b border-transparent hover:border-foreground">Pre-Rolled Cones</Link> / {data.name}
-        </div>
-      </div>
+    <div className="pt-[73px] md:pt-[115px] bg-background text-foreground font-sans overflow-hidden">
+      <Breadcrumb
+        items={[
+          { label: "Pre-Rolled Cones", href: "/pre-rolled-cones" },
+          { label: data.name },
+        ]}
+      />
 
       {/* HERO SECTION */}
-      <section className="pt-4 pb-14">
+      <section className="py-16 md:py-24">
         <div className="max-w-[1180px] mx-auto px-6 md:px-8">
           <div className="grid md:grid-cols-[0.86fr_1.14fr] gap-10 md:gap-[70px] items-center">
             <motion.div initial="initial" whileInView="whileInView" viewport={{ once: true }} variants={stagger}>

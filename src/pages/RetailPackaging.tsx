@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { motion, Variants } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight, Box, Cylinder, Disc, Grid3x3, LayoutTemplate, Layers } from "lucide-react";
+import Breadcrumb from "../components/Breadcrumb";
 import Footer from "../components/Footer";
 
 const stagger: Variants = {
@@ -61,9 +62,11 @@ const RetailPackaging = () => {
   }, [activeSection]);
 
   return (
-    <div className="min-h-screen bg-background flex flex-col">
+    <div className="pt-[73px] md:pt-[115px] min-h-screen bg-background flex flex-col">
+      <Breadcrumb items={[{ label: "Retail & Packaging" }]} />
+
       {/* HERO SECTION */}
-      <section className="pt-32 pb-16 md:pb-24 border-b border-border">
+      <section className="py-16 md:py-24 border-b border-border">
         <div className="max-w-[1200px] mx-auto px-6 md:px-10">
           <div className="grid md:grid-cols-[0.87fr_1.13fr] gap-12 md:gap-16 items-center">
             <motion.div variants={stagger} initial="hidden" animate="show">

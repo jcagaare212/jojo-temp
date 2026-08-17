@@ -1,5 +1,6 @@
 import { motion, Variants } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import Breadcrumb from '../components/Breadcrumb';
 
 export default function Consultation() {
   const stagger: Variants = {
@@ -18,15 +19,11 @@ export default function Consultation() {
   };
 
   return (
-    <div className="bg-background text-foreground overflow-hidden font-sans">
-      <div className="max-w-[1400px] mx-auto px-6 md:px-12 py-8 mt-24">
-        <div className="font-sans text-[11.5px] text-muted-foreground uppercase tracking-widest">
-          <Link to="/" className="hover:text-foreground transition-colors pb-0.5 border-b border-transparent hover:border-foreground">Home</Link> / Consultation
-        </div>
-      </div>
+    <div className="pt-[73px] md:pt-[115px] bg-background text-foreground overflow-hidden font-sans">
+      <Breadcrumb items={[{ label: "Consultation" }]} />
 
       {/* PAGE HERO */}
-      <section className="pt-10 pb-20">
+      <section className="py-16 md:py-24">
         <motion.div className="max-w-[800px] mx-auto text-center px-6" initial="initial" whileInView="whileInView" viewport={{ once: true }} variants={stagger}>
           <motion.div className="eyebrow center mb-6" variants={fadeInUp}>
             Complimentary Support

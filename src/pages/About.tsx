@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { motion, Variants } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
+import Breadcrumb from "../components/Breadcrumb";
 
 const About = () => {
   const { hash } = useLocation();
@@ -29,17 +30,11 @@ const About = () => {
   };
 
   return (
-    <div className="bg-background text-foreground overflow-hidden font-sans">
-      
-      {/* BREADCRUMB */}
-      <div className="max-w-[1180px] mx-auto px-6 md:px-8 py-8 mt-24">
-        <div className="font-sans text-[11px] text-muted-foreground uppercase tracking-widest">
-          <Link to="/" className="hover:text-foreground transition-colors pb-0.5 border-b border-transparent hover:border-foreground">Home</Link> / About Us
-        </div>
-      </div>
+    <div className="pt-[73px] md:pt-[115px] bg-background text-foreground overflow-hidden font-sans">
+      <Breadcrumb items={[{ label: "About Us" }]} />
 
       {/* PAGE HERO */}
-      <section className="pt-4 pb-14">
+      <section className="py-16 md:py-24">
         <motion.div className="max-w-[1180px] mx-auto text-center px-6 md:px-8" initial="initial" whileInView="whileInView" viewport={{ once: true }} variants={stagger}>
           <motion.div className="eyebrow center justify-center mb-6" variants={fadeInUp}>
             Our Story
