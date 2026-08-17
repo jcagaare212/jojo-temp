@@ -51,6 +51,15 @@ const RetailPackaging = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (activeSection) {
+      const navEl = document.getElementById(`nav-${activeSection}`);
+      if (navEl) {
+        navEl.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+      }
+    }
+  }, [activeSection]);
+
   return (
     <div className="min-h-screen bg-background flex flex-col">
       {/* HERO SECTION */}
@@ -128,39 +137,9 @@ const RetailPackaging = () => {
         </div>
       </section>
 
-      {/* FORMAT NAV */}
-      <nav className="sticky top-[73px] md:top-[85px] z-40 border-b border-border bg-white/95 backdrop-blur-md w-full shadow-sm">
-        <div className="flex w-full overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
-          {[
-            { id: '#tins', name: 'Metal Tins', icon: Box },
-            { id: '#paper-tubes', name: 'Paper Tubes', icon: Cylinder },
-            { id: '#jars', name: 'Clear Jars', icon: Disc },
-            { id: '#individual', name: 'Low-Count Boxes', icon: Grid3x3 },
-            { id: '#premium-boxes', name: 'Premium Cartons', icon: LayoutTemplate },
-            { id: '#hanging', name: 'Hanging Packs', icon: Box },
-            { id: '#outer', name: 'Display & Master', icon: Layers },
-          ].map((nav, i) => {
-            const isActive = activeSection === nav.id.slice(1);
-            const Icon = nav.icon;
-            return (
-              <a 
-                key={i} 
-                href={nav.id} 
-                className={`flex-1 min-w-[120px] md:min-w-[140px] py-4 px-2 font-sans text-[10px] md:text-[11px] uppercase tracking-[0.04em] transition-all flex flex-col items-center justify-center shrink-0 border-r border-border last:border-r-0 group
-                  ${isActive ? 'bg-secondary text-foreground' : 'text-muted-foreground hover:bg-secondary/50 hover:text-foreground'}`}
-              >
-                <Icon size={14} className={`mb-2 transition-colors ${isActive ? 'text-foreground' : 'text-muted-foreground group-hover:text-foreground'}`} />
-                <span className={`transition-colors text-center ${isActive ? 'text-foreground font-medium' : 'group-hover:text-foreground'}`}>
-                  {nav.name}
-                </span>
-              </a>
-            );
-          })}
-        </div>
-      </nav>
 
       {/* SECTION: TINS */}
-      <section id="tins" className="py-24 bg-white border-b border-border scroll-mt-20">
+      <section id="tins" className="py-24 bg-white border-b border-border scroll-mt-[160px]">
         <div className="max-w-[1200px] mx-auto px-6 md:px-10">
           <div className="max-w-[700px] mb-16">
             <h2 className="font-['Cormorant_Garamond'] text-[clamp(34px,4vw,50px)] font-medium leading-[1.05] mb-6">Metal Tin Packaging</h2>
@@ -195,7 +174,7 @@ const RetailPackaging = () => {
       </section>
 
       {/* SECTION: PAPER TUBES */}
-      <section id="paper-tubes" className="py-24 bg-secondary border-b border-border scroll-mt-20">
+      <section id="paper-tubes" className="py-24 bg-secondary border-b border-border scroll-mt-[160px]">
         <div className="max-w-[1200px] mx-auto px-6 md:px-10">
           <div className="max-w-[700px] mb-16">
             <h2 className="font-['Cormorant_Garamond'] text-[clamp(34px,4vw,50px)] font-medium leading-[1.05] mb-6">Rigid Paper Tube Packaging</h2>
@@ -223,7 +202,7 @@ const RetailPackaging = () => {
       </section>
 
       {/* SECTION: JARS */}
-      <section id="jars" className="py-24 bg-white border-b border-border scroll-mt-20">
+      <section id="jars" className="py-24 bg-white border-b border-border scroll-mt-[160px]">
         <div className="max-w-[1200px] mx-auto px-6 md:px-10">
           <div className="grid md:grid-cols-[0.8fr_1.2fr] gap-16 items-center">
             <motion.div variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true, margin: "-50px" }}>
@@ -244,7 +223,7 @@ const RetailPackaging = () => {
       </section>
 
       {/* SECTION: INDIVIDUAL / LOW COUNT */}
-      <section id="individual" className="py-24 bg-secondary border-b border-border scroll-mt-20">
+      <section id="individual" className="py-24 bg-secondary border-b border-border scroll-mt-[160px]">
         <div className="max-w-[1200px] mx-auto px-6 md:px-10">
           <div className="max-w-[700px] mb-16">
             <h2 className="font-['Cormorant_Garamond'] text-[clamp(34px,4vw,50px)] font-medium leading-[1.05] mb-6">Compact Retail Packaging for Pre-Rolled Cones</h2>
@@ -283,7 +262,7 @@ const RetailPackaging = () => {
       </section>
 
       {/* SECTION: PREMIUM BOXES */}
-      <section id="premium-boxes" className="py-24 bg-white border-b border-border scroll-mt-20">
+      <section id="premium-boxes" className="py-24 bg-white border-b border-border scroll-mt-[160px]">
         <div className="max-w-[1200px] mx-auto px-6 md:px-10">
           <div className="max-w-[700px] mb-16">
             <h2 className="font-['Cormorant_Garamond'] text-[clamp(34px,4vw,50px)] font-medium leading-[1.05] mb-6">Premium Pre-Rolled Cone Retail Boxes</h2>
@@ -327,7 +306,7 @@ const RetailPackaging = () => {
       </section>
 
       {/* SECTION: HANGING */}
-      <section id="hanging" className="py-24 bg-secondary border-b border-border scroll-mt-20">
+      <section id="hanging" className="py-24 bg-secondary border-b border-border scroll-mt-[160px]">
         <div className="max-w-[1200px] mx-auto px-6 md:px-10">
           <div className="grid md:grid-cols-[1.1fr_0.9fr] gap-16 items-center">
             <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true, margin: "-50px" }} className="border border-border p-6 bg-white overflow-hidden flex items-center justify-center">
@@ -348,7 +327,7 @@ const RetailPackaging = () => {
       </section>
 
       {/* SECTION: OUTER */}
-      <section id="outer" className="py-24 bg-white border-b border-border scroll-mt-20">
+      <section id="outer" className="py-24 bg-white border-b border-border scroll-mt-[160px]">
         <div className="max-w-[1200px] mx-auto px-6 md:px-10">
           <div className="max-w-[700px] mb-16">
             <h2 className="font-['Cormorant_Garamond'] text-[clamp(34px,4vw,50px)] font-medium leading-[1.05] mb-6">Build the Packaging Hierarchy Beyond the Individual Pack</h2>

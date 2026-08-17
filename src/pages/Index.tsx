@@ -1,7 +1,52 @@
 import { motion, Variants } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 
-export default function Index() {
+const Index = () => {
+  const [activeSection, setActiveSection] = useState("");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sectionIds = ['cones', 'bulk', 'paper'];
+      let isAnySectionInView = false;
+      const offset = window.innerHeight * 0.4;
+
+      for (const id of sectionIds) {
+        const el = document.getElementById(id);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          if (rect.top <= window.innerHeight - offset && rect.bottom >= offset) {
+            setActiveSection(id);
+            isAnySectionInView = true;
+            break;
+          }
+        }
+      }
+
+      if (!isAnySectionInView) {
+        setActiveSection("");
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    if (activeSection) {
+      const navEl = document.getElementById(`nav-${activeSection}`);
+      if (navEl && navEl.parentElement) {
+        const container = navEl.parentElement;
+        container.scrollTo({
+          left: navEl.offsetLeft - (container.clientWidth / 2) + (navEl.clientWidth / 2),
+          behavior: 'smooth'
+        });
+      }
+    }
+  }, [activeSection]);
+
   const stagger: Variants = {
     initial: {},
     whileInView: {
@@ -80,18 +125,49 @@ export default function Index() {
         </motion.div>
       </section>
 
+      {/* STATS SECTION */}
+      <section className="py-16 md:py-20 border-b border-border bg-white">
+        <div className="container px-4 md:px-6 max-w-[1200px] mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-border">
+            <div className="py-8 md:py-0 text-center flex flex-col justify-center">
+              <div className="text-4xl md:text-5xl font-serif mb-2">2014</div>
+              <div className="text-[10px] font-sans font-medium tracking-widest text-muted-foreground uppercase">Manufacturing Since</div>
+            </div>
+            <div className="py-8 md:py-0 text-center flex flex-col justify-center">
+              <div className="text-4xl md:text-5xl font-serif mb-2">10M+</div>
+              <div className="text-[10px] font-sans font-medium tracking-widest text-muted-foreground uppercase">Cones Rolled</div>
+            </div>
+            <div className="py-8 md:py-0 text-center flex flex-col justify-center">
+              <div className="text-4xl md:text-5xl font-serif mb-2">100%</div>
+              <div className="text-[10px] font-sans font-medium tracking-widest text-muted-foreground uppercase">Hand-rolled By Women</div>
+            </div>
+            <div className="py-8 md:py-0 text-center flex flex-col justify-center">
+              <div className="text-4xl md:text-5xl font-serif mb-2">5</div>
+              <div className="text-[10px] font-sans font-medium tracking-widest text-muted-foreground uppercase">Standard Sizes</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CHAPTER STRIP */}
-      <nav className="border-b border-border bg-white w-full">
+      <nav className="sticky top-[73px] md:top-[115px] z-40 border-b border-border bg-white w-full shadow-sm">
         <div className="flex w-full overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
           {[
-            { num: '01', title: 'Pre-Rolled Cones', id: '#cones' },
-            { num: '02', title: 'Bulk Cones', id: '#bulk' },
-            { num: '03', title: 'Rolling Papers', id: '#paper' },
-            { num: '04', title: 'Retail & Packaging', id: '/retail-packaging' },
-            { num: '05', title: 'Private Label & Branding', id: '/#private-label' },
-            { num: '06', title: 'Consultation', id: '/consultation' },
+            { num: '01', title: 'Pre-Rolled Cones', id: 'cones', href: '#cones' },
+            { num: '02', title: 'Bulk Cones', id: 'bulk-link', href: '/bulk-cones' },
+            { num: '03', title: 'Rolling Papers', id: 'paper', href: '#paper' },
+            { num: '04', title: 'Retail & Packaging', id: 'retail-link', href: '/retail-packaging' },
+            { num: '05', title: 'Private Label & Branding', id: 'private-link', href: '/private-label' },
+            { num: '06', title: 'Consultation', id: 'consultation-link', href: '/consultation' },
           ].map((ch, i) => (
-            <a key={i} href={ch.id} className="flex-1 min-w-[200px] py-4 px-4 font-sans text-[11.5px] tracking-[0.04em] text-muted-foreground hover:bg-secondary hover:text-foreground transition-colors flex items-center justify-center shrink-0 border-r border-border last:border-r-0">
+            <a 
+              key={i} 
+              id={`nav-${ch.id}`}
+              href={ch.href} 
+              className={`flex-1 min-w-[200px] py-6 px-4 font-sans text-[11.5px] tracking-[0.04em] transition-colors flex items-center justify-center shrink-0 border-r border-border last:border-r-0 ${
+                activeSection === ch.id ? 'bg-secondary text-foreground font-bold' : 'text-muted-foreground hover:bg-secondary hover:text-foreground'
+              }`}
+            >
               <b className="text-foreground font-medium mr-2">{ch.num}</b>{ch.title}
             </a>
           ))}
@@ -309,4 +385,6 @@ export default function Index() {
       </section>
     </div>
   );
-}
+};
+
+export default Index;
