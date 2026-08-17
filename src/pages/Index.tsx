@@ -87,7 +87,7 @@ export default function Index() {
             { num: '01', title: 'Pre-Rolled Cones', id: '#cones' },
             { num: '02', title: 'Bulk Cones', id: '#bulk' },
             { num: '03', title: 'Rolling Papers', id: '#paper' },
-            { num: '04', title: 'Retail & Packaging', id: '#retail' },
+            { num: '04', title: 'Retail & Packaging', id: '/retail-packaging' },
             { num: '05', title: 'Private Label & Branding', id: '/#private-label' },
             { num: '06', title: 'Consultation', id: '/consultation' },
           ].map((ch, i) => (

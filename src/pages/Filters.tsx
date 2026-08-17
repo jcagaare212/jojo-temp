@@ -316,7 +316,6 @@ export default function Filters() {
         </div>
       </section>
 
-      <Footer />
     </div>
   );
 }

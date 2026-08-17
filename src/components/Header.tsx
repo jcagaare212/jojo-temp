@@ -30,7 +30,7 @@ export default function Header() {
     { name: 'Bulk Cones', href: '/bulk-cones' },
     { name: 'Filter Tips', href: '/filters' },
     { name: 'Rolling Papers', href: '/#paper' },
-    { name: 'Retail & Packaging', href: '/#retail' },
+    { name: 'Retail & Packaging', href: '/retail-packaging' },
     { name: 'Private Label & Branding', href: '/private-label' },
     { name: 'Consultation', href: '/consultation' },
     { name: 'About', href: '/about' },
