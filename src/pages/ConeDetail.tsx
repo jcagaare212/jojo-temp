@@ -66,13 +66,13 @@ const coneData: Record<string, any> = {
 };
 
 const colors = [
-  { name: "Unbleached Brown", paper: "#c89d66", tip: "#b77b3e", img: "/images/products/cones/colors/unbleached-brown.webp" },
-  { name: "Bleached White", paper: "#fbfbfb", tip: "#e2e2e2", img: "/images/products/cones/colors/bleached-white.webp" },
-  { name: "Rose Pink", paper: "#f0b8c6", tip: "#d99fb3", img: "/images/products/cones/colors/rose-pink.webp" },
-  { name: "Mint Green", paper: "#a4d3b6", tip: "#8bc2a2", img: "/images/products/cones/colors/mint-green.webp" },
-  { name: "Lavender Purple", paper: "#b4a0cd", tip: "#9a87b5", img: "/images/products/cones/colors/lavender-purple.webp" },
-  { name: "Midnight Black", paper: "#2b2b2b", tip: "#1c1c1c", img: "/images/products/cones/colors/midnight-black.webp" },
-  { name: "Ocean Blue", paper: "#a4c4e0", tip: "#8caacf", img: "/images/products/cones/colors/ocean-blue.webp" }
+  { name: "Unbleached", paper: "#c89d66", tip: "#b77b3e", img: "/images/products/cones/colors/unbleached-brown.webp" },
+  { name: "Bleached", paper: "#fbfbfb", tip: "#e2e2e2", img: "/images/products/cones/colors/bleached-white.webp" },
+  { name: "Pink", paper: "#f0b8c6", tip: "#d99fb3", img: "/images/products/cones/colors/rose-pink.webp" },
+  { name: "Green", paper: "#a4d3b6", tip: "#8bc2a2", img: "/images/products/cones/colors/mint-green.webp" },
+  { name: "Purple", paper: "#b4a0cd", tip: "#9a87b5", img: "/images/products/cones/colors/lavender-purple.webp" },
+  { name: "Black", paper: "#2b2b2b", tip: "#1c1c1c", img: "/images/products/cones/colors/midnight-black.webp" },
+  { name: "Blue", paper: "#a4c4e0", tip: "#8caacf", img: "/images/products/cones/colors/ocean-blue.webp" }
 ];
 
 const coneOrder = ["dogwalker", "mini", "1-1-4-size", "98mm-special", "king-size"];
@@ -149,28 +149,14 @@ const ConeDetail = () => {
         </div>
       </section>
 
-      {/* SPECS GRID */}
-      <section className="py-8 border-y border-border">
-        <div className="max-w-[1180px] mx-auto px-6 md:px-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-5">
-            {Object.entries(data.specs).map(([key, value], i) => (
-              <div key={key} className={`md:border-r border-border md:pr-4 ${i === 3 ? 'md:border-r-0' : ''}`}>
-                <span className="block mb-2 font-sans text-[9px] uppercase tracking-[0.07em] text-muted-foreground">{key}</span>
-                <strong className="font-['Cormorant_Garamond'] text-[20px] font-medium whitespace-pre-line">
-                  {value as string}
-                </strong>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+
 
       {/* PAPER OPTIONS */}
       <section className="py-20">
         <div className="max-w-[1180px] mx-auto px-6 md:px-8">
           <div className="max-w-[660px] mb-10">
             <h2 className="font-['Cormorant_Garamond'] text-[clamp(28px,3.5vw,36px)] font-medium leading-[1.06] mb-3">Paper Formulations</h2>
-            <p className="text-[16px] text-muted-foreground max-w-[56ch]">Our {data.name} cones can be produced using four distinct paper bases, all sourced from premium French and Austrian mills to guarantee an even, slow burn.</p>
+            <p className="text-[16px] text-muted-foreground max-w-[56ch]">Our {data.name} cones can be produced using four distinct paper bases to guarantee an even, slow burn.</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
             {['Wood Pulp', 'Rice Paper', 'Hemp Paper', 'Flax Paper'].map((paper, i) => (
@@ -193,17 +179,17 @@ const ConeDetail = () => {
           
           <div className="mt-8">
             {/* Cone Visualizer Stage */}
-            <div className="min-h-[300px] md:min-h-[480px] flex items-center justify-center py-8 relative">
-              <AnimatePresence mode="wait">
+            <div className="h-[300px] md:h-[480px] w-full relative mx-auto max-w-[900px]">
+              <AnimatePresence>
                 <motion.img 
                   key={activeColor.name}
                   src={activeColor.img}
                   alt={activeColor.name}
-                  className="w-full max-w-[900px] object-contain mix-blend-multiply"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                  transition={{ duration: 0.4, ease: "easeOut" }}
+                  className="absolute inset-0 w-full h-full object-contain mix-blend-multiply"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
                 />
               </AnimatePresence>
             </div>
@@ -219,11 +205,14 @@ const ConeDetail = () => {
                     aria-label={`Select ${c.name}`}
                   />
                   <small className={`font-sans text-[9px] uppercase tracking-wider transition-colors duration-300 ${activeColor.name === c.name ? "text-foreground font-semibold" : "text-muted-foreground group-hover:text-foreground"}`}>
-                    {c.name.split(' ')[0]}
+                    {c.name}
                   </small>
                 </div>
               ))}
             </div>
+            <p className="text-center text-[10px] uppercase tracking-widest text-muted-foreground mt-10 max-w-[70ch] mx-auto font-sans opacity-70">
+              * This is for reference. Actual colour may vary in real life based on paper type and tip options chosen.
+            </p>
           </div>
         </div>
       </section>
@@ -282,18 +271,19 @@ const ConeDetail = () => {
             {coneOrder.map((id, index) => {
               const item = coneData[id];
               const isCurrent = id === sizeId;
+              const scaleClasses = ['scale-[0.70]', 'scale-[0.80]', 'scale-[0.90]', 'scale-[1.00]', 'scale-[1.10]'];
               return (
                 <div 
                   key={id} 
                   onClick={() => navigate(`/pre-rolled-cones/${id}`)}
-                  className={`p-4 md:border-r border-b md:border-b-0 border-border cursor-pointer transition-colors ${isCurrent ? 'bg-secondary' : 'hover:bg-secondary'} ${index === coneOrder.length - 1 ? 'md:border-r-0' : ''} ${index % 2 === 0 ? 'border-r' : 'border-r-0'}`}
+                  className={`p-4 md:border-r border-b md:border-b-0 border-border cursor-pointer transition-all duration-300 ${isCurrent ? 'bg-secondary ring-1 ring-inset ring-foreground/10 shadow-sm relative z-10' : 'bg-white hover:bg-secondary/50'} ${index === coneOrder.length - 1 ? 'md:border-r-0' : ''} ${index % 2 === 0 ? 'border-r' : 'border-r-0'}`}
                 >
                   <div className="h-[120px] flex items-center justify-center mb-3">
-                    <img src={item.img} alt={item.name} className="max-w-full max-h-full object-contain mix-blend-multiply" />
+                    <img src={item.img} alt={item.name} className={`max-w-full max-h-full object-contain mix-blend-multiply transition-transform duration-500 ${scaleClasses[index]}`} />
                   </div>
-                  <div className="border-t border-border pt-2.5">
-                    <span className="block font-sans text-[8px] uppercase tracking-[0.08em] text-muted-foreground mb-1">{item.sizeNum.split(' ')[0]} {item.sizeNum.split(' ')[1]}</span>
-                    <strong className="block font-['Cormorant_Garamond'] text-[17px] font-medium">{item.name}</strong>
+                  <div className={`border-t pt-2.5 ${isCurrent ? 'border-foreground/20' : 'border-border'}`}>
+                    <span className={`block font-sans text-[8px] uppercase tracking-[0.08em] mb-1 ${isCurrent ? 'text-foreground/80' : 'text-muted-foreground'}`}>{item.sizeNum.split(' ')[0]} {item.sizeNum.split(' ')[1]}</span>
+                    <strong className={`block font-['Cormorant_Garamond'] text-[17px] font-medium ${isCurrent ? 'text-foreground' : 'text-foreground/90'}`}>{item.name}</strong>
                     <small className="block mt-0.5 font-sans text-[9px] text-muted-foreground">{item.specs.Dimensions.split('\n')[0]}</small>
                   </div>
                 </div>
