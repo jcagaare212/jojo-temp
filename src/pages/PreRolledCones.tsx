@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { motion, Variants } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
 import Breadcrumb from "../components/Breadcrumb";
+import SEO from "../components/SEO";
 
 const sizes = [
   {
@@ -74,6 +75,24 @@ const PreRolledCones = () => {
 
   return (
     <div className="pt-[73px] md:pt-[115px] bg-background text-foreground overflow-hidden font-sans">
+      <SEO
+        title="Pre-Rolled Cones Manufacturer | Bulk & Custom OEM Sizes"
+        description="Hand-crafted pre-rolled cones with integrated filter tips in 5 standard sizes (DogWalker, Mini, 1¼, 98mm Special, King Size) and custom dimensions. Precision airflow and paper varieties."
+        canonical="https://jojopapers.com/pre-rolled-cones"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          "name": "JOJO Pre-Rolled Cones Formats",
+          "description": "Standard hand-formed pre-rolled cone sizes with integrated filter tips.",
+          "itemListElement": sizes.map((s, idx) => ({
+            "@type": "ListItem",
+            "position": idx + 1,
+            "name": `${s.name} (${s.size})`,
+            "description": s.desc,
+            "url": `https://jojopapers.com/pre-rolled-cones/${s.id}`
+          }))
+        }}
+      />
       <Breadcrumb items={[{ label: "Pre-Rolled Cones" }]} />
 
       {/* PAGE HERO */}

@@ -2,6 +2,7 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { motion, Variants, AnimatePresence } from "framer-motion";
 import Breadcrumb from "../components/Breadcrumb";
+import SEO from "../components/SEO";
 
 const coneData: Record<string, any> = {
   "dogwalker": {
@@ -109,6 +110,27 @@ const ConeDetail = () => {
 
   return (
     <div className="pt-[73px] md:pt-[115px] bg-background text-foreground font-sans overflow-hidden">
+      <SEO
+        title={`${data.name} Pre-Rolled Cones (${data.sizeNum})`}
+        description={`Precision-crafted ${data.name} pre-rolled cones (${data.sizeNum}). Available in Wood Pulp, Rice, Hemp, and Flax paper bases with Spiral or M-Shape filter tips.`}
+        canonical={`https://jojopapers.com/pre-rolled-cones/${sizeId}`}
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Product",
+          "name": `JOJO ${data.name} Pre-Rolled Cones`,
+          "description": data.desc || data.tagline,
+          "brand": {
+            "@type": "Brand",
+            "name": "JOJO Papers"
+          },
+          "manufacturer": {
+            "@type": "Organization",
+            "name": "JOJO Papers"
+          },
+          "size": data.sizeNum,
+          "material": "Wood Pulp, Rice, Hemp, Flax"
+        }}
+      />
       <Breadcrumb
         items={[
           { label: "Pre-Rolled Cones", href: "/pre-rolled-cones" },

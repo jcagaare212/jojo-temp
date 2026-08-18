@@ -1,0 +1,30 @@
+# JOJO Papers
+
+> Premier OEM & Private-Label Manufacturer for Pre-Rolled Cones, Rolling Papers, Filter Tips, and Custom Packaging. Made in India since 2014.
+
+JOJO Papers specializes in high-volume, precision contract manufacturing for legal cannabis dispensaries, multi-state operators (MSOs), commercial filling operations, tobacco distributors, and global smoking accessories brands.
+
+## Core Capabilities & Product Lines
+
+- [Pre-Rolled Cones](https://jojopapers.com/pre-rolled-cones): Hand-crafted pre-rolled cones with integrated filter tips in 5 standard sizes (DogWalker 70mm, Mini 78mm, 1¼ Size 84mm, 98mm Special 98mm, King Size 109mm) and custom dimensions.
+- [Bulk Cones](https://jojopapers.com/bulk-cones): High-count tower packs and stackable trays engineered for commercial vibration machines and high-speed filling lines.
+- [Rolling Papers](https://jojopapers.com/rolling-papers): Premium rolling papers in 4 paper bases (Wood Pulp, Rice, Hemp, Flax) and 7 colour options (Unbleached Brown, Bleached White, Pink, Blue, Green, Purple, Black) in 1¼ and King Size Slim booklets.
+- [Filter Tips](https://jojopapers.com/filters): Spiral and M-Shape tip constructions with precision airflow control, unbleached/bleached papers, and custom tip printing (Logo Only, Logo + Text, Pattern).
+- [Retail & Packaging](https://jojopapers.com/retail-packaging): Custom booklet formats, magnetic closure boxes, slider drawer boxes, rigid paper tubes, embossed metal tins, counter display units, and master shippers.
+- [Private Label & OEM Builder](https://jojopapers.com/private-label): Interactive 7-step product configurator to build and export production briefs for pre-rolled cones and rolling papers.
+- [Quality Control & Consultation](https://jojopapers.com/consultation): Independent first-level quality control review in India, inspection checklists, and pre-shipment specification verification.
+
+## Company Information
+
+- **Website**: https://jojopapers.com
+- **Headquarters**: Vasant Kunj, New Delhi, India
+- **Phone**: +91 99715 08200
+- **Email**: info@jojopapers.com
+- **Instagram**: https://instagram.com/jojopapers.co
+- **WhatsApp**: https://wa.me/919971508200
+- **Established**: 2014
+
+## Extended Documentation
+
+- [Full Capabilities and Specifications (llms-full.txt)](https://jojopapers.com/llms-full.txt)
+- [XML Sitemap](https://jojopapers.com/sitemap.xml)

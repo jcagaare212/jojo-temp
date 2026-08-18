@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
 export interface BreadcrumbItem {
   label: string;
@@ -11,6 +11,46 @@ interface BreadcrumbProps {
 }
 
 export default function Breadcrumb({ items }: BreadcrumbProps) {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    // Generate Google-compliant schema.org BreadcrumbList
+    const itemListElement = [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://jojopapers.com"
+      },
+      ...items.map((item, idx) => ({
+        "@type": "ListItem",
+        "position": idx + 2,
+        "name": item.label,
+        ...(item.href ? { "item": `https://jojopapers.com${item.href}` } : {})
+      }))
+    ];
+
+    const breadcrumbSchema = {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": itemListElement
+    };
+
+    const existingScript = document.getElementById("breadcrumb-json-ld");
+    if (existingScript) existingScript.remove();
+
+    const script = document.createElement("script");
+    script.id = "breadcrumb-json-ld";
+    script.type = "application/ld+json";
+    script.text = JSON.stringify(breadcrumbSchema);
+    document.head.appendChild(script);
+
+    return () => {
+      const s = document.getElementById("breadcrumb-json-ld");
+      if (s) s.remove();
+    };
+  }, [items, pathname]);
+
   return (
     <div className="border-b border-border bg-white">
       <div className="max-w-[1180px] mx-auto px-6 md:px-8 py-3.5">

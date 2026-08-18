@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Breadcrumb from '../components/Breadcrumb';
+import SEO from '../components/SEO';
 
 interface ColourInfo {
   key: string;
@@ -76,6 +77,23 @@ const RollingPapers = () => {
 
   return (
     <div className="pt-[73px] md:pt-[115px] bg-background text-foreground">
+      <SEO
+        title="Custom Rolling Papers Manufacturer | Wood Pulp, Rice, Hemp & Flax"
+        description="Manufacturer of custom rolling papers in 4 paper bases and 7 colour options across 1¼ and King Size Slim formats. Complete booklet branding, filter tips, and custom retail packaging."
+        canonical="https://jojopapers.com/rolling-papers"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Product",
+          "name": "JOJO Custom Rolling Papers",
+          "description": "High-grade rolling papers manufactured in Wood Pulp, Rice, Hemp, and Flax fibers across 7 colours and multiple booklet formats.",
+          "brand": {
+            "@type": "Brand",
+            "name": "JOJO Papers"
+          },
+          "material": "Wood Pulp, Rice, Hemp, Flax",
+          "color": "Unbleached Brown, Bleached White, Pink, Blue, Green, Purple, Black"
+        }}
+      />
       <Breadcrumb items={[{ label: "Rolling Papers" }]} />
 
       {/* HERO SECTION */}

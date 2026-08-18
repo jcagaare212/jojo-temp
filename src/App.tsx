@@ -5,9 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Layout from "./components/Layout";
 import Index from "./pages/Index";
-import ProductDetail from "./pages/ProductDetail";
 import About from "./pages/About";
-import Products from "./pages/Products";
 import NotFound from "./pages/NotFound";
 import PrivateLabel from "./pages/PrivateLabel";
 import Contact from "./pages/Contact";
@@ -30,8 +28,6 @@ const App = () => (
         <Layout>
           <Routes>
             <Route path="/" element={<Index />} />
-            <Route path="/products" element={<Products />} />
-            <Route path="/products/:productId" element={<ProductDetail />} />
             <Route path="/about" element={<About />} />
             <Route path="/private-label" element={<PrivateLabel />} />
             <Route path="/contact" element={<Contact />} />

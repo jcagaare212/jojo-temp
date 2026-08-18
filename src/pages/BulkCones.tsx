@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, CheckCircle2, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Breadcrumb from "../components/Breadcrumb";
+import SEO from "../components/SEO";
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 20 },
@@ -64,6 +65,27 @@ const BulkCones = () => {
 
   return (
     <div className="pt-[73px] md:pt-[115px]">
+      <SEO
+        title="Bulk Pre-Rolled Cones & Tower Packs | High-Volume Wholesale Supply"
+        description="High-count pre-rolled cones supplied in organized tower packs (800ct, 900ct, 1,000ct) for distributors, commercial fillers, and volume brands. Fast shipping worldwide."
+        canonical="https://jojopapers.com/bulk-cones"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Product",
+          "name": "JOJO Bulk Pre-Rolled Cones (Tower Packs)",
+          "description": "High-count pre-rolled cones packed in protective towers for automated and commercial filling operations.",
+          "brand": {
+            "@type": "Brand",
+            "name": "JOJO Papers"
+          },
+          "offers": {
+            "@type": "AggregateOffer",
+            "priceCurrency": "USD",
+            "offerCount": "5",
+            "availability": "https://schema.org/InStock"
+          }
+        }}
+      />
       <Breadcrumb items={[{ label: "Bulk Cones" }]} />
 
       {/* HERO SECTION */}

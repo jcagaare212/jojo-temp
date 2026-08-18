@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import Breadcrumb from '../components/Breadcrumb';
+import SEO from '../components/SEO';
 
 interface StepOption {
   value: string;
@@ -333,8 +334,23 @@ export default function PrivateLabel() {
   };
 
   return (
-    <div className="pt-[73px] md:pt-[115px] bg-background text-foreground">
-      <Breadcrumb items={[{ label: "Private Label & Branding" }]} />
+    <div className="pt-[73px] md:pt-[115px] bg-[#fdfcf9] text-[#111] font-sans antialiased min-h-screen">
+      <SEO
+        title="OEM Rolling Papers & Private Label Interactive Builder"
+        description="Interactive 7-step private-label product configurator. Build, customize, and export manufacturing briefs for pre-rolled cones and rolling paper lines."
+        canonical="https://jojopapers.com/private-label"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "OEM & Private Label Smoking Accessory Manufacturing Brief Builder",
+          "provider": {
+            "@type": "Organization",
+            "name": "JOJO Papers"
+          },
+          "serviceType": "Private Label Contract Manufacturing"
+        }}
+      />
+      <Breadcrumb items={[{ label: "Private Label & OEM" }]} />
 
       {/* HUB HERO */}
       <section className="py-16 md:py-20 border-b border-border bg-white">

@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { motion, Variants } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
 import Breadcrumb from "../components/Breadcrumb";
+import SEO from "../components/SEO";
 
 const About = () => {
   const { hash } = useLocation();
@@ -31,6 +32,27 @@ const About = () => {
 
   return (
     <div className="pt-[73px] md:pt-[115px] bg-background text-foreground overflow-hidden font-sans">
+      <SEO
+        title="About JOJO Papers | Indian Precision Manufacturing Since 2014"
+        description="Founded in 2014 in New Delhi, JOJO Papers combines artisanal hand-craftsmanship with rigorous manufacturing tolerances for global smoking accessory brands."
+        canonical="https://jojopapers.com/about"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "AboutPage",
+          "name": "About JOJO Papers",
+          "description": "Artisanal hand-craftsmanship meets industrial consistency in smoking accessories manufacturing.",
+          "mainEntity": {
+            "@type": "Organization",
+            "name": "JOJO Papers",
+            "foundingDate": "2014",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "New Delhi",
+              "addressCountry": "IN"
+            }
+          }
+        }}
+      />
       <Breadcrumb items={[{ label: "About Us" }]} />
 
       {/* PAGE HERO */}

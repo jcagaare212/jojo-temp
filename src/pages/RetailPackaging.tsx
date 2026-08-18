@@ -3,6 +3,7 @@ import { motion, Variants } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight, Box, Cylinder, Disc, Grid3x3, LayoutTemplate, Layers } from "lucide-react";
 import Breadcrumb from "../components/Breadcrumb";
+import SEO from "../components/SEO";
 import Footer from "../components/Footer";
 
 const stagger: Variants = {
@@ -63,6 +64,21 @@ const RetailPackaging = () => {
 
   return (
     <div className="pt-[73px] md:pt-[115px] min-h-screen bg-background flex flex-col">
+      <SEO
+        title="Custom Rolling Paper & Pre-Rolled Cone Packaging Solutions"
+        description="Retail packaging for pre-rolled cones and rolling papers: drawer boxes, paper tubes, slider packs, embossed metal tins, and counter display units."
+        canonical="https://jojopapers.com/retail-packaging"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "Custom Retail Packaging for Smoking Accessories",
+          "provider": {
+            "@type": "Organization",
+            "name": "JOJO Papers"
+          },
+          "serviceType": "Custom Packaging Manufacturing"
+        }}
+      />
       <Breadcrumb items={[{ label: "Retail & Packaging" }]} />
 
       {/* HERO SECTION */}

@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { motion, Variants } from "framer-motion";
 import { Link } from "react-router-dom";
 import Breadcrumb from "../components/Breadcrumb";
+import SEO from "../components/SEO";
 import Footer from "../components/Footer";
 
 const stagger: Variants = {
@@ -21,6 +22,21 @@ export default function Filters() {
 
   return (
     <div className="pt-[73px] md:pt-[115px] bg-background text-foreground overflow-hidden font-sans">
+      <SEO
+        title="Filter Tips Manufacturer | Spiral & M-Shape Custom Tips"
+        description="Precision-engineered filter tips in Spiral and M-Shape constructions. Custom logo printing, unbleached brown, bleached white, and custom paper colours."
+        canonical="https://jojopapers.com/filters"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Product",
+          "name": "JOJO Precision Filter Tips",
+          "description": "Spiral and M-Shape rolled filter tips engineered for optimal airflow, structural support, and particulate retention.",
+          "brand": {
+            "@type": "Brand",
+            "name": "JOJO Papers"
+          }
+        }}
+      />
       <Breadcrumb items={[{ label: "Filter Tips" }]} />
 
       {/* HERO SECTION */}

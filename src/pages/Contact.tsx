@@ -2,6 +2,7 @@ import B2BForm from "@/components/B2BForm";
 import { Link } from "react-router-dom";
 import { motion, Variants } from "framer-motion";
 import Breadcrumb from "../components/Breadcrumb";
+import SEO from "../components/SEO";
 
 const Contact = () => {
   const stagger: Variants = {
@@ -21,6 +22,31 @@ const Contact = () => {
 
   return (
     <div className="pt-[73px] md:pt-[115px] bg-background text-foreground overflow-hidden font-sans">
+      <SEO
+        title="Contact JOJO Papers | Request Samples & OEM Sourcing Inquiries"
+        description="Get in touch with JOJO Papers for sample requests, MOQ quotes, custom dielines, and contract manufacturing consultations."
+        canonical="https://jojopapers.com/contact"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "ContactPage",
+          "name": "Contact JOJO Papers",
+          "description": "B2B sales, wholesale sample requests, and contract manufacturing consultations.",
+          "mainEntity": {
+            "@type": "LocalBusiness",
+            "name": "JOJO Papers",
+            "image": "https://jojopapers.com/images/products/cones/cones-hero-size-chart.webp",
+            "telephone": "+91 99715 08200",
+            "email": "info@jojopapers.com",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Vasant Kunj",
+              "addressLocality": "New Delhi",
+              "addressRegion": "DL",
+              "addressCountry": "IN"
+            }
+          }
+        }}
+      />
       <Breadcrumb items={[{ label: "Contact" }]} />
 
       {/* PAGE HERO */}

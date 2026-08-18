@@ -1,6 +1,7 @@
 import { motion, Variants } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import Breadcrumb from '../components/Breadcrumb';
+import SEO from '../components/SEO';
 
 export default function Consultation() {
   const stagger: Variants = {
@@ -20,6 +21,21 @@ export default function Consultation() {
 
   return (
     <div className="pt-[73px] md:pt-[115px] bg-background text-foreground overflow-hidden font-sans">
+      <SEO
+        title="Quality Control Consultation & QC Review Framework in India"
+        description="Independent first-level quality control reviews and pre-shipment inspections in India. Verify paper grammage, burn rate, tolerances, and packaging before goods move."
+        canonical="https://jojopapers.com/consultation"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "Quality Control Consultation and Sourcing Review",
+          "provider": {
+            "@type": "Organization",
+            "name": "JOJO Papers"
+          },
+          "serviceType": "Quality Control & Sourcing Inspection"
+        }}
+      />
       <Breadcrumb items={[{ label: "Consultation" }]} />
 
       {/* PAGE HERO */}

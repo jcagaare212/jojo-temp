@@ -1,6 +1,7 @@
 import { motion, Variants } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import SEO from '../components/SEO';
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState("");
@@ -67,6 +68,34 @@ const Index = () => {
 
   return (
     <div className="bg-background text-foreground overflow-hidden font-sans">
+      <SEO
+        title="JOJO Papers — B2B OEM Rolling Papers & Pre-Rolled Cones Manufacturer"
+        description="Premier B2B contract manufacturer for pre-rolled cones, rolling papers, filter tips, and custom retail packaging. Supplying dispensaries and volume brands worldwide since 2014."
+        canonical="https://jojopapers.com"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "serviceType": "B2B OEM Rolling Paper and Pre-Rolled Cone Manufacturing",
+          "provider": {
+            "@type": "Organization",
+            "name": "JOJO Papers",
+            "url": "https://jojopapers.com",
+            "email": "info@jojopapers.com",
+            "telephone": "+91 99715 08200"
+          },
+          "areaServed": "Worldwide",
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "JOJO Manufacturing Services",
+            "itemListElement": [
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom Pre-Rolled Cones" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom Rolling Paper Booklets" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Bulk Cone Tower Packs" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom Retail Packaging" } }
+            ]
+          }
+        }}
+      />
       
       {/* HERO */}
       <section className="pt-32 pb-16">
