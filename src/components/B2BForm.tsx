@@ -30,7 +30,7 @@ const B2BForm = () => {
     const formData = new FormData(e.currentTarget);
     
     // Send form data via AJAX to FormSubmit
-    fetch("https://formsubmit.co/ajax/your@email.com", {
+    fetch("https://formsubmit.co/ajax/info@jojopapers.com", {
       method: "POST",
       body: formData,
       headers: {
