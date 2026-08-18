@@ -304,11 +304,67 @@ export default function Filters() {
                 </li>
               </ul>
             </div>
-            <div className="flex md:justify-end">
-                <Link to="/contact" className="bg-foreground text-background py-4 px-12 font-sans text-[13px] uppercase tracking-[0.01em] font-semibold hover:bg-foreground/90 transition-colors inline-block text-center w-full sm:w-auto">
-                  Contact Us
-                </Link>
+            <div className="flex flex-col sm:flex-row md:flex-col gap-3 md:justify-end md:items-end w-full">
+              <Link
+                to="/contact"
+                className="bg-foreground text-background py-4 px-8 font-mono text-[11.5px] uppercase tracking-wider font-medium hover:bg-foreground/90 transition-colors text-center w-full sm:w-auto md:w-[260px] border border-foreground shadow-xs"
+              >
+                Request Samples
+              </Link>
+              <Link
+                to="/consultation"
+                className="bg-transparent text-foreground py-4 px-8 font-mono text-[11.5px] uppercase tracking-wider font-medium hover:bg-foreground hover:text-background transition-colors text-center w-full sm:w-auto md:w-[260px] border border-foreground shadow-xs"
+              >
+                Book a Consultation
+              </Link>
+              <Link
+                to="/private-label"
+                className="inline-flex items-center justify-center gap-2 pt-2 font-mono text-[10.5px] uppercase tracking-wider text-muted-foreground hover:text-foreground transition-colors"
+              >
+                Build Private Label Brief &rarr;
+              </Link>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FINAL SITEMAP & CAPABILITIES CTA */}
+      <section className="py-20 md:py-28 bg-[#0d0d0d] text-white text-center border-t border-white/10">
+        <div className="max-w-[1180px] mx-auto px-6 md:px-8">
+          <div className="inline-flex items-center gap-2.5 mb-4 font-mono text-[11px] tracking-[0.15em] uppercase text-white/60 before:content-[''] before:w-5 before:h-px before:bg-white/60">
+            Precision In Every Detail
+          </div>
+          <h2 className="text-white text-[clamp(28px,4vw,44px)] font-medium max-w-[22ch] mx-auto mb-4 leading-tight font-['Cormorant_Garamond']">
+            Partner with JOJO for your next production run.
+          </h2>
+          <p className="text-white/65 text-[15px] max-w-[48ch] mx-auto mb-9 leading-relaxed">
+            Bulk cone counts, rolling papers, filter tips and complete private-label systems — one manufacturing partner, one standard.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[1px] bg-white/20 border border-white/20 max-w-[800px] mx-auto">
+            <Link
+              to="/pre-rolled-cones"
+              className="bg-[#0d0d0d] py-5 px-3 font-mono text-[12px] tracking-[0.05em] uppercase text-white transition-colors hover:bg-[#1f1f1f]"
+            >
+              Pre-Rolled Cones
+            </Link>
+            <Link
+              to="/bulk-cones"
+              className="bg-[#0d0d0d] py-5 px-3 font-mono text-[12px] tracking-[0.05em] uppercase text-white transition-colors hover:bg-[#1f1f1f]"
+            >
+              Bulk Cones
+            </Link>
+            <Link
+              to="/rolling-papers"
+              className="bg-[#0d0d0d] py-5 px-3 font-mono text-[12px] tracking-[0.05em] uppercase text-white transition-colors hover:bg-[#1f1f1f]"
+            >
+              Rolling Papers
+            </Link>
+            <Link
+              to="/contact"
+              className="bg-[#0d0d0d] py-5 px-3 font-mono text-[12px] tracking-[0.05em] uppercase text-white transition-colors hover:bg-[#1f1f1f]"
+            >
+              Contact JOJO
+            </Link>
           </div>
         </div>
       </section>
