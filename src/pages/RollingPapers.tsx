@@ -240,6 +240,10 @@ const RollingPapers = () => {
               </div>
             </div>
           </div>
+
+          <p className="text-center text-[10px] uppercase tracking-widest text-muted-foreground mt-8 max-w-[70ch] mx-auto font-sans opacity-70">
+            * This is for reference. Actual colour may vary in real life based on paper type and tip options chosen.
+          </p>
         </div>
       </section>
 

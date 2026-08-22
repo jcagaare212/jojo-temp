@@ -89,7 +89,7 @@ const BulkCones = () => {
       <Breadcrumb items={[{ label: "Bulk Cones" }]} />
 
       {/* HERO SECTION */}
-      <section className="relative overflow-hidden bg-background pt-16 pb-20 md:pt-24 md:pb-32 border-b border-border">
+      <section className="relative overflow-hidden bg-background pt-12 pb-14 md:pt-16 md:pb-20 border-b border-border">
         <div className="container px-4 md:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-[0.88fr_1.12fr] gap-12 lg:gap-20 items-center">
             <motion.div initial="hidden" animate="visible" variants={stagger} className="max-w-xl">
@@ -156,26 +156,26 @@ const BulkCones = () => {
       </div>
 
       {/* WHAT IS A BULK TOWER? */}
-      <section id="what-is" className="py-24 bg-background scroll-mt-[160px]">
+      <section id="what-is" className="py-12 md:py-16 bg-background scroll-mt-[120px] border-b border-border">
         <div className="container px-4 md:px-6">
-          <div className="max-w-3xl mx-auto text-center mb-16">
+          <div className="max-w-3xl mx-auto text-center mb-8 md:mb-10">
             <div className="text-xs font-sans font-medium tracking-wider uppercase text-muted-foreground mb-4">01 — Bulk Tower Format</div>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif leading-[1.05] mb-6">More cones in one organised commercial pack.</h2>
-            <p className="text-muted-foreground text-lg leading-relaxed">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif leading-[1.05] mb-4">More cones in one organised commercial pack.</h2>
+            <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
               A JOJO bulk tower is a high-count supply format for businesses that need pre-rolled cones in volume. It is not a small consumer pack.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-[1px] bg-border border border-border">
-            <div className="bg-white p-10 md:p-16">
-              <h3 className="text-2xl font-serif mb-4">What you receive.</h3>
-              <p className="text-muted-foreground leading-relaxed">
+            <div className="bg-white p-6 md:p-10">
+              <h3 className="text-2xl font-serif mb-3">What you receive.</h3>
+              <p className="text-muted-foreground leading-relaxed text-sm md:text-base">
                 Pre-rolled cones organised in a tower/tray format and packed by the selected cone size and count, ready for commercial handling.
               </p>
             </div>
-            <div className="bg-white p-10 md:p-16">
-              <h3 className="text-2xl font-serif mb-4">Why buyers use it.</h3>
-              <p className="text-muted-foreground leading-relaxed">
+            <div className="bg-white p-6 md:p-10">
+              <h3 className="text-2xl font-serif mb-3">Why buyers use it.</h3>
+              <p className="text-muted-foreground leading-relaxed text-sm md:text-base">
                 It reduces the need for many small packs and gives distributors, fillers and volume buyers a cleaner way to receive and manage cone inventory.
               </p>
             </div>
@@ -184,12 +184,12 @@ const BulkCones = () => {
       </section>
 
       {/* WHO BUYS BULK CONES */}
-      <section id="buyers" className="py-24 bg-secondary/30 scroll-mt-[160px]">
+      <section id="buyers" className="py-12 md:py-16 bg-secondary/30 scroll-mt-[120px] border-b border-border">
         <div className="container px-4 md:px-6">
-          <div className="max-w-2xl mb-16">
-            <div className="text-xs font-sans font-medium tracking-wider uppercase text-muted-foreground mb-4">02 — Who Buys Bulk Cones?</div>
-            <h2 className="text-3xl md:text-4xl font-serif leading-tight mb-4">Built for businesses that need volume.</h2>
-            <p className="text-muted-foreground text-lg">
+          <div className="max-w-2xl mb-8 md:mb-10">
+            <div className="text-xs font-sans font-medium tracking-wider uppercase text-muted-foreground mb-3">02 — Who Buys Bulk Cones?</div>
+            <h2 className="text-3xl md:text-4xl font-serif leading-tight mb-3">Built for businesses that need volume.</h2>
+            <p className="text-muted-foreground text-base md:text-lg">
               Bulk towers make the most sense when cones are being purchased for a commercial operation rather than as a finished consumer pack.
             </p>
           </div>
@@ -201,7 +201,7 @@ const BulkCones = () => {
               { id: '03', title: 'Large Retail Programs', desc: 'For retail groups and trade buyers purchasing larger cone quantities on a repeat basis.' },
               { id: '04', title: 'Brands Buying in Volume', desc: 'For brands that first need the cone supply itself and want to discuss packaging separately.' }
             ].map((buyer, i) => (
-              <div key={i} className="bg-white p-8">
+              <div key={i} className="bg-white p-6 md:p-8">
                 <div className="text-[10px] font-sans font-medium text-muted-foreground tracking-widest uppercase mb-4">{buyer.id}</div>
                 <h3 className="text-xl font-serif mb-3 leading-tight">{buyer.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{buyer.desc}</p>
@@ -212,17 +212,17 @@ const BulkCones = () => {
       </section>
 
       {/* TOWER COUNTS */}
-      <section id="counts" className="py-24 bg-background scroll-mt-[160px]">
+      <section id="counts" className="py-12 md:py-16 bg-background scroll-mt-[120px] border-b border-border">
         <div className="container px-4 md:px-6">
-          <div className="max-w-2xl mx-auto text-center mb-16">
-            <div className="text-xs font-sans font-medium tracking-wider uppercase text-muted-foreground mb-4">03 — Tower Counts</div>
-            <h2 className="text-3xl md:text-4xl font-serif leading-tight mb-4">Choose the quantity per tower.</h2>
-            <p className="text-muted-foreground text-lg">
+          <div className="max-w-2xl mx-auto text-center mb-8 md:mb-10">
+            <div className="text-xs font-sans font-medium tracking-wider uppercase text-muted-foreground mb-3">03 — Tower Counts</div>
+            <h2 className="text-3xl md:text-4xl font-serif leading-tight mb-3">Choose the quantity per tower.</h2>
+            <p className="text-muted-foreground text-base md:text-lg">
               Standard JOJO tower directions range from 200 to 1,000 cones. The most suitable count depends on the cone size and your commercial requirement.
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-[1px] bg-border border border-border mb-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-[1px] bg-border border border-border mb-6">
             {['200', '400', '500', '600', '800', '900', '1,000'].map((count, i) => (
               <div key={i} className="bg-white p-6 md:p-8 text-center flex flex-col items-center justify-center">
                 <b className="text-2xl md:text-3xl font-serif font-medium block mb-1">{count}</b>
@@ -231,11 +231,11 @@ const BulkCones = () => {
             ))}
           </div>
           
-          <p className="text-center text-sm text-muted-foreground mb-16">
+          <p className="text-center text-sm text-muted-foreground mb-8 md:mb-10">
             Available configuration may vary by cone size. We confirm the final tower count before production.
           </p>
 
-          <div className="bg-foreground text-background p-8 md:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-8 border border-foreground">
+          <div className="bg-foreground text-background p-6 md:p-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-8 border border-foreground">
             <div className="max-w-xl">
               <h3 className="text-2xl font-serif mb-2">Not sure which tower count to choose?</h3>
               <p className="text-background/70 text-sm leading-relaxed">
@@ -250,17 +250,17 @@ const BulkCones = () => {
       </section>
 
       {/* CONE SIZES */}
-      <section id="sizes" className="py-24 bg-background scroll-mt-[120px]">
+      <section id="sizes" className="py-12 md:py-16 bg-background scroll-mt-[120px] border-b border-border">
         <div className="container px-4 md:px-6">
-          <div className="max-w-2xl mx-auto text-center mb-16">
-            <div className="text-xs font-sans font-medium tracking-wider uppercase text-muted-foreground mb-4">05 — Core Bulk Cone Sizes</div>
-            <h2 className="text-3xl md:text-4xl font-serif leading-tight mb-4">Choose the cone format you need in bulk.</h2>
-            <p className="text-muted-foreground text-lg">
+          <div className="max-w-2xl mx-auto text-center mb-8 md:mb-10">
+            <div className="text-xs font-sans font-medium tracking-wider uppercase text-muted-foreground mb-3">05 — Core Bulk Cone Sizes</div>
+            <h2 className="text-3xl md:text-4xl font-serif leading-tight mb-3">Choose the cone format you need in bulk.</h2>
+            <p className="text-muted-foreground text-base md:text-lg">
               The same bulk-supply approach can be planned around five core JOJO cone sizes. Final dimensions and tip specification are confirmed with the order.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-[1px] bg-border border border-border mb-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-[1px] bg-border border border-border mb-8 md:mb-10">
             {[
               { size: '70 mm', name: 'Dogwalker', desc: 'Compact cone format for short-size requirements.' },
               { size: '78 mm', name: 'Mini', desc: 'Short-format cone option for compact product ranges.' },
@@ -268,7 +268,7 @@ const BulkCones = () => {
               { size: '98 mm', name: '98 mm Special', desc: 'Longer format for buyers requiring a 98 mm cone.' },
               { size: '109 mm', name: 'King Size', desc: 'Full-length King Size format for volume supply.' }
             ].map((item, i) => (
-              <div key={i} className="bg-white p-8 text-center flex flex-col items-center">
+              <div key={i} className="bg-white p-6 md:p-8 text-center flex flex-col items-center">
                 <b className="text-2xl font-serif font-medium block mb-2">{item.size}</b>
                 <span className="text-[10px] font-sans font-medium text-muted-foreground tracking-widest uppercase mb-4">{item.name}</span>
                 <p className="text-sm text-muted-foreground leading-relaxed mt-auto">{item.desc}</p>
@@ -308,10 +308,10 @@ const BulkCones = () => {
       </section>
 
       {/* ORDER PROCESS */}
-      <section id="order" className="py-24 bg-background scroll-mt-[160px]">
+      <section id="order" className="py-12 md:py-16 bg-background scroll-mt-[120px] border-b border-border">
         <div className="container px-4 md:px-6">
-          <div className="mb-12">
-            <h2 className="text-3xl font-serif mb-4">How to order bulk cones.</h2>
+          <div className="mb-8 md:mb-10">
+            <h2 className="text-3xl font-serif mb-3">How to order bulk cones.</h2>
             <p className="text-muted-foreground">Our process is designed to confirm exact specifications before production begins.</p>
           </div>
           
@@ -322,8 +322,8 @@ const BulkCones = () => {
               { step: '03', title: 'Commercial Proposal', desc: 'You receive a formal quotation based on your specification and delivery location.' },
               { step: '04', title: 'Lead Time & Delivery', desc: 'Upon approval, we schedule production and confirm your expected dispatch window.' }
             ].map((item, i) => (
-              <div key={i} className="bg-white p-8 min-h-[220px] flex flex-col">
-                <span className="text-[11px] font-sans font-medium tracking-widest text-muted-foreground uppercase mb-6 block">Step {item.step}</span>
+              <div key={i} className="bg-white p-6 md:p-8 min-h-[180px] flex flex-col">
+                <span className="text-[11px] font-sans font-medium tracking-widest text-muted-foreground uppercase mb-4 block">Step {item.step}</span>
                 <h3 className="text-xl font-serif mb-3 leading-tight">{item.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed mt-auto">{item.desc}</p>
               </div>
@@ -333,7 +333,7 @@ const BulkCones = () => {
       </section>
 
       {/* BRAND NOTE (PRIVATE LABEL) */}
-      <section className="py-24 bg-secondary/50 border-y border-border">
+      <section className="py-12 md:py-16 bg-secondary/50 border-b border-border">
         <div className="container px-4 md:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-[0.95fr_1.05fr] gap-12 lg:gap-20 items-center">
             <div className="bg-white border border-border p-4">
@@ -344,8 +344,8 @@ const BulkCones = () => {
               />
             </div>
             <div className="max-w-xl">
-              <h2 className="text-3xl md:text-4xl font-serif leading-[1.05] mb-6">Need it custom printed? Private Label & OEM.</h2>
-              <p className="text-muted-foreground text-[15px] leading-relaxed mb-8">
+              <h2 className="text-3xl md:text-4xl font-serif leading-[1.05] mb-4">Need it custom printed? Private Label & OEM.</h2>
+              <p className="text-muted-foreground text-[15px] leading-relaxed mb-6">
                 If you require branded filter tips, custom retail packaging, or a complete OEM product line, we offer a dedicated Private Label service to bring your vision to market.
               </p>
               <Button asChild variant="outline" className="rounded-none font-sans tracking-wider uppercase text-xs px-6 py-6 group">
@@ -360,12 +360,12 @@ const BulkCones = () => {
       </section>
 
       {/* FINAL CTA */}
-      <section className="py-24 md:py-32 bg-foreground text-background text-center">
+      <section className="py-16 md:py-24 bg-foreground text-background text-center">
         <div className="container px-4 md:px-6">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif leading-[1.05] max-w-2xl mx-auto mb-6">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif leading-[1.05] max-w-2xl mx-auto mb-4">
             Ready to order bulk cones?
           </h2>
-          <p className="text-background/70 max-w-2xl mx-auto mb-12 text-lg">
+          <p className="text-background/70 max-w-2xl mx-auto mb-8 text-lg">
             Contact us to request pricing, discuss tower counts, or start your volume cone program.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 max-w-4xl mx-auto gap-[1px] bg-background/20 border border-background/20">
