@@ -98,92 +98,60 @@ const Index = () => {
       />
       
       {/* HERO */}
-      <section className="pt-28 md:pt-36 pb-12 border-b border-border bg-gradient-to-b from-background via-secondary/15 to-background">
-        <div className="max-w-[1400px] mx-auto px-6 md:px-12">
-          <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-10 lg:gap-16 items-center">
-            
-            {/* Left Column: Typography & CTAs */}
-            <motion.div 
-              className="text-left max-w-[620px]"
-              initial="initial"
-              whileInView="whileInView"
-              viewport={{ once: true }}
-              variants={stagger}
-            >
-              <motion.div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-secondary border border-border text-[11px] font-mono uppercase tracking-[0.18em] text-muted-foreground mb-6" variants={fadeInUp}>
-                <span className="w-1.5 h-1.5 rounded-full bg-[#b3773f]"></span>
-                B2B OEM Manufacturing · Since 2014
-              </motion.div>
-              
-              <motion.h1 className="text-[clamp(34px,4.5vw,56px)] leading-[1.06] mb-6 font-['Cormorant_Garamond'] font-medium" variants={fadeInUp}>
-                Precision you can spec.<br />Craft you can't automate.
-              </motion.h1>
-              
-              <motion.p className="text-[16px] md:text-[17px] text-muted-foreground mb-8 leading-relaxed" variants={fadeInUp}>
-                JOJO Papers manufactures pre‑rolled cones, rolling papers and filter tips for dispensaries, distributors and private‑label brands — every single piece precision hand-rolled for flawless draw.
-              </motion.p>
-              
-              <motion.div className="flex gap-4 items-center flex-wrap mb-10" variants={fadeInUp}>
-                <a href="/consultation" className="btn-premium-solid">Start Your Custom Build</a>
-                <a href="/contact" className="btn-premium bg-transparent text-foreground hover:bg-foreground hover:text-background border-foreground">Request Samples</a>
-              </motion.div>
+      <section className="pt-32 pb-16">
+        <motion.div 
+          className="max-w-[640px] mx-auto text-center px-6"
+          initial="initial"
+          whileInView="whileInView"
+          viewport={{ once: true }}
+          variants={stagger}
+        >
+          <motion.div className="eyebrow center mb-6" variants={fadeInUp}>
+            B2B Manufacturing · Since 2014
+          </motion.div>
+          <motion.h1 className="text-[clamp(32px,5vw,54px)] leading-[1.08] mb-5 font-['Cormorant_Garamond'] font-medium" variants={fadeInUp}>
+            Precision you can spec.<br/>Craft you can't automate.
+          </motion.h1>
+          <motion.p className="text-[17px] text-muted-foreground mb-8 max-w-[46ch] mx-auto leading-relaxed" variants={fadeInUp}>
+            JOJO Papers manufactures pre‑rolled cones, rolling papers and filter tips for dispensaries, distributors and private‑label brands — every piece rolled by hand.
+          </motion.p>
+          <motion.div className="flex gap-4 justify-center flex-wrap" variants={fadeInUp}>
+            <a href="/consultation" className="btn-premium-solid">Start Your Custom Build</a>
+            <a href="/contact" className="btn-premium bg-transparent text-foreground hover:bg-foreground hover:text-background border-foreground">Request Samples</a>
+          </motion.div>
+        </motion.div>
 
-              {/* Quick Feature Badges */}
-              <motion.div className="grid grid-cols-3 gap-4 pt-6 border-t border-border/80 text-[12px] text-muted-foreground" variants={fadeInUp}>
-                <div>
-                  <div className="font-semibold text-foreground font-mono text-[13px]">100%</div>
-                  <div>Food-grade Paper</div>
-                </div>
-                <div>
-                  <div className="font-semibold text-foreground font-mono text-[13px]">5 Sizes</div>
-                  <div>Dogwalker to King</div>
-                </div>
-                <div>
-                  <div className="font-semibold text-foreground font-mono text-[13px]">Custom OEM</div>
-                  <div>Full Print &amp; Pack</div>
-                </div>
-              </motion.div>
-            </motion.div>
-
-            {/* Right Column: Hero Video Card (Vertical 9:16 aspect ratio) */}
-            <motion.div 
-              className="w-full flex justify-center lg:justify-end"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.9, delay: 0.2 }}
-            >
-              <div className="relative w-full max-w-[320px] sm:max-w-[350px] lg:max-w-[360px] max-h-[580px] aspect-[9/16] bg-black rounded-xl overflow-hidden border border-border/80 shadow-2xl">
-                <video 
-                  src="/hero_video_test.mp4" 
-                  poster="/images/hero_video_poster.webp"
-                  autoPlay 
-                  loop 
-                  muted 
-                  playsInline 
-                  preload="metadata"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </motion.div>
-
+        <motion.div 
+          className="max-w-[1400px] mx-auto px-6 md:px-12 mt-12"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1, delay: 0.4 }}
+        >
+          <div className="w-full aspect-[16/7] bg-secondary border border-border relative overflow-hidden flex items-center justify-center rounded-sm">
+             <img src="/images/12.webp" alt="JOJO Papers Hero" className="w-full h-full object-contain p-4 mix-blend-multiply opacity-90 hover:scale-105 transition-transform duration-700" />
           </div>
-        </div>
+        </motion.div>
 
-        {/* STAT STRIP */}
-        <div className="max-w-[1400px] mx-auto px-6 md:px-12 grid grid-cols-2 md:grid-cols-4 border-t border-border mt-14 pt-8">
+        <motion.div 
+          className="max-w-[1400px] mx-auto px-6 md:px-12 grid grid-cols-2 md:grid-cols-4 border-y border-border mt-16"
+          initial="initial"
+          whileInView="whileInView"
+          viewport={{ once: true }}
+          variants={stagger}
+        >
           {[
             { label: 'Manufacturing Since', value: '2014' },
             { label: 'Cones Rolled', value: '10M+' },
             { label: 'Hand-Rolled by Women', value: '100%' },
             { label: 'Standard Sizes', value: '5' }
           ].map((stat, i) => (
-            <div key={i} className={`py-4 px-4 text-center ${i !== 0 ? 'md:border-l border-border' : ''}`}>
-              <b className="block font-['Cormorant_Garamond'] text-2xl md:text-3xl font-medium mb-0.5">{stat.value}</b>
+            <motion.div key={i} className={`py-10 px-6 text-center ${i !== 0 ? 'md:border-l border-border' : ''}`} variants={fadeInUp}>
+              <b className="block font-['Cormorant_Garamond'] text-3xl font-medium mb-1">{stat.value}</b>
               <span className="font-sans text-[11px] uppercase tracking-[0.05em] text-muted-foreground">{stat.label}</span>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </section>
 
       {/* CHAPTER STRIP */}
