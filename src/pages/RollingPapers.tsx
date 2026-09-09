@@ -97,7 +97,7 @@ const RollingPapers = () => {
       <Breadcrumb items={[{ label: "Rolling Papers" }]} />
 
       {/* HERO SECTION */}
-      <section className="py-16 md:py-24 border-b border-border text-center bg-white" id="paper">
+      <section className="py-10 md:py-14 border-b border-border text-center bg-white" id="paper">
         <div className="max-w-[820px] mx-auto px-6">
           <div className="inline-flex items-center gap-2.5 mb-4 font-mono text-[11px] tracking-[0.15em] uppercase text-muted-foreground before:content-[''] before:w-5 before:h-px before:bg-foreground">
             Rolling Papers · B2B Manufacturing
@@ -126,7 +126,7 @@ const RollingPapers = () => {
       </section>
 
       {/* DEFINITION SECTION */}
-      <section className="py-16 md:py-20 bg-white" id="what-is-rolling-paper">
+      <section className="py-10 md:py-14 bg-white" id="what-is-rolling-paper">
         <div className="max-w-[1180px] mx-auto px-6 md:px-8">
           <div className="max-w-[780px]">
             <div className="inline-flex items-center gap-2.5 mb-3.5 font-mono text-[11px] tracking-[0.15em] uppercase text-muted-foreground before:content-[''] before:w-5 before:h-px before:bg-foreground">
@@ -143,9 +143,9 @@ const RollingPapers = () => {
       </section>
 
       {/* 01 — PAPER TYPES */}
-      <section id="paper-types" className="py-16 md:py-22 border-t border-border bg-white">
+      <section id="paper-types" className="py-10 md:py-14 border-t border-border bg-white">
         <div className="max-w-[1180px] mx-auto px-6 md:px-8">
-          <div className="max-w-[720px] mx-auto text-center mb-12">
+          <div className="max-w-[720px] mx-auto text-center mb-8">
             <div className="inline-flex items-center gap-2.5 mb-3.5 font-mono text-[11px] tracking-[0.15em] uppercase text-muted-foreground before:content-[''] before:w-5 before:h-px before:bg-foreground">
               01 — Paper Types
             </div>
@@ -158,7 +158,7 @@ const RollingPapers = () => {
           </div>
 
           {/* Connected 4-box horizontal strip */}
-          <div className="grid grid-cols-2 md:grid-cols-4 border border-border divide-y md:divide-y-0 md:divide-x divide-border bg-white mb-9 max-w-[960px] mx-auto shadow-sm">
+          <div className="grid grid-cols-2 md:grid-cols-4 border border-border divide-y md:divide-y-0 md:divide-x divide-border bg-white mb-6 max-w-[960px] mx-auto shadow-sm">
             <div className="py-5 px-4 text-center font-mono text-[12px] tracking-[0.05em] uppercase text-foreground font-medium">
               Wood Pulp
             </div>
@@ -180,9 +180,9 @@ const RollingPapers = () => {
       </section>
 
       {/* 02 — PAPER COLOURS */}
-      <section className="py-16 md:py-22 border-t border-b border-border bg-[#fafafa]" id="paper-colours">
+      <section className="py-10 md:py-14 border-t border-b border-border bg-[#fafafa]" id="paper-colours">
         <div className="max-w-[1180px] mx-auto px-6 md:px-8">
-          <div className="max-w-[720px] mx-auto text-center mb-12">
+          <div className="max-w-[720px] mx-auto text-center mb-8">
             <div className="inline-flex items-center gap-2.5 mb-3.5 font-mono text-[11px] tracking-[0.15em] uppercase text-muted-foreground before:content-[''] before:w-5 before:h-px before:bg-foreground">
               02 — Paper Colours
             </div>
@@ -241,16 +241,16 @@ const RollingPapers = () => {
             </div>
           </div>
 
-          <p className="text-center text-[10px] uppercase tracking-widest text-muted-foreground mt-8 max-w-[70ch] mx-auto font-sans opacity-70">
+          <p className="text-center text-[10px] uppercase tracking-widest text-muted-foreground mt-6 max-w-[70ch] mx-auto font-sans opacity-70">
             * This is for reference. Actual colour may vary in real life based on paper type and tip options chosen.
           </p>
         </div>
       </section>
 
       {/* 03 — CORE ROLLING PAPER SIZES */}
-      <section id="core-sizes" className="py-16 md:py-24 bg-white">
+      <section id="core-sizes" className="py-10 md:py-14 bg-white">
         <div className="max-w-[1180px] mx-auto px-6 md:px-8">
-          <div className="max-w-[820px] mx-auto text-center mb-14">
+          <div className="max-w-[820px] mx-auto text-center mb-8 md:mb-10">
             <div className="inline-flex items-center gap-2.5 mb-3.5 font-mono text-[11px] tracking-[0.15em] uppercase text-muted-foreground before:content-[''] before:w-5 before:h-px before:bg-foreground">
               03 — Core Rolling Paper Sizes
             </div>
@@ -321,7 +321,7 @@ const RollingPapers = () => {
       </section>
 
       {/* 04 — ADDITIONAL & CUSTOM SIZES */}
-      <section className="py-16 md:py-22 border-t border-b border-border bg-[#fafafa]" id="other-sizes">
+      <section className="py-10 md:py-14 border-t border-b border-border bg-[#fafafa]" id="other-sizes">
         <div className="max-w-[1180px] mx-auto px-6 md:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-10 md:gap-14 items-center">
             <div>
@@ -373,9 +373,9 @@ const RollingPapers = () => {
       </section>
 
       {/* 05 — RETAIL & PACKAGING */}
-      <section className="py-16 md:py-24 bg-[#fafafa]" id="retail">
+      <section className="py-10 md:py-14 bg-[#fafafa]" id="retail">
         <div className="max-w-[1180px] mx-auto px-6 md:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-[0.82fr_1.18fr] gap-8 md:gap-16 items-end mb-10">
+          <div className="grid grid-cols-1 lg:grid-cols-[0.82fr_1.18fr] gap-8 md:gap-14 items-end mb-8">
             <div>
               <div className="inline-flex items-center gap-2.5 mb-3.5 font-mono text-[11px] tracking-[0.15em] uppercase text-muted-foreground before:content-[''] before:w-5 before:h-px before:bg-foreground">
                 05 — Retail &amp; Packaging
@@ -477,7 +477,7 @@ const RollingPapers = () => {
             </div>
             <div>
               <Link
-                to="/retail-packaging"
+                to="/retail-packaging/rolling-papers"
                 className="bg-white text-[#111] border border-white px-6 py-5 flex items-center justify-between gap-6 font-mono text-[11px] tracking-[0.05em] uppercase transition-all hover:bg-[#111] hover:text-white"
               >
                 <span>Explore Rolling Paper<br />Retail &amp; Packaging</span>
@@ -489,7 +489,7 @@ const RollingPapers = () => {
       </section>
 
       {/* FINAL CTA SECTION */}
-      <section className="py-16 md:py-24 bg-[#0d0d0d] text-white text-center">
+      <section className="py-12 md:py-16 bg-[#0d0d0d] text-white text-center">
         <div className="max-w-[1180px] mx-auto px-6 md:px-8">
           <div className="inline-flex items-center gap-2.5 mb-4 font-mono text-[11px] tracking-[0.15em] uppercase text-white/60 before:content-[''] before:w-5 before:h-px before:bg-white/60">
             Rolling Paper Manufacturing

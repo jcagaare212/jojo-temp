@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Phone, Mail, Instagram } from 'lucide-react';
+import { motion, AnimatePresence, Variants } from 'framer-motion';
+import { Menu, X, Phone, Mail, Instagram, ChevronDown } from 'lucide-react';
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [expandedMobileMenu, setExpandedMobileMenu] = useState<string | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,6 +15,10 @@ export default function Header() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const toggleMobileSubmenu = (name: string) => {
+    setExpandedMobileMenu(prev => prev === name ? null : name);
+  };
 
   const navLinks = [
     { 
@@ -28,29 +33,36 @@ export default function Header() {
       ]
     },
     { name: 'Bulk Cones', href: '/bulk-cones' },
-    { name: 'Filter Tips', href: '/filters' },
     { name: 'Rolling Papers', href: '/rolling-papers' },
-    { name: 'Retail & Packaging', href: '/retail-packaging' },
+    { name: 'Filter Tips', href: '/filters' },
+    { 
+      name: 'Retail & Packaging', 
+      href: '/retail-packaging/pre-rolled-cones',
+      dropdown: [
+        { name: 'Pre-Rolled Cones', href: '/retail-packaging/pre-rolled-cones' },
+        { name: 'Rolling Papers', href: '/retail-packaging/rolling-papers' },
+      ]
+    },
     { name: 'Private Label & Branding', href: '/private-label' },
     { name: 'Consultation', href: '/consultation' },
     { name: 'About', href: '/about' },
   ];
 
   // Animation variants
-  const headerVariants = {
+  const headerVariants: Variants = {
     hidden: { y: -100 },
     visible: { 
       y: 0,
       transition: { 
         duration: 0.8, 
-        ease: [0.22, 1, 0.36, 1],
+        ease: [0.22, 1, 0.36, 1] as any,
         when: "beforeChildren",
         staggerChildren: 0.05
       }
     }
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: -10 },
     visible: { 
       opacity: 1, 
@@ -165,47 +177,78 @@ export default function Header() {
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
           >
-            <nav className="flex flex-col gap-6 items-center text-center overflow-y-auto pb-20 w-full">
+            <nav className="flex flex-col gap-5 items-center text-center overflow-y-auto pb-20 w-full">
               {navLinks.map((link) => (
                 <div key={link.name} className="flex flex-col items-center w-full">
-                  {link.href.startsWith('/') && !link.href.includes('#') ? (
-                    <Link 
-                      to={link.href}
-                      className="text-2xl font-['Cormorant_Garamond'] text-foreground hover:text-muted-foreground transition-colors"
-                      onClick={() => setMobileMenuOpen(false)}
-                    >
-                      {link.name}
-                    </Link>
+                  {link.dropdown ? (
+                    <>
+                      <button 
+                        type="button"
+                        className="flex items-center justify-center gap-2.5 py-1 text-2xl font-['Cormorant_Garamond'] text-foreground hover:text-muted-foreground transition-colors cursor-pointer"
+                        onClick={() => toggleMobileSubmenu(link.name)}
+                      >
+                        <span>{link.name}</span>
+                        <ChevronDown 
+                          size={20} 
+                          className={`text-muted-foreground transition-transform duration-300 ${expandedMobileMenu === link.name ? 'rotate-180 text-foreground' : ''}`} 
+                        />
+                      </button>
+
+                      <AnimatePresence>
+                        {expandedMobileMenu === link.name && (
+                          <motion.div 
+                            initial={{ opacity: 0, height: 0 }}
+                            animate={{ opacity: 1, height: 'auto' }}
+                            exit={{ opacity: 0, height: 0 }}
+                            transition={{ duration: 0.25, ease: 'easeInOut' }}
+                            className="flex flex-col items-center gap-2.5 mt-3 mb-1 bg-secondary/35 w-full py-4 border-y border-border overflow-hidden"
+                          >
+                            <Link 
+                              to={link.href}
+                              className="text-[13.5px] font-semibold text-foreground hover:text-muted-foreground transition-colors pb-1 border-b border-border/70"
+                              onClick={() => { setMobileMenuOpen(false); setExpandedMobileMenu(null); }}
+                            >
+                              All {link.name} →
+                            </Link>
+                            {link.dropdown.map(dropItem => (
+                              <Link 
+                                key={dropItem.name}
+                                to={dropItem.href}
+                                className="text-[14px] text-foreground/80 hover:text-foreground transition-colors py-0.5"
+                                onClick={() => { setMobileMenuOpen(false); setExpandedMobileMenu(null); }}
+                              >
+                                {dropItem.name}
+                              </Link>
+                            ))}
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </>
                   ) : (
-                    <a 
-                      href={link.href}
-                      className="text-2xl font-['Cormorant_Garamond'] text-foreground hover:text-muted-foreground transition-colors"
-                      onClick={() => setMobileMenuOpen(false)}
-                    >
-                      {link.name}
-                    </a>
-                  )}
-                  
-                  {link.dropdown && (
-                    <div className="flex flex-col items-center gap-3 mt-4 mb-2 bg-secondary/30 w-full py-4 border-y border-border">
-                      {link.dropdown.map(dropItem => (
-                        <Link 
-                          key={dropItem.name}
-                          to={dropItem.href}
-                          className="text-[14px] text-foreground/70 hover:text-foreground transition-colors"
-                          onClick={() => setMobileMenuOpen(false)}
-                        >
-                          {dropItem.name}
-                        </Link>
-                      ))}
-                    </div>
+                    link.href.startsWith('/') && !link.href.includes('#') ? (
+                      <Link 
+                        to={link.href}
+                        className="text-2xl font-['Cormorant_Garamond'] text-foreground hover:text-muted-foreground transition-colors py-1"
+                        onClick={() => { setMobileMenuOpen(false); setExpandedMobileMenu(null); }}
+                      >
+                        {link.name}
+                      </Link>
+                    ) : (
+                      <a 
+                        href={link.href}
+                        className="text-2xl font-['Cormorant_Garamond'] text-foreground hover:text-muted-foreground transition-colors py-1"
+                        onClick={() => { setMobileMenuOpen(false); setExpandedMobileMenu(null); }}
+                      >
+                        {link.name}
+                      </a>
+                    )
                   )}
                 </div>
               ))}
               <Link 
                 to="/contact"
-                className="bg-foreground text-background text-[13px] font-semibold uppercase tracking-widest px-8 py-4 w-full max-w-sm mt-8"
-                onClick={() => setMobileMenuOpen(false)}
+                className="bg-foreground text-background text-[13px] font-semibold uppercase tracking-widest px-8 py-4 w-full max-w-sm mt-6"
+                onClick={() => { setMobileMenuOpen(false); setExpandedMobileMenu(null); }}
               >
                 Contact Us
               </Link>
@@ -227,3 +270,4 @@ export default function Header() {
     </>
   );
 }
+

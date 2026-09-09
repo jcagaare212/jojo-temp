@@ -2,91 +2,97 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://jojopapers.com/</loc>
-    <lastmod>2026-09-02</lastmod>
+    <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.00</priority>
   </url>
   <url>
     <loc>https://jojopapers.com/pre-rolled-cones</loc>
-    <lastmod>2026-09-02</lastmod>
+    <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
   <url>
     <loc>https://jojopapers.com/pre-rolled-cones/dogwalker</loc>
-    <lastmod>2026-09-02</lastmod>
+    <lastmod>2026-09-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://jojopapers.com/pre-rolled-cones/mini</loc>
-    <lastmod>2026-09-02</lastmod>
+    <lastmod>2026-09-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://jojopapers.com/pre-rolled-cones/1-1-4-size</loc>
-    <lastmod>2026-09-02</lastmod>
+    <lastmod>2026-09-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://jojopapers.com/pre-rolled-cones/98mm-special</loc>
-    <lastmod>2026-09-02</lastmod>
+    <lastmod>2026-09-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://jojopapers.com/pre-rolled-cones/king-size</loc>
-    <lastmod>2026-09-02</lastmod>
+    <lastmod>2026-09-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://jojopapers.com/bulk-cones</loc>
-    <lastmod>2026-09-02</lastmod>
+    <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
   <url>
     <loc>https://jojopapers.com/rolling-papers</loc>
-    <lastmod>2026-09-02</lastmod>
+    <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
   <url>
     <loc>https://jojopapers.com/filters</loc>
-    <lastmod>2026-09-02</lastmod>
+    <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
   <url>
-    <loc>https://jojopapers.com/retail-packaging</loc>
-    <lastmod>2026-09-02</lastmod>
+    <loc>https://jojopapers.com/retail-packaging/pre-rolled-cones</loc>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://jojopapers.com/retail-packaging/rolling-papers</loc>
+    <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
   <url>
     <loc>https://jojopapers.com/private-label</loc>
-    <lastmod>2026-09-02</lastmod>
+    <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
   <url>
     <loc>https://jojopapers.com/consultation</loc>
-    <lastmod>2026-09-02</lastmod>
+    <lastmod>2026-09-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://jojopapers.com/about</loc>
-    <lastmod>2026-09-02</lastmod>
+    <lastmod>2026-09-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
   <url>
     <loc>https://jojopapers.com/contact</loc>
-    <lastmod>2026-09-02</lastmod>
+    <lastmod>2026-09-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>

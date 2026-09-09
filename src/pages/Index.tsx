@@ -3,8 +3,29 @@ import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import SEO from '../components/SEO';
 
+const BASE_COUNT = 10000000;
+const START_TIME = new Date('2026-09-01T00:00:00+05:30').getTime();
+const RATE_PER_SEC = 2.8; // ~2.8 cones per second
+
 const Index = () => {
   const [activeSection, setActiveSection] = useState("");
+  const [coneCount, setConeCount] = useState<number>(() => {
+    const elapsed = Math.max(0, (Date.now() - START_TIME) / 1000);
+    return BASE_COUNT + Math.floor(elapsed * RATE_PER_SEC);
+  });
+  const [isTicking, setIsTicking] = useState(false);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const elapsed = Math.max(0, (Date.now() - START_TIME) / 1000);
+      const newCount = BASE_COUNT + Math.floor(elapsed * RATE_PER_SEC);
+      setConeCount(newCount);
+      setIsTicking(true);
+      setTimeout(() => setIsTicking(false), 250);
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -97,60 +118,77 @@ const Index = () => {
         }}
       />
       
-      {/* HERO */}
-      <section className="pt-32 pb-16">
+      {/* HERO SECTION WITH LIVE PRODUCTION COUNTER */}
+      <section className="pt-28 md:pt-36 pb-16 md:pb-24 border-b border-border bg-white">
         <motion.div 
-          className="max-w-[640px] mx-auto text-center px-6"
+          className="max-w-[1100px] mx-auto text-center px-6"
           initial="initial"
           whileInView="whileInView"
           viewport={{ once: true }}
           variants={stagger}
         >
-          <motion.div className="eyebrow center mb-6" variants={fadeInUp}>
-            B2B Manufacturing · Since 2014
+          {/* Live Production Badge */}
+          <motion.div variants={fadeInUp} className="inline-flex items-center gap-2.5 font-mono text-[10px] md:text-[11px] font-bold uppercase tracking-[0.16em] text-[#4a4a4a] mb-5">
+            <span className="w-2 h-2 rounded-full bg-[#a97922] shadow-[0_0_0_4px_rgba(169,121,34,0.18)] animate-pulse inline-block" />
+            Live Production · Made in India since 2014
           </motion.div>
-          <motion.h1 className="text-[clamp(32px,5vw,54px)] leading-[1.08] mb-5 font-['Cormorant_Garamond'] font-medium" variants={fadeInUp}>
-            Precision you can spec.<br/>Craft you can't automate.
-          </motion.h1>
-          <motion.p className="text-[17px] text-muted-foreground mb-8 max-w-[46ch] mx-auto leading-relaxed" variants={fadeInUp}>
-            JOJO Papers manufactures pre‑rolled cones, rolling papers and filter tips for dispensaries, distributors and private‑label brands — every piece rolled by hand.
+
+          {/* Sub-headline */}
+          <motion.div variants={fadeInUp} className="font-['Cormorant_Garamond'] text-[clamp(22px,2.5vw,34px)] text-[#363636] font-normal mb-2">
+            More than a decade in every roll.
+          </motion.div>
+
+          {/* Live Dynamic Counter */}
+          <motion.div variants={fadeInUp} className="py-2">
+            <div 
+              className={`font-bold font-sans tracking-[-0.04em] text-[#0a0a0a] text-[clamp(34px,8.2vw,136px)] sm:text-[clamp(54px,9.5vw,148px)] leading-[0.88] select-none tabular-nums whitespace-nowrap transition-all duration-200 ${
+                isTicking ? 'scale-[1.006] text-[#000]' : 'scale-100 text-[#0a0a0a]'
+              }`}
+            >
+              {coneCount.toLocaleString('en-US')}
+            </div>
+            <div className="text-[clamp(18px,2.6vw,38px)] font-bold tracking-tight text-[#111] mt-3 sm:mt-4">
+              pre-rolled cones <span className="font-['Cormorant_Garamond'] font-normal italic text-[#a97922]">and counting.</span>
+            </div>
+          </motion.div>
+
+          {/* Descriptive Copy */}
+          <motion.p variants={fadeInUp} className="text-[15px] sm:text-[17px] text-muted-foreground mt-6 mb-8 max-w-[640px] mx-auto leading-relaxed font-light">
+            JOJO develops pre-rolled cones, rolling papers and filter tips for B2B buyers — with bulk supply, retail packaging, private-label development and India-side consultation available around the product.
           </motion.p>
-          <motion.div className="flex gap-4 justify-center flex-wrap" variants={fadeInUp}>
-            <a href="/consultation" className="btn-premium-solid">Start Your Custom Build</a>
-            <a href="/contact" className="btn-premium bg-transparent text-foreground hover:bg-foreground hover:text-background border-foreground">Request Samples</a>
+
+          {/* Action Buttons */}
+          <motion.div variants={fadeInUp} className="flex gap-3.5 justify-center flex-wrap">
+            <Link to="/private-label" className="btn-premium-solid py-3.5 px-8 text-[11px] font-mono tracking-wider uppercase">
+              Start Your Custom Build
+            </Link>
+            <Link to="/contact" className="btn-premium bg-transparent text-foreground hover:bg-foreground hover:text-background border-foreground py-3.5 px-8 text-[11px] font-mono tracking-wider uppercase">
+              Request Samples
+            </Link>
           </motion.div>
-        </motion.div>
 
-        <motion.div 
-          className="max-w-[1400px] mx-auto px-6 md:px-12 mt-12"
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, delay: 0.4 }}
-        >
-          <div className="w-full aspect-[16/7] bg-secondary border border-border relative overflow-hidden flex items-center justify-center rounded-sm">
-             <img src="/images/12.webp" alt="JOJO Papers Hero" className="w-full h-full object-contain p-4 mix-blend-multiply opacity-90 hover:scale-105 transition-transform duration-700" />
-          </div>
-        </motion.div>
-
-        <motion.div 
-          className="max-w-[1400px] mx-auto px-6 md:px-12 grid grid-cols-2 md:grid-cols-4 border-y border-border mt-16"
-          initial="initial"
-          whileInView="whileInView"
-          viewport={{ once: true }}
-          variants={stagger}
-        >
-          {[
-            { label: 'Manufacturing Since', value: '2014' },
-            { label: 'Cones Rolled', value: '10M+' },
-            { label: 'Hand-Rolled by Women', value: '100%' },
-            { label: 'Standard Sizes', value: '5' }
-          ].map((stat, i) => (
-            <motion.div key={i} className={`py-10 px-6 text-center ${i !== 0 ? 'md:border-l border-border' : ''}`} variants={fadeInUp}>
-              <b className="block font-['Cormorant_Garamond'] text-3xl font-medium mb-1">{stat.value}</b>
-              <span className="font-sans text-[11px] uppercase tracking-[0.05em] text-muted-foreground">{stat.label}</span>
-            </motion.div>
-          ))}
+          {/* Proof Strip */}
+          <motion.div 
+            variants={fadeInUp} 
+            className="flex flex-wrap items-center justify-center gap-6 sm:gap-10 pt-10 mt-10 border-t border-border/80 font-mono text-[9.5px] sm:text-[10px] font-bold uppercase tracking-[0.12em] text-[#777]"
+          >
+            <span className="flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#a97922]" />
+              Pre-Rolled Cones
+            </span>
+            <span className="flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#a97922]" />
+              Rolling Papers
+            </span>
+            <span className="flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#a97922]" />
+              Filter Tips
+            </span>
+            <span className="flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#a97922]" />
+              Bulk Supply &amp; OEM
+            </span>
+          </motion.div>
         </motion.div>
       </section>
 
@@ -341,28 +379,31 @@ const Index = () => {
       </section>
 
       {/* ABOUT / TRUST */}
-      <section className="py-20 border-b border-border">
+      <section className="py-20 border-b border-border bg-[#fafaf8]">
         <div className="max-w-[1400px] mx-auto px-6 md:px-12">
-          <div className="grid md:grid-cols-[0.9fr_1.1fr] gap-16 items-center">
-            <motion.div className="aspect-[4/5] ph-image bg-secondary border border-border" initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
-              Artisan / Hand-Rolling Photo
+          <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-16 items-start">
+            <motion.div variants={fadeInUp} initial="initial" whileInView="whileInView" viewport={{ once: true }}>
+              <div className="eyebrow mb-3">Why JOJO</div>
+              <h2 className="text-[clamp(28px,3.5vw,44px)] font-['Cormorant_Garamond'] font-medium leading-[1.08] text-foreground">
+                Engineered for perfection,<br className="hidden sm:inline" /> rolled entirely by hand.
+              </h2>
             </motion.div>
             <motion.div variants={fadeInUp} initial="initial" whileInView="whileInView" viewport={{ once: true }}>
-              <div className="eyebrow">Why JOJO</div>
-              <h2 className="text-[clamp(24px,3vw,34px)] font-['Cormorant_Garamond'] font-medium mb-4">Engineered for perfection, rolled entirely by hand.</h2>
-              <p className="text-muted-foreground mb-8 max-w-[48ch]">Since 2014, JOJO Papers has manufactured pre-rolled cones, rolling papers and filter tips with close attention to structure, finish and repeatability.</p>
+              <p className="text-muted-foreground text-[15.5px] leading-relaxed mb-8 max-w-[52ch]">
+                Since 2014, JOJO Papers has manufactured pre-rolled cones, rolling papers and filter tips with close attention to structure, finish and repeatability.
+              </p>
               
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-4 border-t border-border pt-6 mt-6">
+              <div className="grid grid-cols-3 gap-6 border-t border-border pt-6">
                 <div>
-                  <b className="block font-['Cormorant_Garamond'] text-2xl font-medium">10M+</b>
+                  <b className="block font-['Cormorant_Garamond'] text-3xl font-medium text-foreground">10M+</b>
                   <span className="font-sans text-[11px] uppercase tracking-[0.05em] text-muted-foreground">Cones Rolled</span>
                 </div>
                 <div>
-                  <b className="block font-['Cormorant_Garamond'] text-2xl font-medium">200+</b>
+                  <b className="block font-['Cormorant_Garamond'] text-3xl font-medium text-foreground">200+</b>
                   <span className="font-sans text-[11px] uppercase tracking-[0.05em] text-muted-foreground">Women Empowered</span>
                 </div>
                 <div>
-                  <b className="block font-['Cormorant_Garamond'] text-2xl font-medium">10+</b>
+                  <b className="block font-['Cormorant_Garamond'] text-3xl font-medium text-foreground">10+</b>
                   <span className="font-sans text-[11px] uppercase tracking-[0.05em] text-muted-foreground">Years' Experience</span>
                 </div>
               </div>

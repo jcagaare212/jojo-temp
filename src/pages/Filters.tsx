@@ -40,10 +40,10 @@ export default function Filters() {
       <Breadcrumb items={[{ label: "Filter Tips" }]} />
 
       {/* HERO SECTION */}
-      <section className="py-12 md:py-20 bg-secondary border-b border-border">
+      <section className="py-10 md:py-14 bg-secondary border-b border-border">
         <div className="max-w-[1200px] mx-auto px-6 md:px-10">
-          <div className="grid md:grid-cols-[1fr_0.92fr] gap-12 md:gap-16 items-end">
-            <motion.div className="pb-8 md:pb-12" initial="initial" whileInView="whileInView" viewport={{ once: true }} variants={stagger}>
+          <div className="grid md:grid-cols-[1fr_0.92fr] gap-10 md:gap-14 items-end">
+            <motion.div className="pb-6 md:pb-8" initial="initial" whileInView="whileInView" viewport={{ once: true }} variants={stagger}>
               <motion.div className="font-sans text-[11px] text-muted-foreground uppercase tracking-[0.2em] mb-6 flex items-center gap-3" variants={fadeInUp}>
                 <span className="w-10 h-[1px] bg-border block"></span>
                 Better Sessions, Live Cleaner
@@ -79,9 +79,9 @@ export default function Filters() {
       </section>
 
       {/* STAT STRIP */}
-      <section className="bg-secondary pb-10 border-b border-border">
+      <section className="bg-secondary pb-6 border-b border-border">
         <div className="max-w-[1200px] mx-auto px-6 md:px-10">
-          <div className="grid grid-cols-2 md:grid-cols-4 border-t border-border pt-10">
+          <div className="grid grid-cols-2 md:grid-cols-4 border-t border-border pt-6">
             <div className="pr-4 md:pr-6 border-r border-b md:border-b-0 border-border pb-6 md:pb-0">
               <div className="font-['Cormorant_Garamond'] text-[32px] md:text-[36px] font-semibold text-foreground">2</div>
               <div className="text-[13px] text-muted-foreground mt-1.5 leading-relaxed">Tip constructions,<br/>Spiral and M-Shape</div>
@@ -105,16 +105,16 @@ export default function Filters() {
 
 
       {/* INTRO SECTION */}
-      <section className="py-14 md:py-20 bg-white border-b border-border">
+      <section className="py-10 md:py-14 bg-white border-b border-border">
         <div className="max-w-[1200px] mx-auto px-6 md:px-10">
-          <div className="grid md:grid-cols-[0.8fr_1.2fr] gap-10 md:gap-16 items-start">
+          <div className="grid md:grid-cols-[0.8fr_1.2fr] gap-8 md:gap-12 items-start">
             <div>
               <div className="font-mono text-[11px] text-muted-foreground uppercase tracking-[0.18em] mb-3">The Details</div>
               <h2 className="font-['Cormorant_Garamond'] text-[clamp(32px,3.8vw,42px)] font-medium leading-[1.08]">
                 A small piece of paper. It changes the whole roll.
               </h2>
             </div>
-            <div className="text-[15px] md:text-[16px] text-muted-foreground leading-[1.75] pt-1 md:pt-6">
+            <div className="text-[15px] md:text-[16px] text-muted-foreground leading-[1.75] pt-1 md:pt-4">
               <p className="mb-4">
                 Every JOJO cone ships with a filter tip built to a real internal structure, not just a rolled up scrap. The tip holds the cone open at the mouth end, keeps the pack firm through handling and travel, and gives every session a clean, consistent pull from first hit to last.
               </p>
@@ -127,9 +127,9 @@ export default function Filters() {
       </section>
 
       {/* CONSTRUCTIONS */}
-      <section id="construction" className="bg-secondary/40 py-14 md:py-20 border-b border-border">
+      <section id="construction" className="bg-secondary/40 py-10 md:py-14 border-b border-border">
         <div className="max-w-[1200px] mx-auto px-6 md:px-10">
-          <div className="text-center max-w-[620px] mx-auto mb-12 md:mb-16">
+          <div className="text-center max-w-[620px] mx-auto mb-8 md:mb-10">
             <div className="font-mono text-[11px] text-muted-foreground uppercase tracking-[0.18em] mb-3">Structural Design</div>
             <h2 className="font-['Cormorant_Garamond'] text-[clamp(32px,3.8vw,44px)] font-medium leading-[1.08] mb-3">
               Two constructions. Both built for airflow.
@@ -139,7 +139,7 @@ export default function Filters() {
             </p>
           </div>
 
-          <div className="flex flex-col gap-12 md:gap-16">
+          <div className="flex flex-col gap-8 md:gap-10">
             {/* Construction 1: Spiral Tip */}
             <div className="grid md:grid-cols-[0.9fr_1.1fr] gap-8 md:gap-14 items-center bg-white border border-border p-6 md:p-10 shadow-xs">
               <div className="flex flex-col gap-4">
@@ -222,9 +222,9 @@ export default function Filters() {
       </section>
 
       {/* COLOURS & PRINT OPTIONS */}
-      <section id="colours" className="py-14 md:py-20 bg-white border-b border-border">
+      <section id="colours" className="py-10 md:py-14 bg-white border-b border-border">
         <div className="max-w-[1200px] mx-auto px-6 md:px-10">
-          <div className="text-center max-w-[620px] mx-auto mb-10 md:mb-12">
+          <div className="text-center max-w-[620px] mx-auto mb-6 md:mb-8">
             <div className="font-mono text-[11px] text-muted-foreground uppercase tracking-[0.18em] mb-3">Colours &amp; Print Options</div>
             <h2 className="font-['Cormorant_Garamond'] text-[clamp(32px,3.8vw,44px)] font-medium leading-[1.08] mb-3">Plain. Printed. Custom. Yours.</h2>
             <p className="text-[15px] text-muted-foreground leading-[1.6]">
@@ -257,9 +257,9 @@ export default function Filters() {
       </section>
       
       {/* STYLES IN ACTION */}
-      <section className="bg-white py-14 md:py-20 border-b border-border">
+      <section className="bg-white py-10 md:py-14 border-b border-border">
         <div className="max-w-[1200px] mx-auto px-6 md:px-10">
-          <div className="text-center max-w-[600px] mx-auto mb-12">
+          <div className="text-center max-w-[600px] mx-auto mb-8">
             <div className="font-mono text-[11px] text-muted-foreground uppercase tracking-[0.18em] mb-3">Styles In Action</div>
             <h2 className="font-['Cormorant_Garamond'] text-[clamp(32px,3.8vw,44px)] font-medium leading-[1.08] mb-3">On the cone, up close.</h2>
             <p className="text-[15px] text-muted-foreground leading-[1.6]">
@@ -297,7 +297,7 @@ export default function Filters() {
       </section>
 
       {/* WORDMARK TRANSITION BAND */}
-      <section className="py-12 bg-secondary/30 border-b border-border flex items-center justify-center">
+      <section className="py-8 bg-secondary/30 border-b border-border flex items-center justify-center">
         <div className="max-w-[540px] px-6">
           <img 
             src="/images/products/tips/extracted/11_jojo_papers_filter_tips_wordmark.webp" 
@@ -308,9 +308,9 @@ export default function Filters() {
       </section>
 
       {/* PRINTED TIPS SHOWCASE */}
-      <section className="py-14 md:py-20 bg-secondary/40 border-b border-border">
+      <section className="py-10 md:py-14 bg-secondary/40 border-b border-border">
         <div className="max-w-[1200px] mx-auto px-6 md:px-10">
-          <div className="text-center max-w-[640px] mx-auto mb-10 md:mb-12">
+          <div className="text-center max-w-[640px] mx-auto mb-6 md:mb-8">
             <div className="font-mono text-[11px] text-muted-foreground uppercase tracking-[0.18em] mb-3">Printed Tips</div>
             <h2 className="font-['Cormorant_Garamond'] text-[clamp(32px,3.8vw,44px)] font-medium leading-[1.08] mb-3">Make it yours.</h2>
             <p className="text-[15px] text-muted-foreground leading-[1.6]">
@@ -329,9 +329,9 @@ export default function Filters() {
       </section>
 
       {/* CRAFT GRID / QUALITY CONTROL */}
-      <section className="bg-foreground text-background py-16 md:py-24 border-b border-[#222]">
+      <section className="bg-foreground text-background py-12 md:py-16 border-b border-[#222]">
         <div className="max-w-[1200px] mx-auto px-6 md:px-10">
-          <div className="text-center max-w-[620px] mx-auto mb-12">
+          <div className="text-center max-w-[620px] mx-auto mb-8">
             <div className="font-mono text-[11px] text-[#8f8f8f] uppercase tracking-[0.2em] mb-3">Made By Hand</div>
             <h2 className="font-['Cormorant_Garamond'] text-[clamp(32px,3.8vw,44px)] font-medium leading-[1.08] mb-3">Every tip, rolled and checked one at a time.</h2>
             <p className="text-[15px] text-[#bfbfbf] leading-[1.6]">
@@ -355,9 +355,9 @@ export default function Filters() {
       </section>
 
       {/* CTA / CONTACT SECTION */}
-      <section id="contact" className="py-16 md:py-24 bg-secondary/50 border-b border-border">
+      <section id="contact" className="py-12 md:py-16 bg-secondary/50 border-b border-border">
         <div className="max-w-[1200px] mx-auto px-6 md:px-10">
-          <div className="grid md:grid-cols-[1.2fr_0.8fr] gap-12 md:gap-16 items-center">
+          <div className="grid md:grid-cols-[1.2fr_0.8fr] gap-10 md:gap-14 items-center">
             <div>
               <div className="font-mono text-[11px] text-muted-foreground uppercase tracking-[0.18em] mb-3">Get In Touch</div>
               <h2 className="font-['Cormorant_Garamond'] text-[32px] md:text-[38px] font-medium leading-[1.08] mb-4">
@@ -406,7 +406,7 @@ export default function Filters() {
       </section>
 
       {/* FINAL CAPABILITIES CTA */}
-      <section className="py-16 md:py-24 bg-[#0d0d0d] text-white text-center">
+      <section className="py-12 md:py-16 bg-[#0d0d0d] text-white text-center">
         <div className="max-w-[1180px] mx-auto px-6 md:px-8">
           <div className="inline-flex items-center gap-2.5 mb-4 font-mono text-[11px] tracking-[0.15em] uppercase text-white/60 before:content-[''] before:w-5 before:h-px before:bg-white/60">
             Precision In Every Detail

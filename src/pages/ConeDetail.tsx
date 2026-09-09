@@ -139,7 +139,7 @@ const ConeDetail = () => {
       />
 
       {/* HERO SECTION */}
-      <section className="py-16 md:py-24">
+      <section className="py-10 md:py-14">
         <div className="max-w-[1180px] mx-auto px-6 md:px-8">
           <div className="grid md:grid-cols-[0.86fr_1.14fr] gap-10 md:gap-[70px] items-center">
             <motion.div initial="initial" whileInView="whileInView" viewport={{ once: true }} variants={stagger}>
@@ -174,7 +174,7 @@ const ConeDetail = () => {
 
 
       {/* PAPER OPTIONS */}
-      <section className="py-20">
+      <section className="py-10 md:py-14">
         <div className="max-w-[1180px] mx-auto px-6 md:px-8">
           <div className="max-w-[660px] mb-10">
             <h2 className="font-['Cormorant_Garamond'] text-[clamp(28px,3.5vw,36px)] font-medium leading-[1.06] mb-3">Paper Formulations</h2>
@@ -192,16 +192,16 @@ const ConeDetail = () => {
       </section>
 
       {/* COLOURS */}
-      <section className="py-20 bg-secondary border-y border-border">
+      <section className="py-10 md:py-14 bg-secondary border-y border-border">
         <div className="max-w-[1180px] mx-auto px-6 md:px-8">
-          <div className="max-w-[660px] mb-10">
+          <div className="max-w-[660px] mb-6">
             <h2 className="font-['Cormorant_Garamond'] text-[clamp(28px,3.5vw,36px)] font-medium leading-[1.06] mb-3">Custom Colours</h2>
             <p className="text-[16px] text-muted-foreground max-w-[56ch]">Go beyond standard white and brown. We offer food-grade, safe dye options to match your brand's palette, from subtle pastels to deep, solid blacks.</p>
           </div>
           
-          <div className="mt-8">
+          <div className="mt-6">
             {/* Cone Visualizer Stage */}
-            <div className="h-[300px] md:h-[480px] w-full relative mx-auto max-w-[900px]">
+            <div className="h-[280px] md:h-[420px] w-full relative mx-auto max-w-[900px]">
               <AnimatePresence>
                 <motion.img 
                   key={activeColor.name}
@@ -217,7 +217,7 @@ const ConeDetail = () => {
             </div>
 
             {/* Swatches */}
-            <div className="flex justify-center gap-6 md:gap-8 flex-wrap mt-8">
+            <div className="flex justify-center gap-6 md:gap-8 flex-wrap mt-6">
               {colors.map((c, i) => (
                 <div key={i} className="flex flex-col items-center gap-3 group">
                   <button 
@@ -232,7 +232,7 @@ const ConeDetail = () => {
                 </div>
               ))}
             </div>
-            <p className="text-center text-[10px] uppercase tracking-widest text-muted-foreground mt-10 max-w-[70ch] mx-auto font-sans opacity-70">
+            <p className="text-center text-[10px] uppercase tracking-widest text-muted-foreground mt-6 max-w-[70ch] mx-auto font-sans opacity-70">
               * This is for reference. Actual colour may vary in real life based on paper type and tip options chosen.
             </p>
           </div>
@@ -240,7 +240,7 @@ const ConeDetail = () => {
       </section>
 
       {/* FILTER TIPS */}
-      <section className="py-20">
+      <section className="py-10 md:py-14">
         <div className="max-w-[1180px] mx-auto px-6 md:px-8">
           <div className="grid md:grid-cols-[0.74fr_1.26fr] gap-10 items-start">
             <div>
@@ -282,9 +282,9 @@ const ConeDetail = () => {
       </section>
 
       {/* CONE RANGE STRIP */}
-      <section className="py-20 bg-secondary border-t border-border">
+      <section className="py-10 md:py-14 bg-secondary border-t border-border">
         <div className="max-w-[1180px] mx-auto px-6 md:px-8">
-          <div className="max-w-[660px] mb-8">
+          <div className="max-w-[660px] mb-6">
             <h2 className="font-['Cormorant_Garamond'] text-[clamp(28px,3.5vw,36px)] font-medium leading-[1.06] mb-3">Explore the Range</h2>
             <p className="text-[16px] text-muted-foreground">Select another size below to view its specific technical dimensions.</p>
           </div>
@@ -316,7 +316,7 @@ const ConeDetail = () => {
       </section>
 
       {/* FINAL CTA */}
-      <section className="bg-foreground text-background py-20">
+      <section className="bg-foreground text-background py-12 md:py-16">
         <div className="max-w-[1180px] mx-auto px-6 md:px-8 text-center">
           <div className="font-sans text-[11px] tracking-widest uppercase text-white/60 flex items-center justify-center gap-2.5 mb-4 before:content-[''] before:w-5 before:h-[1px] before:bg-white/60">
             Next Step

@@ -96,7 +96,7 @@ const PreRolledCones = () => {
       <Breadcrumb items={[{ label: "Pre-Rolled Cones" }]} />
 
       {/* PAGE HERO */}
-      <section className="py-16 md:py-24">
+      <section className="py-10 md:py-14">
         <motion.div className="max-w-[1180px] mx-auto text-center px-6 md:px-8" initial="initial" whileInView="whileInView" viewport={{ once: true }} variants={stagger}>
           <motion.div className="eyebrow center justify-center mb-6" variants={fadeInUp}>
             Pre-Rolled Cones
@@ -108,16 +108,16 @@ const PreRolledCones = () => {
             JOJO pre-rolled cones are hand-formed with an integrated filter tip and produced across five standard sizes. Each format can be developed using different paper bases, colours and filter-tip constructions.
           </motion.p>
           
-          <motion.div className="flex flex-col md:flex-row justify-center gap-[1px] bg-border border border-border max-w-[900px] mx-auto mt-12" variants={fadeInUp}>
-            <div className="flex-1 bg-white p-8 text-center">
+          <motion.div className="flex flex-col md:flex-row justify-center gap-[1px] bg-border border border-border max-w-[900px] mx-auto mt-8" variants={fadeInUp}>
+            <div className="flex-1 bg-white p-5 md:p-6 text-center">
               <h4 className="font-['Cormorant_Garamond'] text-[18px] font-medium mb-2">Hand-Rolled</h4>
               <p className="text-[13px] text-muted-foreground">Each cone is individually formed and finished by hand.</p>
             </div>
-            <div className="flex-1 bg-white p-8 text-center">
+            <div className="flex-1 bg-white p-5 md:p-6 text-center">
               <h4 className="font-['Cormorant_Garamond'] text-[18px] font-medium mb-2">Five Standard Sizes</h4>
               <p className="text-[13px] text-muted-foreground">A complete range from 70mm DogWalker to 109mm King Size.</p>
             </div>
-            <div className="flex-1 bg-white p-8 text-center">
+            <div className="flex-1 bg-white p-5 md:p-6 text-center">
               <h4 className="font-['Cormorant_Garamond'] text-[18px] font-medium mb-2">Multiple Configurations</h4>
               <p className="text-[13px] text-muted-foreground">Choose from different paper bases, colours and filter-tip constructions.</p>
             </div>
@@ -126,14 +126,14 @@ const PreRolledCones = () => {
       </section>
 
       {/* SIZES */}
-      <section className="py-14">
+      <section className="py-8 md:py-10">
         <div className="max-w-[1180px] mx-auto px-6 md:px-8">
           <div className="flex flex-col">
             {sizes.map((item, index) => (
               <motion.div 
                 key={item.id}
                 id={item.id}
-                className={`flex flex-col md:flex-row items-center gap-10 md:gap-16 py-14 border-t border-border ${index === sizes.length - 1 ? 'border-b' : ''} ${index % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}
+                className={`flex flex-col md:flex-row items-center gap-8 md:gap-12 py-8 md:py-10 border-t border-border ${index === sizes.length - 1 ? 'border-b' : ''} ${index % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}
                 initial="initial" whileInView="whileInView" viewport={{ once: true, margin: "-100px" }} variants={stagger}
               >
                 {/* Image Side */}
@@ -179,9 +179,9 @@ const PreRolledCones = () => {
       </section>
 
       {/* TEMPLATE NOTE */}
-      <section className="py-10">
+      <section className="py-6 md:py-8">
         <motion.div className="max-w-[1180px] mx-auto px-6 md:px-8" initial="initial" whileInView="whileInView" viewport={{ once: true }} variants={fadeInUp}>
-          <div className="border border-border p-8 md:p-12 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+          <div className="border border-border p-6 md:p-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
             <div>
               <div className="font-sans text-[11px] text-muted-foreground uppercase tracking-widest mb-3 eyebrow">Detailed Specifications</div>
               <p className="text-[14px] text-muted-foreground max-w-[52ch]">
@@ -195,8 +195,42 @@ const PreRolledCones = () => {
         </motion.div>
       </section>
 
+      {/* RETAIL & PACKAGING BANNER */}
+      <section className="py-4 md:py-6">
+        <div className="max-w-[1180px] mx-auto px-6 md:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="bg-[#111] text-white p-8 md:p-11 grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-8 items-center"
+          >
+            <div>
+              <div className="inline-flex items-center gap-2.5 mb-3 font-mono text-[11px] tracking-[0.15em] uppercase text-[#aaa] before:content-[''] before:w-5 before:h-px before:bg-[#777]">
+                Continue to Retail &amp; Packaging
+              </div>
+              <h3 className="text-white text-[clamp(26px,3.5vw,40px)] font-medium leading-[1.05] mb-3 font-['Cormorant_Garamond']">
+                Explore pre-rolled cone retail &amp; custom packaging.
+              </h3>
+              <p className="text-[#c7c7c7] text-[13.5px] leading-relaxed max-w-[78ch]">
+                The dedicated Pre-Rolled Cones Retail &amp; Packaging page explores retail boxes, drawer packs, paper tubes, tins, multi-packs, hanging formats, counter displays and master packing — engineered for shelf impact and production efficiency.
+              </p>
+            </div>
+            <div>
+              <Link
+                to="/retail-packaging/pre-rolled-cones"
+                className="bg-white text-[#111] border border-white px-6 py-5 flex items-center justify-between gap-6 font-mono text-[11px] tracking-[0.05em] uppercase transition-all hover:bg-[#111] hover:text-white shrink-0"
+              >
+                <span>Explore Cone<br />Retail &amp; Packaging</span>
+                <b className="text-[20px] font-normal">&rarr;</b>
+              </Link>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* FINAL CTA */}
-      <section className="bg-foreground text-background py-20 mt-10">
+      <section className="bg-foreground text-background py-12 md:py-16 mt-6 md:mt-8">
         <motion.div className="max-w-[1180px] mx-auto px-6 md:px-8 text-center" initial="initial" whileInView="whileInView" viewport={{ once: true }} variants={stagger}>
           <motion.div className="font-sans text-[11px] tracking-widest uppercase text-white/60 flex items-center justify-center gap-2.5 mb-4 before:content-[''] before:w-5 before:h-[1px] before:bg-white/60" variants={fadeInUp}>
             Next Step

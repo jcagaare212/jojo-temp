@@ -14,6 +14,7 @@ import ConeDetail from "./pages/ConeDetail";
 import BulkCones from "./pages/BulkCones";
 import Filters from "./pages/Filters";
 import RetailPackaging from "./pages/RetailPackaging";
+import RollingPaperPackaging from "./pages/RollingPaperPackaging";
 import Consultation from "./pages/Consultation";
 import RollingPapers from "./pages/RollingPapers";
 
@@ -30,6 +31,7 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/about" element={<About />} />
             <Route path="/private-label" element={<PrivateLabel />} />
+            <Route path="/private-label-branding" element={<PrivateLabel />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/pre-rolled-cones" element={<PreRolledCones />} />
             <Route path="/pre-rolled-cones/:sizeId" element={<ConeDetail />} />
@@ -37,6 +39,9 @@ const App = () => (
             <Route path="/rolling-papers" element={<RollingPapers />} />
             <Route path="/filters" element={<Filters />} />
             <Route path="/retail-packaging" element={<RetailPackaging />} />
+            <Route path="/retail-packaging/pre-rolled-cones" element={<RetailPackaging />} />
+            <Route path="/retail-packaging/rolling-papers" element={<RollingPaperPackaging />} />
+            <Route path="/rolling-paper-packaging" element={<RollingPaperPackaging />} />
             <Route path="/consultation" element={<Consultation />} />
             <Route path="*" element={<NotFound />} />
           </Routes>

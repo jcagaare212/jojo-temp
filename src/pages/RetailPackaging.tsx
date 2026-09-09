@@ -65,13 +65,13 @@ const RetailPackaging = () => {
   return (
     <div className="pt-[73px] md:pt-[115px] min-h-screen bg-background flex flex-col">
       <SEO
-        title="Custom Rolling Paper & Pre-Rolled Cone Packaging Solutions"
-        description="Retail packaging for pre-rolled cones and rolling papers: drawer boxes, paper tubes, slider packs, embossed metal tins, and counter display units."
-        canonical="https://jojopapers.com/retail-packaging"
+        title="Custom Pre-Rolled Cone Retail Packaging Solutions | JOJO Papers"
+        description="Retail packaging for pre-rolled cones: drawer boxes, paper tubes, slider packs, embossed metal tins, glass jars, and counter display units."
+        canonical="https://jojopapers.com/retail-packaging/pre-rolled-cones"
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "Service",
-          "name": "Custom Retail Packaging for Smoking Accessories",
+          "name": "Custom Pre-Rolled Cone Retail Packaging",
           "provider": {
             "@type": "Organization",
             "name": "JOJO Papers"
@@ -79,12 +79,15 @@ const RetailPackaging = () => {
           "serviceType": "Custom Packaging Manufacturing"
         }}
       />
-      <Breadcrumb items={[{ label: "Retail & Packaging" }]} />
+      <Breadcrumb items={[
+        { label: "Retail & Packaging", href: "/retail-packaging/pre-rolled-cones" },
+        { label: "Pre-Rolled Cones" }
+      ]} />
 
       {/* HERO SECTION */}
-      <section className="py-16 md:py-24 border-b border-border">
+      <section className="pt-8 pb-10 md:pt-12 md:pb-14 border-b border-border">
         <div className="max-w-[1200px] mx-auto px-6 md:px-10">
-          <div className="grid md:grid-cols-[0.87fr_1.13fr] gap-12 md:gap-16 items-center">
+          <div className="grid md:grid-cols-[0.87fr_1.13fr] gap-8 md:gap-12 items-center">
             <motion.div variants={stagger} initial="hidden" animate="show">
               <motion.div variants={fadeUp} className="flex items-center gap-3 mb-6">
                 <div className="w-[20px] h-[1px] bg-foreground"></div>
@@ -127,11 +130,11 @@ const RetailPackaging = () => {
       </section>
 
       {/* INTRO SECTION */}
-      <section className="py-20 md:py-24 bg-secondary border-b border-border">
+      <section className="py-10 md:py-12 bg-secondary border-b border-border">
         <div className="max-w-[1200px] mx-auto px-6 md:px-10">
-          <div className="grid md:grid-cols-[0.9fr_1.1fr] gap-12 md:gap-16 items-start">
+          <div className="grid md:grid-cols-[0.9fr_1.1fr] gap-8 md:gap-12 items-start">
             <motion.h2 
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               className="font-['Cormorant_Garamond'] text-[clamp(40px,4.7vw,57px)] font-medium leading-[1.01]"
@@ -139,7 +142,7 @@ const RetailPackaging = () => {
               The Role of Retail Packaging
             </motion.h2>
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
             >
@@ -156,11 +159,10 @@ const RetailPackaging = () => {
         </div>
       </section>
 
-
       {/* SECTION: TINS */}
-      <section id="tins" className="py-24 bg-white border-b border-border scroll-mt-[160px]">
+      <section id="tins" className="py-12 md:py-16 bg-white border-b border-border scroll-mt-[160px]">
         <div className="max-w-[1200px] mx-auto px-6 md:px-10">
-          <div className="max-w-[700px] mb-16">
+          <div className="max-w-[700px] mb-8">
             <h2 className="font-['Cormorant_Garamond'] text-[clamp(34px,4vw,50px)] font-medium leading-[1.05] mb-6">Metal Tin Packaging</h2>
             <p className="text-[15px] text-muted-foreground leading-[1.8]">
               Metal tins create a compact, durable retail pack and can be developed around different cone lengths, counts and brand positions. The footprint, depth and internal arrangement should be chosen around the selected cone before artwork is finalised.
@@ -193,9 +195,9 @@ const RetailPackaging = () => {
       </section>
 
       {/* SECTION: PAPER TUBES */}
-      <section id="paper-tubes" className="py-24 bg-secondary border-b border-border scroll-mt-[160px]">
+      <section id="paper-tubes" className="py-12 md:py-16 bg-secondary border-b border-border scroll-mt-[160px]">
         <div className="max-w-[1200px] mx-auto px-6 md:px-10">
-          <div className="max-w-[700px] mb-16">
+          <div className="max-w-[700px] mb-8">
             <h2 className="font-['Cormorant_Garamond'] text-[clamp(34px,4vw,50px)] font-medium leading-[1.05] mb-6">Rigid Paper Tube Packaging</h2>
             <p className="text-[15px] text-muted-foreground leading-[1.8]">
               Rigid paper tubes offer a cylindrical packaging route that can scale in height and diameter. They can be developed as small-count or larger-count packs, with colour and print direction adapted to the brand.
@@ -221,9 +223,9 @@ const RetailPackaging = () => {
       </section>
 
       {/* SECTION: JARS */}
-      <section id="jars" className="py-24 bg-white border-b border-border scroll-mt-[160px]">
+      <section id="jars" className="py-12 md:py-16 bg-white border-b border-border scroll-mt-[160px]">
         <div className="max-w-[1200px] mx-auto px-6 md:px-10">
-          <div className="grid md:grid-cols-[0.8fr_1.2fr] gap-16 items-center">
+          <div className="grid md:grid-cols-[0.8fr_1.2fr] gap-12 md:gap-16 items-center">
             <motion.div variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true, margin: "-50px" }}>
               <motion.h2 variants={fadeUp} className="font-['Cormorant_Garamond'] text-[clamp(34px,4vw,50px)] font-medium leading-[1.05] mb-6">Clear Plastic Jars for Larger Counts</motion.h2>
               <motion.p variants={fadeUp} className="text-[15px] text-muted-foreground leading-[1.8] mb-8">
@@ -242,9 +244,9 @@ const RetailPackaging = () => {
       </section>
 
       {/* SECTION: INDIVIDUAL / LOW COUNT */}
-      <section id="individual" className="py-24 bg-secondary border-b border-border scroll-mt-[160px]">
+      <section id="individual" className="py-12 md:py-16 bg-secondary border-b border-border scroll-mt-[160px]">
         <div className="max-w-[1200px] mx-auto px-6 md:px-10">
-          <div className="max-w-[700px] mb-16">
+          <div className="max-w-[700px] mb-8">
             <h2 className="font-['Cormorant_Garamond'] text-[clamp(34px,4vw,50px)] font-medium leading-[1.05] mb-6">Compact Retail Packaging for Pre-Rolled Cones</h2>
             <p className="text-[15px] text-muted-foreground leading-[1.8]">
               Low-count pre-rolled cone packaging can range from individual cone tubes to 3-piece drawer boxes and 6-piece carton formats. These packs are designed around portability, shelf footprint and the number of cones the buyer wants inside one retail unit.
@@ -281,15 +283,15 @@ const RetailPackaging = () => {
       </section>
 
       {/* SECTION: PREMIUM BOXES */}
-      <section id="premium-boxes" className="py-24 bg-white border-b border-border scroll-mt-[160px]">
+      <section id="premium-boxes" className="py-12 md:py-16 bg-white border-b border-border scroll-mt-[160px]">
         <div className="max-w-[1200px] mx-auto px-6 md:px-10">
-          <div className="max-w-[700px] mb-16">
+          <div className="max-w-[700px] mb-8">
             <h2 className="font-['Cormorant_Garamond'] text-[clamp(34px,4vw,50px)] font-medium leading-[1.05] mb-6">Premium Pre-Rolled Cone Retail Boxes</h2>
             <p className="text-[15px] text-muted-foreground leading-[1.8]">
               Drawer boxes and larger presentation cartons give more space to build a complete retail experience around the cone pack. They can accommodate the main cone product together with supporting pack components where required by the project.
             </p>
           </div>
-          <div className="grid md:grid-cols-2 gap-x-8 gap-y-16">
+          <div className="grid md:grid-cols-2 gap-x-8 gap-y-12">
             {[
               { 
                 img: "extracted_11.jpg", 
@@ -325,9 +327,9 @@ const RetailPackaging = () => {
       </section>
 
       {/* SECTION: HANGING */}
-      <section id="hanging" className="py-24 bg-secondary border-b border-border scroll-mt-[160px]">
+      <section id="hanging" className="py-12 md:py-16 bg-secondary border-b border-border scroll-mt-[160px]">
         <div className="max-w-[1200px] mx-auto px-6 md:px-10">
-          <div className="grid md:grid-cols-[1.1fr_0.9fr] gap-16 items-center">
+          <div className="grid md:grid-cols-[1.1fr_0.9fr] gap-12 md:gap-16 items-center">
             <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true, margin: "-50px" }} className="border border-border p-6 bg-white overflow-hidden flex items-center justify-center">
               <img src="/images/products/retail-packaging/extracted_15.jpg" alt="Hanging Retail Packs" className="w-full h-auto object-contain hover:scale-105 transition-transform duration-700" />
             </motion.div>
@@ -346,9 +348,9 @@ const RetailPackaging = () => {
       </section>
 
       {/* SECTION: OUTER */}
-      <section id="outer" className="py-24 bg-white border-b border-border scroll-mt-[160px]">
+      <section id="outer" className="py-12 md:py-16 bg-white border-b border-border scroll-mt-[160px]">
         <div className="max-w-[1200px] mx-auto px-6 md:px-10">
-          <div className="max-w-[700px] mb-16">
+          <div className="max-w-[700px] mb-8">
             <h2 className="font-['Cormorant_Garamond'] text-[clamp(34px,4vw,50px)] font-medium leading-[1.05] mb-6">Build the Packaging Hierarchy Beyond the Individual Pack</h2>
             <p className="text-[15px] text-muted-foreground leading-[1.8]">
               Once the individual retail format is approved, larger grouped cartons and master packaging can be developed around it. This keeps the consumer-facing pack, retailer-facing group pack and distribution layer connected.
@@ -374,7 +376,7 @@ const RetailPackaging = () => {
       </section>
 
       {/* SECTION: OEM DEVELOPMENT */}
-      <section className="py-20 md:py-24 bg-foreground text-background">
+      <section className="py-12 md:py-16 bg-foreground text-background">
         <div className="max-w-[1200px] mx-auto px-6 md:px-10">
           <div className="grid md:grid-cols-[0.72fr_1.28fr] gap-12 md:gap-16 items-center">
             <motion.div variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true }}>
@@ -415,7 +417,7 @@ const RetailPackaging = () => {
       </section>
 
       {/* SECTION: FAQ */}
-      <section className="py-20 md:py-24 bg-white border-b border-border">
+      <section className="py-12 md:py-16 bg-white border-b border-border">
         <div className="max-w-[1200px] mx-auto px-6 md:px-10">
           <div className="grid md:grid-cols-[0.8fr_1.2fr] gap-12 md:gap-16">
             <motion.div variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true }}>
@@ -460,7 +462,7 @@ const RetailPackaging = () => {
                 }
               ].map((faq, i) => (
                 <motion.details key={i} variants={fadeUp} className="group border-b border-border">
-                  <summary className="flex items-center justify-between cursor-pointer py-6 font-['Cormorant_Garamond'] text-[22px] font-medium list-none">
+                  <summary className="flex items-center justify-between cursor-pointer py-5 font-['Cormorant_Garamond'] text-[22px] font-medium list-none">
                     {faq.q}
                     <span className="ml-6 flex-shrink-0 w-6 h-6 flex items-center justify-center border border-border rounded-full group-open:rotate-180 transition-transform duration-300">
                       <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -468,7 +470,7 @@ const RetailPackaging = () => {
                       </svg>
                     </span>
                   </summary>
-                  <p className="text-[14px] text-muted-foreground leading-[1.8] pb-6 pr-12">
+                  <p className="text-[14px] text-muted-foreground leading-[1.8] pb-5 pr-12">
                     {faq.a}
                   </p>
                 </motion.details>
@@ -479,9 +481,9 @@ const RetailPackaging = () => {
       </section>
 
       {/* SECTION: CTA */}
-      <section className="py-24 bg-foreground text-background border-t border-[#333]">
+      <section className="py-14 md:py-16 bg-foreground text-background border-t border-[#333]">
         <div className="max-w-[1200px] mx-auto px-6 md:px-10">
-          <div className="grid md:grid-cols-[1fr_400px] gap-16 items-center">
+          <div className="grid md:grid-cols-[1fr_400px] gap-12 md:gap-16 items-center">
             <motion.div variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true }}>
               <motion.div variants={fadeUp} className="flex items-center gap-3 mb-6">
                 <div className="w-[20px] h-[1px] bg-muted-foreground"></div>

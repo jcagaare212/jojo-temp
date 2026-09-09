@@ -89,7 +89,7 @@ const BulkCones = () => {
       <Breadcrumb items={[{ label: "Bulk Cones" }]} />
 
       {/* HERO SECTION */}
-      <section className="relative overflow-hidden bg-background pt-12 pb-14 md:pt-16 md:pb-20 border-b border-border">
+      <section className="relative overflow-hidden bg-background pt-8 pb-10 md:pt-10 md:pb-12 border-b border-border">
         <div className="container px-4 md:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-[0.88fr_1.12fr] gap-12 lg:gap-20 items-center">
             <motion.div initial="hidden" animate="visible" variants={stagger} className="max-w-xl">
@@ -156,7 +156,7 @@ const BulkCones = () => {
       </div>
 
       {/* WHAT IS A BULK TOWER? */}
-      <section id="what-is" className="py-12 md:py-16 bg-background scroll-mt-[120px] border-b border-border">
+      <section id="what-is" className="py-10 md:py-12 bg-background scroll-mt-[120px] border-b border-border">
         <div className="container px-4 md:px-6">
           <div className="max-w-3xl mx-auto text-center mb-8 md:mb-10">
             <div className="text-xs font-sans font-medium tracking-wider uppercase text-muted-foreground mb-4">01 — Bulk Tower Format</div>
@@ -184,7 +184,7 @@ const BulkCones = () => {
       </section>
 
       {/* WHO BUYS BULK CONES */}
-      <section id="buyers" className="py-12 md:py-16 bg-secondary/30 scroll-mt-[120px] border-b border-border">
+      <section id="buyers" className="py-10 md:py-12 bg-secondary/30 scroll-mt-[120px] border-b border-border">
         <div className="container px-4 md:px-6">
           <div className="max-w-2xl mb-8 md:mb-10">
             <div className="text-xs font-sans font-medium tracking-wider uppercase text-muted-foreground mb-3">02 — Who Buys Bulk Cones?</div>
@@ -212,7 +212,7 @@ const BulkCones = () => {
       </section>
 
       {/* TOWER COUNTS */}
-      <section id="counts" className="py-12 md:py-16 bg-background scroll-mt-[120px] border-b border-border">
+      <section id="counts" className="py-10 md:py-12 bg-background scroll-mt-[120px] border-b border-border">
         <div className="container px-4 md:px-6">
           <div className="max-w-2xl mx-auto text-center mb-8 md:mb-10">
             <div className="text-xs font-sans font-medium tracking-wider uppercase text-muted-foreground mb-3">03 — Tower Counts</div>
@@ -250,7 +250,7 @@ const BulkCones = () => {
       </section>
 
       {/* CONE SIZES */}
-      <section id="sizes" className="py-12 md:py-16 bg-background scroll-mt-[120px] border-b border-border">
+      <section id="sizes" className="py-10 md:py-12 bg-background scroll-mt-[120px] border-b border-border">
         <div className="container px-4 md:px-6">
           <div className="max-w-2xl mx-auto text-center mb-8 md:mb-10">
             <div className="text-xs font-sans font-medium tracking-wider uppercase text-muted-foreground mb-3">05 — Core Bulk Cone Sizes</div>
@@ -308,7 +308,7 @@ const BulkCones = () => {
       </section>
 
       {/* ORDER PROCESS */}
-      <section id="order" className="py-12 md:py-16 bg-background scroll-mt-[120px] border-b border-border">
+      <section id="order" className="py-10 md:py-12 bg-background scroll-mt-[120px] border-b border-border">
         <div className="container px-4 md:px-6">
           <div className="mb-8 md:mb-10">
             <h2 className="text-3xl font-serif mb-3">How to order bulk cones.</h2>
@@ -333,7 +333,7 @@ const BulkCones = () => {
       </section>
 
       {/* BRAND NOTE (PRIVATE LABEL) */}
-      <section className="py-12 md:py-16 bg-secondary/50 border-b border-border">
+      <section className="py-10 md:py-12 bg-secondary/50 border-b border-border">
         <div className="container px-4 md:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-[0.95fr_1.05fr] gap-12 lg:gap-20 items-center">
             <div className="bg-white border border-border p-4">
@@ -360,7 +360,7 @@ const BulkCones = () => {
       </section>
 
       {/* FINAL CTA */}
-      <section className="py-16 md:py-24 bg-foreground text-background text-center">
+      <section className="py-12 md:py-16 bg-foreground text-background text-center">
         <div className="container px-4 md:px-6">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif leading-[1.05] max-w-2xl mx-auto mb-4">
             Ready to order bulk cones?
